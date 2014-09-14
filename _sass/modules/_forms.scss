@@ -1,0 +1,31 @@
+// ==========================================================================
+// Form Elements
+// ==========================================================================
+
+.form {
+	@include e(label) {
+		@include m(hidden) {
+			@extend .srt;
+		}
+		display: block;
+		margin-bottom: em(8px);
+	}
+
+	@include e(input) {
+		display: block;
+		margin-bottom: em(20px);
+		width: 100%;
+		border-bottom: 6px solid palette(grey, x-light);
+		color: $black;
+
+		&:focus {	
+			border-color: $grey;
+		}
+	}
+
+	@include e(btn) {
+		@extend %btn;
+		width: 100%;
+		background: $hopbush;
+	}
+}

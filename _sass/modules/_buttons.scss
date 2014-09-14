@@ -1,0 +1,17 @@
+// ==========================================================================
+// Buttons
+// ==========================================================================
+
+.btn {
+  @include ui-colors($themes__ui);
+}
+
+[class^="btn--"] {
+  @extend %btn;
+  @extend %center-align;
+  @media (min-width: $g-breakpoint + 1) {
+    width: auto;
+    display: inline-block;
+		@include doubly(20px);
+  }
+}

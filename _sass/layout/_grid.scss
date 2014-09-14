@@ -1,0 +1,48 @@
+// ==========================================================================
+// Grid
+// ==========================================================================
+
+// Grid container
+
+.grid {
+	@extend %clearfix;
+	@extend .centered;
+	width: 90%;
+
+	// Make nested grid container 100%
+	[class*="grid__col--"] > & {
+		width: 100%;
+	}
+	@media (min-width: $g-breakpoint +1) {
+		width: 75%;
+	  
+	  // Include grid column classes
+		@include e(col) {
+			@include column-classes;
+		}
+	}
+
+	// Set max-width for grid container
+	@media (min-width: 1080px) {
+		max-width: $g-cont-max-width;
+	}
+}
+
+// Grid columns
+
+[class^="grid__col--"] {
+	@media (min-width: 1px) and (max-width: $g-breakpoint)  { 
+		margin-top: 12px;
+		margin-bottom: 12px;
+	}
+	@media (min-width: $g-breakpoint +1 ) { 
+		float: left;
+		min-height: 1px;
+		padding-left: 10px;
+		padding-right: 10px;
+		@include doubly(percentage($g-gutter-width / $context));
+		&:last-of-type {
+			float: right;
+		}
+	}
+}

@@ -1,0 +1,14 @@
+# Site settings
+title: Sass Break
+email: g.hernandez07@gmail.com
+description: "A blog about Sass."
+baseurl: ""
+url: "http://sassbreak.com"
+twitter_username: sassbreak
+github_username:  jekyll
+relative_path: /
+highlighter: pygments
+
+# Build settings
+markdown: kramdown
+permalink: pretty

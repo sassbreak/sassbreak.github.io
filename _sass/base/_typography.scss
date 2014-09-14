@@ -1,0 +1,36 @@
+// ==========================================================================
+// Typography Styles
+// ==========================================================================
+
+// Headlines
+
+.headline {
+	&-primary {
+		@extend %hdln-prim;
+		line-height: (40px/42px);
+	}
+
+ 	&-secondary {
+		@extend %hdln-sec;
+	}
+
+}
+// Post list type
+
+.post {
+	@include e(title) {
+		@extend %hdln-prim;
+		font-size: em(36px);
+		display: block;
+		margin-bottom: em(8px, 36px);
+		&:hover {
+			color: $hopbush;
+		}
+	}
+}
+
+// Site desc
+
+.site-desc {
+	font-size: em(15px);
+}

@@ -1,0 +1,21 @@
+// ==========================================================================
+// States
+// ==========================================================================
+
+// Mobile Grid Display states - FIX THIS
+
+.is-displayed-mobile {
+	@media (min-width: 1px) and (max-width: $g-breakpoint) {
+		display: block;
+		
+		// Jump out of the selector context, but stay inside the media query
+		@at-root (with: media) {
+			.is-hidden-mobile {
+				display: none;
+			}
+		}
+	}
+	@media (min-width: $g-breakpoint + 1) {
+		display: none;
+	}	
+}

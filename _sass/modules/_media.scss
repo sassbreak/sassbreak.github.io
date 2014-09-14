@@ -1,0 +1,23 @@
+// ==========================================================================
+// Media
+// ==========================================================================
+
+// Images
+
+.media__img {
+	@include m(wrap) {
+		border: 1px solid palette(grey, x-light);
+		padding: em(12px);
+	}
+	@include m(avatar) {
+		width: 109px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		border-radius: $br--round;
+	}
+}
+
+.feat-img {
+	margin-bottom: em(32px);
+}

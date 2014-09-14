@@ -1,0 +1,32 @@
+// ==========================================================================
+// Nav
+// ==========================================================================
+
+.nav {
+	@include e(item) {
+		@extend %nav-item-disp;
+		a {
+			@extend %nav-item-link;
+			color: $white;
+			&:hover {
+      	@extend %nav-item-on;
+    	}
+		}
+  	@include m(current) { 
+			@extend %nav-item-disp;
+	  	a {
+				@extend %nav-item-link;
+				@extend %nav-item-on;
+	    }
+  	}
+	}
+	@media (min-width: 1px) and (max-width: $g-breakpoint)  { 
+		background-color: #c0407f;
+		li {
+			border-right: 1px solid rgba($white, .15);
+			&:last-child {
+				border: none;
+			}
+		}
+	}
+}

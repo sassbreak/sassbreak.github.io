@@ -1,0 +1,38 @@
+// ==========================================================================
+// Posts and Pages
+// ==========================================================================
+
+.post {
+	@include e(item) {
+		border-bottom: 1px dotted palette(grey, light);
+		margin-bottom: em(48px);
+		padding-bottom: em(48px);
+		&:last-child {
+			border: none;
+		}
+	}
+	@include e(header) {
+		margin-bottom: em(34px);
+	}
+	@include e(content) {
+		margin-bottom: em(62px);
+	}
+	@include e(meta) {
+		margin-bottom: em(30px);
+	}
+	@include e(author) {
+		color: $patina;
+	}
+	@include e(sep) {
+		color: $iron;
+		padding: 0 em(6px);
+	}
+	@include e(date) {
+		color: 	$regent-grey;
+		font-size: em(15px);
+	}
+}
+.post,
+.page {
+	padding-top: em(12px);
+}

@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<div class="grid">
+	<div class="grid__col--12">
+		<ul class="post">
+			{% for post in site.posts %}
+				<li class="post__item">
+					<a class="post__title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+					<div class="post__meta">
+						<b class="post__author">{{ post.author }}</b>
+						<b class="post__sep">•</b>
+						<b class="post__date">{{ post.date | date: "%b %-d, %Y" }}</b>
+					</div>
+					{{ post.excerpt }}
+					<a class="btn--default" href="{{ post.url | prepend: site.baseurl }}">Read more</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>

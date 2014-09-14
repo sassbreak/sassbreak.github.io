@@ -1,0 +1,32 @@
+// ==========================================================================
+// Panels
+// ==========================================================================
+
+.panel {
+	@extend %panel-default;
+	@include m(centered) {
+		@extend %center-align;
+		@extend %panel-default;
+	}
+	@include m(padded) {
+		@extend %panel-padding;
+		@include m(centered) {
+			@extend %center-align;
+			@extend %panel-padding;
+		}
+	}
+}
+.main-header {
+	height: 54px;
+	background-color: $hopbush;
+	background-size: 25%;
+	@extend %center-align;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+	@media (min-width: $g-breakpoint) { 
+		background-size: 12%;
+		background-image: url('#{$path--rel}/texture.png');
+	}
+}

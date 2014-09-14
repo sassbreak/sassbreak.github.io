@@ -1,0 +1,20 @@
+// ==========================================================================
+// Placeholder Selectors
+// ==========================================================================
+
+%hdln-prim {
+	color: $pale-sky;
+	font-weight: $font-weight--light;
+	font-size: em(42px);
+	line-height: (46px/42px);
+	margin-top: em(5px, 42px);
+	margin-bottom: em(8px, 42px);
+}
+
+%hdln-sec {
+	letter-spacing: $letter-space;
+	font-weight: $font-weight--light;
+	font-size: em(26px);
+	margin-bottom: em(22px, 26px);	
+	font-family: $font-family--secondary;
+}

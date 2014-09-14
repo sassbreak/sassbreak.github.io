@@ -1,0 +1,20 @@
+// =========================================================================
+// These styles are only for displaying Poly UI modules on the landing page
+// =========================================================================
+
+
+.theme__poly {
+	
+	// Poly Grid Display
+	.grid [class*="grid__col"] {
+  	font-weight: $font-weight--thin;
+		margin-bottom: em(16px);
+		padding: 1.75%;
+	}
+}
+
+// h4 margins for spacing
+
+h4 {
+	margin-top: em(42px);
+}

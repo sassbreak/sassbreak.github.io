@@ -1,0 +1,118 @@
+// ==========================================================================
+// Base Styles
+// ==========================================================================
+
+* {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	color: $pale-sky;
+  font-size: $base__font-size;
+  font-family: $font-family--primary;
+  line-height: ($base__line/$base__font-size);
+}
+
+// Text
+
+h1 {
+	@extend %hdln-prim;
+}
+
+h2 {
+	@extend %hdln-sec;
+}
+
+h3 {
+	font-size: em(18px);
+	margin-bottom: em(5px, 18px);
+	color: palette(grey, light);
+}
+
+h4 {
+	margin-top: 0;
+	margin-bottom: em(44px, 14px);
+	color: palette(grey, x-light);
+	text-transform: uppercase;
+	letter-spacing: $letter-space;
+	font-weight: $font-weight--medium;
+	font-size: em(14px);
+}
+
+a {
+	transition: $trns-duration;
+	color: $patina; 
+	text-decoration: none;
+	font-weight: $font-weight--medium;
+}
+
+p {
+	margin: 0 0 em(24px, 18px);
+	font-weight: $font-weight--light;
+	font-size: em(18px);
+	line-height: (27px/18px);
+}
+
+b {
+	font-weight: $font-weight--medium;
+}
+
+blockquote {
+	font-weight: $font-weight--light;
+	font-style : italic;
+	font-size : em(20px);
+	@media (min-width: $g-breakpoint) {
+		margin: em(32px, 24px) 0;
+		padding: 0 0 0 5%;
+		border-left: em(8px, 24px) solid palette(grey, xx-light); 
+		font-size: em(24px);
+	}
+}
+
+// Lists
+
+li {
+	margin-bottom: em(6px);
+}
+
+// Images
+
+img {
+  margin-bottom: em(26px);
+  max-width: 100%;
+  height: auto;
+}
+
+// hr
+
+hr {
+	border: none;
+	border-bottom: 1px dotted palette(grey, light);
+	margin: em(22px) 0;
+}
+
+// Form elements
+
+input, 
+textarea {
+	padding: 15px; 
+	outline: 0;
+	border: 0;
+	border-radius: $br--default;
+	background: palette(grey, xx-light);
+	font-weight: $font-weight--light;
+	font-size : em(18px);
+}
+
+input:focus, 
+textarea:focus {
+	transition: $trns_duration;
+}
+
+// Footer
+
+footer {
+	border-top: 1px solid palette(grey, x-light);
+	background: $iron;
+}

@@ -1,0 +1,23 @@
+{% capture location %}{{ page.url | remove_first:'/' | split:'/' | first }}{% endcapture %} 
+<header class="main-header" role="banner">
+    <nav class="navbar" role="navigation">
+        <ul class="nav">
+           <li {% if location == '{{ site.url }}' %}class="nav__item--current" {% endif %} class="nav__item">
+                <a href="{{ site.url }}">Articles</a>
+            </li>
+            <li {% if location == 'about' %}class="nav__item--current" {% endif %} class="nav__item">
+                <a href="/about/">About</a>
+            </li class="nav__item">
+            <li {% if location == 'resources' %}class="nav__item--current" {% endif %} class="nav__item">
+                <a href="/resources/">Resources</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="grid panel--padded--centered">
+    <div class="grid__col--12 break">
+        <a class="site-logo" href="/" title="Sassbreak.com – Home">
+            <b class="srt">Sass Break</b>
+        </a>
+    </div>
+</div>

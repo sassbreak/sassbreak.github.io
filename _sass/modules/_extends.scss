@@ -1,0 +1,51 @@
+// ==========================================================================
+// Placeholder selectors
+// ==========================================================================
+
+// Nav Item
+
+%nav-item-disp {
+  display: inline-block;
+}
+%nav-item-link {
+  display: block;
+  line-height: em(54px);
+  font-weight: $font-weight--light;
+  letter-spacing: $letter-space;
+  padding: 0 em(18px);
+  @media (min-width: $g-breakpoint + 1) {
+    padding: 0 em(30px);
+  }
+}
+%nav-item-on {
+  color: transparentize($white, .4);
+} 
+
+// Buttons
+
+%btn {
+  padding: 12px 24px;
+  border: 0;
+  border-radius : $br--default;
+  color: $white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size : em(14px);
+  font-weight: $font-weight--medium;
+  transition: opacity $trns_duration;
+  display: block;
+  width: 100%;
+  &:hover {
+    opacity: .75;
+  }
+  &:active {
+    opacity: initial;
+  }
+}
+
+// Icons
+
+%icn--ui {
+	line-height: 0;
+	cursor: pointer;
+}

@@ -1,0 +1,17 @@
+// ==========================================================================
+// Placeholder Selectors
+// ==========================================================================
+
+%panel-default {
+	padding-top: em(40px);
+	padding-bottom: em(20px);
+}
+
+%panel-padding {
+	padding-top: em(84px);
+	padding-bottom: em(20px);
+	@media (min-width: $g-breakpoint + 1) {
+		padding-top: em(112px);
+		padding-bottom: em(44px);
+	}
+}
