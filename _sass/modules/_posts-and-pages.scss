@@ -16,6 +16,9 @@
 	}
 	@include e(content) {
 		margin-bottom: em(62px);
+		li {
+			margin: em(4px) 0;
+		}
 	}
 	@include e(meta) {
 		margin-bottom: em(30px);

@@ -533,6 +533,18 @@ footer {
     [class^="grid__col--"]:last-of-type {
       float: right; } }
 
+html,
+body {
+  height: 100%; }
+
+.wrapper {
+  min-height: 100%;
+  margin: 0 auto -10em; }
+
+footer,
+.push {
+  height: 11.58824em; }
+
 .theme__poly .grid [class*="grid__col"] {
   font-weight: 100;
   margin-bottom: 0.94118em;
@@ -713,6 +725,8 @@ h4 {
   margin-bottom: 2em; }
 .post__content {
   margin-bottom: 3.64706em; }
+  .post__content li {
+    margin: 0.23529em 0; }
 .post__meta {
   margin-bottom: 1.76471em; }
 .post__author {
