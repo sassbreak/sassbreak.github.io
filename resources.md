@@ -4,12 +4,12 @@ title: Sass Resources
 permalink: /resources/
 ---
 
-A ongoing list of Sass resources. If you'd like your Sass article, website or post listed, [let us know](https://twitter.com/sassbreak).
+An ongoing list of Sass resources. If you'd like your Sass article, website or post listed, [let us know](https://twitter.com/sassbreak).
 
 ### Sass
 
 * [Sass website](http://sass-lang.com/)
-* [thesassway.com](http://thesassway.com/)
+* [The Sass Way](http://thesassway.com/)
 
 ***
 

@@ -1,4 +1,2 @@
-sassbreak
-=========
-
-A blog about Sass.
+sassbreak.github.io
+===================
