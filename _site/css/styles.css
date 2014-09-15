@@ -533,18 +533,18 @@ footer {
     [class^="grid__col--"]:last-of-type {
       float: right; } }
 
-html,
-body {
-  height: 100%; }
+@media (min-width: 769px) {
+  html,
+  body {
+    height: 100%; }
 
-.wrapper {
-  min-height: 100%;
-  margin: 0 auto -10em; }
+  .wrapper {
+    min-height: 100%;
+    margin: 0 auto -10em; }
 
-footer,
-.push {
-  height: 11.58824em; }
-
+  footer,
+  .push {
+    height: 11.58824em; } }
 .theme__poly .grid [class*="grid__col"] {
   font-weight: 100;
   margin-bottom: 0.94118em;

@@ -2,17 +2,17 @@
 // Sticky Footer
 // ==========================================================================
 
-html, 
-body {
-	height: 100%;
-}
-
-.wrapper {
-	min-height: 100%;
-	margin: 0 auto -10em;
-}
-
-footer, 
-.push {
-	height: em(197px);
+@media (min-width: $g-breakpoint +1) {
+	html, 
+	body {
+		height: 100%;
+	}
+	.wrapper {
+		min-height: 100%;
+		margin: 0 auto -10em;
+	}
+	footer, 
+	.push {
+		height: em(197px);
+	}
 }
