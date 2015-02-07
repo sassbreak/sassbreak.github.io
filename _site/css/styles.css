@@ -392,7 +392,7 @@ body {
 
 h3 {
   font-size: 1.05882em;
-  margin-bottom: 0.27778em;
+  margin-bottom: 0.66667em;
   color: #a2abb4; }
 
 h4 {
@@ -626,7 +626,7 @@ h4 {
   border-bottom: solid 3px #bfc0c7; }
 .btn--error {
   background-color: #b37399;
-  border-bottom: solid 3px #9e5680; }
+  border-bottom: solid 3px #9d5580; }
 .btn--warning {
   background-color: #699;
   border-bottom: solid 3px #527a7a; }
@@ -671,7 +671,7 @@ h4 {
   width: 100px;
   height: 100px;
   display: inline-block;
-  padding: 0 5.76471em;
+  padding: 0 4.23529em;
   background-position: center;
   background-color: #fff; }
   .site-logo--white {
@@ -682,6 +682,9 @@ h4 {
     display: inline-block;
     background-size: 100%;
     margin-bottom: 0.47059em; }
+  @media (min-width: 768px) {
+    .site-logo {
+      padding: 0 5.76471em; } }
 
 .break {
   position: relative; }

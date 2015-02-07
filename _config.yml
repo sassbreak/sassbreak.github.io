@@ -1,7 +1,7 @@
 # Site settings
-title: Sass Break
+title: Sass break - A simple blog about Sass
 email: g.hernandez07@gmail.com
-description: "A blog about Sass."
+description: "A simple blog about Sass."
 baseurl: ""
 url: "http://sassbreak.com"
 twitter_username: sassbreak

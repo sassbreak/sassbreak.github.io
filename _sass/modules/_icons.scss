@@ -6,13 +6,16 @@
 
 .site-logo {
 	@include img-replace("main-logo.svg", 100px, 100px, inline-block);
-	padding: 0 em(98px);
+	padding: 0 em(72px);
 	background-position: center;
 	background-color: $white;
 	@include m(white) {
 		@include img-replace("logo-white.png", 80px, 80px, inline-block);
 		background-size: 100%;
 		margin-bottom: em(8px);
+	}
+	@media (min-width: $g-breakpoint) { 
+		padding: 0 em(98px);
 	}
 }
 .break {

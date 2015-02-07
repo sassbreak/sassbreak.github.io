@@ -1,89 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sass Break</title>
-    <description>A blog about Sass.</description>
+    <title>Sass break - A simple blog about Sass</title>
+    <description>A simple blog about Sass.</description>
     <link>http://sassbreak.com/</link>
     <atom:link href="http://sassbreak.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 15 Sep 2014 11:28:16 -0400</pubDate>
-    <lastBuildDate>Mon, 15 Sep 2014 11:28:16 -0400</lastBuildDate>
-    <generator>Jekyll v2.2.0</generator>
+    <pubDate>Sat, 07 Feb 2015 15:27:18 -0500</pubDate>
+    <lastBuildDate>Sat, 07 Feb 2015 15:27:18 -0500</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>Sass Test Post</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory - edit this post and re-build (or run with the &lt;code&gt;-w&lt;/code&gt; switch) to see your changes!
-To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention: YYYY-MM-DD-name-of-post.ext.&lt;/p&gt;
+        <title>Poly – A Modular UI Kit Built with Sass</title>
+        <description>&lt;p&gt;Poly is a simple, repsonsive UI toolkit for everyone to share and enjoy! It was designed by &lt;a href=&quot;https://twitter.com/MatHelme&quot;&gt;Mat Helme&lt;/a&gt; and built by &lt;a href=&quot;https://twitter.com/guilh&quot;&gt;Guil Hernandez&lt;/a&gt; using many of the best practices and principles of modular Sass. Poly’s versatility makes it the perfect toolkit for your next website, prototype, or blog. In fact, we used Poly to build Sass break.&lt;/p&gt;
 
-&lt;h3 id=&quot;more-stuff&quot;&gt;More Stuff&lt;/h3&gt;
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;p&gt;To learn how we built Poly, watch the &lt;a href=&quot;http://teamtreehouse.com/library/modular-css-with-sass&quot;&gt;Modular CSS with Sass&lt;/a&gt; course on Treehouse. You can also &lt;a href=&quot;https://github.com/Guilh/Poly&quot;&gt;grab the files on GitHub&lt;/a&gt;, or check it out on CodePen:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.box&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;steelblue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;radius&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;.&lt;/p&gt;
+&lt;p data-height=&quot;268&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;KwmmWq&quot; data-default-tab=&quot;result&quot; data-user=&quot;Guilh&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/Guilh/pen/KwmmWq/&quot;&gt;Poly – A simple, modular UI kit built with Sass&lt;/a&gt; by Guil H (&lt;a href=&quot;http://codepen.io/Guilh&quot;&gt;@Guilh&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async=&quot;&quot; src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
 
 </description>
-        <pubDate>Fri, 08 Aug 2014 18:50:46 -0400</pubDate>
-        <link>http://sassbreak.com/null/</link>
-        <guid isPermaLink="true">http://sassbreak.com/null/</guid>
+        <pubDate>Sat, 07 Feb 2015 17:50:46 -0500</pubDate>
+        <link>http://sassbreak.com/poly-ui-toolkit/</link>
+        <guid isPermaLink="true">http://sassbreak.com/poly-ui-toolkit/</guid>
         
         
-        <category>jekyll</category>
+        <category>sass</category>
         
-        <category>update</category>
+        <category>projects</category>
         
       </item>
     
       <item>
-        <title>Another Test Post</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory - edit this post and re-build (or run with the &lt;code&gt;-w&lt;/code&gt; switch) to see your changes!
-To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention: YYYY-MM-DD-name-of-post.ext.&lt;/p&gt;
+        <title>South Florida Sass Meetup</title>
+        <description>&lt;p&gt;In an effort to grow—and get to know—the awesome Sass community in South Florida, we’ve started a new meetup to talk about all things Sass!&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;p&gt;The meetups will consist of meet and greets followed by talks and presentations by local designers and developers. We’re currently searching the Palm Beach County area for the perfect venue. &lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;.&lt;/p&gt;
-
+&lt;p&gt;If you’re in the South Florida area, we’d love to have you! Follow &lt;a href=&quot;https://twitter.com/sflsass&quot;&gt;@sflsass&lt;/a&gt; on Twitter for updates.&lt;/p&gt;
 </description>
-        <pubDate>Fri, 08 Aug 2014 18:50:46 -0400</pubDate>
-        <link>http://sassbreak.com/another-test/</link>
-        <guid isPermaLink="true">http://sassbreak.com/another-test/</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory - edit this post and re-build (or run with the &lt;code&gt;-w&lt;/code&gt; switch) to see your changes!
-To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention: YYYY-MM-DD-name-of-post.ext.&lt;/p&gt;
-
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 05 Aug 2014 18:50:46 -0400</pubDate>
-        <link>http://sassbreak.com/welcome/</link>
-        <guid isPermaLink="true">http://sassbreak.com/welcome/</guid>
+        <pubDate>Fri, 06 Feb 2015 17:50:46 -0500</pubDate>
+        <link>http://sassbreak.com/south-florida-sass-meetup</link>
+        <guid isPermaLink="true">http://sassbreak.com/south-florida-sass-meetup</guid>
         
         
         <category>jekyll</category>
