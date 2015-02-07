@@ -8,7 +8,7 @@ permalink: /poly-ui-toolkit/
 image: poly-hdr.jpg
 ---
 
-Poly is a simple, repsonsive UI toolkit for everyone to share and enjoy! It was designed by [Mat Helme](https://twitter.com/MatHelme) and built by [Guil Hernandez](https://twitter.com/guilh) using many of the best practices and principles of modular Sass. Poly's versatility makes it the perfect toolkit for your next website, prototype, or blog. In fact, we used Poly to build Sass break.
+Poly is a simple, responsive UI toolkit for everyone to share and enjoy! It was designed by [Mat Helme](https://twitter.com/MatHelme) and built by [Guil Hernandez](https://twitter.com/guilh) using many of the best practices and principles of modular Sass. Poly's versatility makes it the perfect toolkit for your next website, prototype, or blog. In fact, we used Poly to build Sass break.
 
 To learn how we built Poly, watch the [Modular CSS with Sass](http://teamtreehouse.com/library/modular-css-with-sass) course on Treehouse. You can also [grab the files on GitHub](https://github.com/Guilh/Poly), or check it out on CodePen:
 
