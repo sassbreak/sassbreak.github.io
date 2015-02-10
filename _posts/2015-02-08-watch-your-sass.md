@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "--watch Yo' Sass"
-date:   2015-02-08
+date:   2015-02-09
 author: Guil Hernandez
 categories: sass tips
 permalink: /watch-your-sass/
