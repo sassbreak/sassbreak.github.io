@@ -34,7 +34,7 @@ So if your Sass file is in the root directory, this will auto-compile to css wit
 
 ##The commands I prefer
 
-Usually, to keep our project nice and tidy, we'll want our Sass and CSS files in separate directories. For instance, if our Sass file is in a directory named "scss", this command will compile our Sass and update the style sheet inside the "css" directory:
+Usually, to keep our project nice and tidy, we'll want our Sass and CSS files in separate directories. For instance, if our Sass file is in a directory named "scss," this command will compile our Sass and update the style sheet inside the "css" directory:
 
 {% highlight ruby %}
 sass --watch scss/style.scss:css/style.css
