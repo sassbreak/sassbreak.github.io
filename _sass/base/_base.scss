@@ -22,6 +22,7 @@ h1 {
 
 h2 {
 	@extend %hdln-sec;
+	font-weight: $font-weight--medium;
 }
 
 h3 {
