@@ -8,7 +8,7 @@ permalink: /watch-your-sass/
 image: sass-watch.jpg
 ---
 
-I know the feeling: You just installed Sass, eager to dive into all the awesome features and finally convert that stale CSS project over to Sass. You create your first .scss file, crack open Terminal, type a `--watch` command&mdash;everything comes to a hault. You get errors like &nbsp;`No such file or directory`, or you notice your Sass compiling to the wrong directory, but can’t figure out why.
+I know the feeling: You just installed Sass, eager to dive into all of its awesome features and finally convert that stale CSS project over to Sass. You create your first .scss file, crack open Terminal, type a `--watch` command&mdash;everything comes to a hault. You get errors like &nbsp;`No such file or directory`, or you notice your Sass compiling to the wrong directory, but can’t figure out why.
 
 After Googling and attempting a few `--watch` commands, you check your .css file. Nothing. This goes on for almost an hour. Yes, this is frustrating, but don’t let it discourage you from crossing over to the wonderful world of Sass. 
 
