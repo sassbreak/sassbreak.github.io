@@ -16,7 +16,7 @@ In this post, we'll take a look at a simple blend mode mixin I recently created 
 
 When we use the `background-blend-mode` property on an element, it mixes the background image and color together based on the blend mode we set.
 
-The simple version of our mixin accepts three arguments: the image path, background color, and blend mode:
+The simple version of the mixin accepts three arguments: the image path, background color, and blend mode:
 
 {% highlight scss %}
 @mixin blendy($img, $color, $blend) {
