@@ -84,7 +84,7 @@ $transp-grad : linear-gradient(black, transparent);
 $snarky-grad : linear-gradient(firebrick 40%, blue);
 {% endhighlight %}
 
-To do that, we'll pass both `$color` and a new argument,`$grad`, as optional arguments set to `null` by default. And, since `multiply` is the blend mode I use the most, I'll set the default blend mode value to `multiply`.
+To do that, we'll pass both `$color` and a new argument,`$grad`, as optional arguments set to `null` by default. And, since `multiply` is the most widely used blend mode *(at least for me)*, let's set the default blend mode value to `multiply`.
 
 {% highlight scss %}
 @mixin blendy($img, $color: null, $grad: null, $blend: multiply) {
