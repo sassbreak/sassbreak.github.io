@@ -5,6 +5,7 @@ date:   2015-02-06 22:50:46
 author: David Conner
 categories: jekyll update
 permalink: /south-florida-sass-meetup
+desc: "The Sass community in South Florida started a new meetup to talk about all things Sass."
 image: sfl-sass.jpg
 ---
 

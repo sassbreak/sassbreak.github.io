@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Sass break | CSS Blend Modes with Sass</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="We’ll build a simple CSS blend mode mixin with Sass.">
+  <link rel="shortcut icon" href="http://sassbreak.com/favicon.ico">
+<!--     <link rel="stylesheet" href="http://basehold.it/27"> -->
+  <link rel="canonical" href="http://sassbreak.com/css-blend-modes-with-sass/">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-54825201-1', 'auto');
+	  ga('send', 'pageview');
+	</script>
+</head>
+
+    <body>
+			<div class="wrapper">
+		     
+<header class="main-header" role="banner">
+    <nav class="navbar" role="navigation">
+        <ul class="nav">
+           <li  class="nav__item">
+                <a href="http://sassbreak.com">Articles</a>
+            </li>
+            <li  class="nav__item">
+                <a href="/about/">About</a>
+            </li class="nav__item">
+            <li  class="nav__item">
+                <a href="/resources/">Resources</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="grid panel--padded--centered">
+    <div class="grid__col--12 break">
+        <a class="site-logo" href="/" title="Sassbreak.com – Home">
+            <b class="srt">Sass Break</b>
+        </a>
+    </div>
+</div>
+
+		    <div class="grid">
+	<div class="grid__col--12 post">
+
+    <header class="post__header">
+      <h1 class="headline-primary">CSS Blend Modes with Sass</h1>
+      <div class="post__meta">
+        <b class="post__author">Guil Hernandez</b>
+        <b class="post__sep">•</b>
+        <b class="post__date"> 
+        Feb 16, 2015</b>
+      </div>
+    </header>
+
+    <img class="feat-img is-hidden-mobile" src="/assets/blend-modes.jpg">
+
+    <article class="post__content">
+    <p>CSS blend modes are a new feature that let us blend an element’s background layer with another layer. They’re commonly used for blending a background image with a background color. </p>
+
+<p>In this post, we’ll take a look at a simple blend mode mixin I recently created and used on several Sass projects.</p>
+
+<h2 id="using-blend-modes">Using blend modes</h2>
+
+<p>When we use the <code>background-blend-mode</code> property on an element, it mixes the background image and color together based on the blend mode we set.</p>
+
+<p>The simple version of the mixin accepts three arguments: the image path, background color, and blend mode:</p>
+
+<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@mixin</span><span class="nf"> blendy</span><span class="p">(</span><span class="nv">$img</span><span class="o">,</span> <span class="nv">$color</span><span class="o">,</span> <span class="nv">$blend</span><span class="p">)</span> <span class="p">{</span>
+  <span class="na">background-image</span><span class="o">:</span> <span class="sx">url(&#39;img/</span><span class="si">#{</span><span class="nv">$img</span><span class="si">}</span><span class="sx">&#39;)</span><span class="p">;</span>
+  <span class="na">background-color</span><span class="o">:</span> <span class="nv">$color</span><span class="p">;</span>
+  <span class="na">background-blend-mode</span><span class="o">:</span> <span class="nv">$blend</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Now we can include the <code>blendy</code> mixin in any rule that needs a background blend, like this:</p>
+
+<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.blend</span> <span class="p">{</span>
+  <span class="k">@include</span><span class="nd"> blendy</span><span class="p">(</span><span class="s2">&quot;mountains.jpg&quot;</span><span class="o">,</span> <span class="ni">firebrick</span><span class="o">,</span> <span class="n">multiply</span><span class="p">);</span>
+  <span class="na">width</span><span class="o">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+  <span class="na">height</span><span class="o">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+  <span class="na">border-radius</span><span class="o">:</span> <span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
+  <span class="na">background-size</span><span class="o">:</span> <span class="n">cover</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<h2 id="what-about-gradients">What about gradients?</h2>
+<p>What’s great about blend modes is that they also allow blending between images and gradients. This can create some interesting blending effects.</p>
+
+<p>First, we’ll declare a variable for our blend mode gradient:</p>
+
+<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Blend mode gradient</span>
+<span class="nv">$bm-gradient</span><span class="o">:</span> <span class="nf">linear-gradient</span><span class="p">(</span><span class="nb">aqua</span><span class="o">,</span> <span class="ni">royalblue</span><span class="p">);</span></code></pre></div>
+
+<p>Next, we’ll need to adjust the code in our mixin to accommodate gradients. Since gradients are actually background images — not colors, let’s add an <code>@if</code>/<code>@else</code> condition that displays multiple background layers if we pass <code>$bm-gradient</code> as the <code>$color</code> argument:</p>
+
+<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@mixin</span><span class="nf"> blendy</span><span class="p">(</span><span class="nv">$img</span><span class="o">,</span> <span class="nv">$color</span><span class="o">,</span> <span class="nv">$blend</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nv">$img-path</span><span class="o">:</span> <span class="sx">url(&#39;</span><span class="si">#{</span><span class="nv">$img</span><span class="si">}</span><span class="sx">&#39;)</span><span class="p">;</span>
+  <span class="k">@if</span> <span class="nv">$color</span> <span class="o">==</span> <span class="nv">$bm-gradient</span> <span class="p">{</span>
+    <span class="na">background</span><span class="o">:</span> <span class="nv">$color</span><span class="o">,</span> <span class="nv">$img-path</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">@else</span> <span class="p">{</span>
+    <span class="na">background-image</span><span class="o">:</span> <span class="nv">$img-path</span><span class="p">;</span>
+    <span class="na">background-color</span><span class="o">:</span> <span class="nv">$color</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="na">background-blend-mode</span><span class="o">:</span> <span class="nv">$blend</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>This time, instead of a color value, let’s pass the gradient variable:</p>
+
+<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.blend</span> <span class="p">{</span>
+  <span class="k">@include</span><span class="nd"> blendy</span><span class="p">(</span><span class="s2">&quot;mountains.jpg&quot;</span><span class="o">,</span> <span class="nv">$bm-gradient</span><span class="o">,</span> <span class="n">multiply</span><span class="p">);</span>
+  <span class="nc">...</span>
+<span class="p">}</span></code></pre></div>
+
+<h2 id="finishing-touches">Finishing touches</h2>
+
+<p>Currently, we’re limited to one blend mode gradient and we want the mixin to accept values from a variety of variables. For example, any of these:</p>
+
+<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Blend mode gradients</span>
+<span class="nv">$fancy-grad</span><span class="o">  :</span> <span class="nf">linear-gradient</span><span class="p">(</span><span class="nb">aqua</span><span class="o">,</span> <span class="ni">royalblue</span><span class="p">);</span>
+<span class="nv">$transp-grad</span><span class="o"> :</span> <span class="nf">linear-gradient</span><span class="p">(</span><span class="nb">black</span><span class="o">,</span> <span class="no">transparent</span><span class="p">);</span>
+<span class="nv">$snarky-grad</span><span class="o"> :</span> <span class="nf">linear-gradient</span><span class="p">(</span><span class="ni">firebrick</span> <span class="mi">40</span><span class="kt">%</span><span class="o">,</span> <span class="nb">blue</span><span class="p">);</span></code></pre></div>
+
+<p>To do that, we’ll pass both <code>$color</code> and a new argument,<code>$grad</code>, as optional arguments set to <code>null</code> by default. And, since <code>multiply</code> is the most widely used blend mode <em>(at least for me)</em>, let’s set the default blend mode value to <code>multiply</code>.</p>
+
+<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@mixin</span><span class="nf"> blendy</span><span class="p">(</span><span class="nv">$img</span><span class="o">,</span> <span class="nv">$color</span><span class="o">:</span> <span class="n">null</span><span class="o">,</span> <span class="nv">$grad</span><span class="o">:</span> <span class="n">null</span><span class="o">,</span> <span class="nv">$blend</span><span class="o">:</span> <span class="n">multiply</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nv">$img-path</span><span class="o">:</span> <span class="sx">url(&#39;img/</span><span class="si">#{</span><span class="nv">$img</span><span class="si">}</span><span class="sx">&#39;)</span><span class="p">;</span>
+  <span class="k">@if</span> <span class="nv">$grad</span> <span class="p">{</span>
+    <span class="na">background</span><span class="o">:</span> <span class="nv">$grad</span><span class="o">,</span> <span class="nv">$img-path</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">@else</span> <span class="p">{</span>
+    <span class="na">background-image</span><span class="o">:</span> <span class="nv">$img-path</span><span class="p">;</span>
+    <span class="na">background-color</span><span class="o">:</span> <span class="nv">$color</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="na">background-blend-mode</span><span class="o">:</span> <span class="nv">$blend</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Now we can simply specify the image and the blend color or gradient we want to display:</p>
+
+<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.blend</span> <span class="p">{</span>
+  <span class="k">@include</span><span class="nd"> blendy</span><span class="p">(</span><span class="s2">&quot;mountains.jpg&quot;</span><span class="o">,</span> <span class="mh">#00bfff</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nc">.feat</span> <span class="p">{</span>
+  <span class="k">@include</span><span class="nd"> blendy</span><span class="p">(</span><span class="s2">&quot;featured.jpg&quot;</span><span class="o">,</span> <span class="nv">$grad</span><span class="o">:</span> <span class="nv">$fancy-grad</span><span class="p">);</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Check out the final result on CodePen:</p>
+
+<p data-height="268" data-theme-id="0" data-slug-hash="LEQWev" data-default-tab="result" data-user="Guilh" class="codepen">See the Pen <a href="http://codepen.io/Guilh/pen/LEQWev/">LEQWev</a> by Guil H (<a href="http://codepen.io/Guilh">@Guilh</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+
+
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="sassbreak" data-size="large">Tweet this article</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </article>
+
+    <div class="post__comments">
+      <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'sassbreak'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+
+	</div>
+</div>
+		  	<div class="push"></div>
+			</div>
+		  <footer class="panel--centered" role="contentinfo">
+		<div class="grid">
+			<div class="grid__col--4">
+				<a href="https://twitter.com/Dave_Conner" title="Dave Conner - @Dave_Conner"><img class="media__img--avatar" src="https://pbs.twimg.com/profile_images/468537320581238784/BVSoNzeI.jpeg"></a>
+			</div>
+	    <div class="grid__col--4">
+	    	<a class="site-logo--white" href="/" title="Home">
+        	<b class="srt">Sass Break</b>
+        </a>
+	    	<p class="site-desc">A simple blog about Sass. <a href="https://twitter.com/sassbreak">@sassbreak</a></p>
+	    </div>
+			<div class="grid__col--4">
+				<a href="https://twitter.com/guilh" title="Guil Hernandez - @guilh"><img class="media__img--avatar" src="https://pbs.twimg.com/profile_images/483977668723884034/bPshQmgj.jpeg"></a>
+			</div>
+	</div>
+</footer>
+
+    </body>
+</html>

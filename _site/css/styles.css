@@ -225,7 +225,7 @@ li {
   letter-spacing: 1px;
   font-weight: 300;
   font-size: 1.52941em;
-  margin-bottom: 0.84615em;
+  margin-bottom: 0.69231em;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 .headline-primary {
@@ -243,7 +243,8 @@ li {
 
 .highlight {
   background: #ebedef;
-  padding: 0.58824em 1.47059em;
+  padding: 0.29412em 1.17647em;
+  margin-top: 1.41176em;
   margin-bottom: 2em;
   border-radius: 0.4em; }
   .highlight .c {
@@ -390,6 +391,9 @@ body {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.47059; }
 
+h2 {
+  font-weight: 400; }
+
 h3 {
   font-size: 1.05882em;
   margin-bottom: 0.66667em;
@@ -453,6 +457,9 @@ textarea {
 input:focus,
 textarea:focus {
   transition: 0.3s; }
+
+code {
+  padding: 0 .18em; }
 
 footer {
   border-top: 1px solid #ebedef;
@@ -601,7 +608,7 @@ h4 {
   border-radius: 50%; }
 
 .feat-img {
-  margin-bottom: 1.88235em; }
+  margin-bottom: 2.11765em; }
 
 .form__label {
   display: block;

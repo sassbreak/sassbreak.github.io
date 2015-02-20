@@ -5,6 +5,7 @@ date:   2015-02-09
 author: Guil Hernandez
 categories: sass tips
 permalink: /watch-your-sass/
+desc: "The --watch command tells Sass to watch your project for changes. It’s what converts your Sass files into CSS and auto-compiles your Sass every time it changes."
 image: sass-watch.jpg
 ---
 

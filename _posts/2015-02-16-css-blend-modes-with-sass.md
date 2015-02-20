@@ -5,6 +5,7 @@ date:   2015-02-16
 author: Guil Hernandez
 categories: sass tips
 permalink: /css-blend-modes-with-sass/
+desc: "We’ll build a simple CSS blend mode mixin with Sass."
 image: blend-modes.jpg
 ---
 
