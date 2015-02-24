@@ -13,6 +13,7 @@ This is an ongoing list of Sass resources. If you'd like your website, tool or a
 * [Advanced Sass - by Dale Sande](http://teamtreehouse.com/library/advanced-sass)
 * [Modular CSS with Sass](http://teamtreehouse.com/library/modular-css-with-sass)
 * [SassBites](https://www.youtube.com/user/sassbites)
+* [CSS to Sass](http://teamtreehouse.com/library/css-to-sass/upcoming) (coming soon)
 
  ***
 
