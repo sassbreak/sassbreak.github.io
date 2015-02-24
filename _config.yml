@@ -1,5 +1,5 @@
 # Site settings
-title: A simple blog about Sass
+title: Sass break - A simple blog about Sass
 email: g.hernandez07@gmail.com
 description: "A simple blog about Sass."
 baseurl: ""
@@ -8,6 +8,7 @@ twitter_username: sassbreak
 github_username:  jekyll
 relative_path: /
 highlighter: pygments
+#paginate: 6
 
 # Build settings
 markdown: kramdown
