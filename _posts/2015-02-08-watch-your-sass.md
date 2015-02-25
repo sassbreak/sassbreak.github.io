@@ -19,7 +19,7 @@ In this short post, we’ll go over a few simple `--watch` commands, what they m
 
 The `--watch` command literally tells Sass to watch your project for changes. It's what converts your Sass files into CSS and auto-compiles your Sass every time it changes.
 
-For example, this command tells Sass to watch and compile to a specific file – it's basically saying *"watch style.scss and compile to style.css"*:
+For example, this command tells Sass to watch and compile to a specific file – it's basically saying *"watch my project and compile from style.scss to style.css"*:
 
 {% highlight ruby %}
 sass --watch style.scss:style.css
@@ -31,7 +31,7 @@ Following is a more general command that looks for your Sass files and watches f
 sass --watch .
 {% endhighlight %}
 
-So if your Sass file is in the root directory, this will auto-compile to css within the root directory. This can get messy if, say, you only want Sass files in a "scss" directory, because the `sass --watch .` command will also watch and compile to CSS within that "scss" directory. 
+So if your Sass file is in the root directory, this will auto-compile to CSS within the root directory. This can get messy if, say, you only want Sass files in a "scss" directory, because the `sass --watch .` command will also watch and compile to CSS within that "scss" directory. 
 
 ##The commands I prefer
 
@@ -49,7 +49,7 @@ sass --watch scss:css
 
 This tells Sass *"watch the scss directory for changes, then update the style sheet inside the css directory."*
 
-If the `--watch` command succeeds, you should a notification like this in the command line output: `Sass is watching for changes. Press Ctrl-C to stop.`
+If the `--watch` command succeeds, you should see a notification like this in the command line output: `Sass is watching for changes. Press Ctrl-C to stop.`
 
 You also may see something like:
 
