@@ -10,7 +10,7 @@ desc: "We can nest @keyframes rules in Sass without an @at-root directive."
 
 A handy feature in Sass 3.3 was the [`@at-rule` directive](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#at-root), which outputs nested Sass rules at the root of the CSS.
 
-It was Stu Robson who came up with [an awesome use case and example](http://www.alwaystwisted.com/articles/2014-03-08-using-sass-33s-at-root-for-piece-of-mind) for `@at-root` when dealing with animations and `@keyframes` rules. Instead of creating `@keyframes` rules at the root of the style sheet, we could nest them inside their modules with `@at-root`, like this:
+It was Stu Robson who came up with [an awesome use case and example](http://www.alwaystwisted.com/articles/2014-03-08-using-sass-33s-at-root-for-piece-of-mind) for `@at-root` when dealing with animations and `@keyframes` rules. Instead of creating keyframes rules at the root of the style sheet, we could nest them inside their modules with `@at-root`. Like this:
 
 {% highlight scss %}
 .bunny {
@@ -28,10 +28,10 @@ It was Stu Robson who came up with [an awesome use case and example](http://www.
 }
 {% endhighlight %}
 
-I loved this feature because it made the `@keyframes` rules easier to find, read and maintain.
+I was excited about this feature because it made `@keyframes` rules easier to find, read and maintain.
 
 ##No more @at-root
-I recently discovered that Sass 3.4 automatically "@at-roots" nested keyframe rules. So now, instead of wrapping our `@keyframes` rules in an `@at-root`, we only need to nest the rules:
+I recently discovered that Sass 3.4 automatically "@at-roots" nested keyframe rules. So now, instead of wrapping our `@keyframes` rules in an `@at-root`, we can nest them like regular Sass rules:
 
 {% highlight scss %}
 .bunny {
