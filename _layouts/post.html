@@ -15,7 +15,9 @@ comments: true
       </div>
     </header>
 
+    {% if page.image %}
     <img class="feat-img is-hidden-mobile" src="/assets/{{ page.image }}">
+    {% endif %}
 
     <article class="post__content">
     {{ content }}
