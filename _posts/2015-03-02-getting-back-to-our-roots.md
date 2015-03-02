@@ -6,7 +6,7 @@ author: David Conner
 categories: sass tips
 permalink: /getting-back-to-our-roots/
 desc: "The `@at-root` directive, introduced with Sass 3.3, emits a collection of nested rules at the top-level root of the document. "
-image: viewport-relative-headlines.jpg
+image: the-roots.jpg
 ---
 
 Nesting is a feature in Sass that allows you to write your CSS with the same visual hierarchy that we see in HTML. It can provide many organizational and time saving benefits but its misuse is one of the main criticisms of Sass and the CSS it outputs. There have been many articles espousing the three levels deep nesting rule. When observed, this rule can take care of the majority of nesting issues but there are still cases where pushing a nested selector up to the root would be useful. That is where the `@at-root` directive comes in.
