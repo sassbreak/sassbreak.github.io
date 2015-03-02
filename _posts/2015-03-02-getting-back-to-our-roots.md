@@ -46,8 +46,7 @@ By default `@at-root` will move nested styles out from within a parent selector 
 
 {% endhighlight %}
 
-[source]
-[source]:http://sass-lang.com/documentation/file.SASS_REFERENCE.html#at-root
+<a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#at-root">Source</a>
 
 ##Use Cases
 I admit, the obvious uses for `@at-root` are pretty limited but the control that this directive provides is beneficial in specific edge cases. Here are three instances where you may find the `@at-root` to be helpful.
@@ -175,7 +174,7 @@ The styles are all kept together but the fallback is emitted outside of the supp
 {% endhighlight %}
 
 ###3. Removing specificity for items that will likely get modified while still keeping the organization of nesting. 
-I love the visual organization that nesting allows but sometimes you know you are going to have to modify a class that exist both inside and out of a nested parent. Compound selectors add to the specificity so kicking classes that you plan on altering out to the root can bee a good idea.
+I love the visual organization that nesting allows but sometimes you know you are going to have to modify a class that exist both inside and out of a nested parent. Compound selectors add to the specificity so kicking classes that you plan on altering out to the root can be a good idea.
 
 
 {% highlight scss %}
