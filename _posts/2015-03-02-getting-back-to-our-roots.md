@@ -11,7 +11,7 @@ image: the-roots.jpg
 
 Nesting is a feature in Sass that allows you to write your CSS with the same visual hierarchy that we see in HTML. It can provide many organizational and time saving benefits but its misuse is one of the main criticisms of Sass and the CSS it outputs. There have been many articles espousing the three levels deep nesting rule. When observed, this rule can take care of the majority of nesting issues but there are still cases where pushing a nested selector up to the root would be useful. That is where the `@at-root` directive comes in.
 
-##@at-root
+###@at-root
 The `@at-root` directive, introduced with Sass 3.3, emits a collection of nested rules at the top-level root of the document. You can use it in-line with a single selector or as a block with multiple selectors.
 
 {% highlight scss %}
@@ -49,7 +49,7 @@ By default `@at-root` will move nested styles out from within a parent selector 
 [source]
 [source]:http://sass-lang.com/documentation/file.SASS_REFERENCE.html#at-root
 
-##Use Cases
+###Use Cases
 I admit, the obvious uses for `@at-root` are pretty limited but the control that this directive provides is beneficial in specific edge cases. Here are three instances where you may find the `@at-root` to be helpful.
 
 ####1. Modify an element's use of a class
@@ -198,11 +198,12 @@ I love the visual organization that nesting allows but sometimes you know you ar
 {% endhighlight %}
 
 
-
+###Final Thoughts
+Admittedly the use cases for `@at-root` were difficult to come by. I started writing the article with an amazing one that would save multiple lines of code only to have it fall apart on me once I started writing. The examples that were left are decent but far from a game changer. If you have a good use for `@at-root` please let us know in the comments. 
 
 Check out the examples on CodePen:
 
-<p data-height="268" data-theme-id="12771" data-slug-hash="raKNwX" data-default-tab="result" data-user="davidicus" class='codepen'>See the Pen <a href='http://codepen.io/davidicus/pen/raKNwX/'>@at-root use case examples</a> by David Conner (<a href='http://codepen.io/davidicus'>@davidicus</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="266" data-theme-id="6879" data-slug-hash="raKNwX" data-default-tab="result" data-user="davidicus" class='codepen'>See the Pen <a href='http://codepen.io/davidicus/pen/raKNwX/'>@at-root use case examples</a> by David Conner (<a href='http://codepen.io/davidicus'>@davidicus</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 
