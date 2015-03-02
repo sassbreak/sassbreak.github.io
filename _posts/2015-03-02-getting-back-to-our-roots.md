@@ -49,7 +49,7 @@ By default `@at-root` will move nested styles out from within a parent selector 
 <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#at-root">Source</a>
 
 ##Use Cases
-I admit, the obvious uses for `@at-root` are pretty limited but the control that this directive provides is beneficial in specific edge cases. Here are three instances where you may find the `@at-root` to be helpful.
+The obvious uses for `@at-root` are pretty limited but the control that this directive provides is beneficial in specific edge cases. Here are three instances where you may find the `@at-root` to be helpful.
 
 ###1. Modify an element's use of a class
 For certain situations you may need to tweak a specific element's use of a class. For instance, removing the text decoration from an anchor tag that will be used as a button.
