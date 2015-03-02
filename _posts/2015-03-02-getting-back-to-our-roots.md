@@ -11,7 +11,7 @@ image: the-roots.jpg
 
 Nesting is a feature in Sass that allows you to write your CSS with the same visual hierarchy that we see in HTML. It can provide many organizational and time saving benefits but its misuse is one of the main criticisms of Sass and the CSS it outputs. There have been many articles espousing the three levels deep nesting rule. When observed, this rule can take care of the majority of nesting issues but there are still cases where pushing a nested selector up to the root would be useful. That is where the `@at-root` directive comes in.
 
-###@at-root
+##@at-root
 The `@at-root` directive, introduced with Sass 3.3, emits a collection of nested rules at the top-level root of the document. You can use it in-line with a single selector or as a block with multiple selectors.
 
 {% highlight scss %}
@@ -49,10 +49,10 @@ By default `@at-root` will move nested styles out from within a parent selector 
 [source]
 [source]:http://sass-lang.com/documentation/file.SASS_REFERENCE.html#at-root
 
-###Use Cases
+##Use Cases
 I admit, the obvious uses for `@at-root` are pretty limited but the control that this directive provides is beneficial in specific edge cases. Here are three instances where you may find the `@at-root` to be helpful.
 
-####1. Modify an element's use of a class
+###1. Modify an element's use of a class
 For certain situations you may need to tweak a specific element's use of a class. For instance, removing the text decoration from an anchor tag that will be used as a button.
 
 {% highlight scss %}
@@ -86,7 +86,7 @@ a.btn {
 }
 {% endhighlight %}
 
-####2. Escaping @supports for fallback code 
+###2. Escaping @supports for fallback code 
 The styles are all kept together but the fallback is emitted outside of the supports along with any styles that will be needed regardless of support.
 
 {% highlight scss %}
@@ -174,7 +174,7 @@ The styles are all kept together but the fallback is emitted outside of the supp
 
 {% endhighlight %}
 
-####3. Removing specificity for items that will likely get modified while still keeping the organization of nesting. 
+###3. Removing specificity for items that will likely get modified while still keeping the organization of nesting. 
 I love the visual organization that nesting allows but sometimes you know you are going to have to modify a class that exist both inside and out of a nested parent. Compound selectors add to the specificity so kicking classes that you plan on altering out to the root can bee a good idea.
 
 
@@ -198,7 +198,7 @@ I love the visual organization that nesting allows but sometimes you know you ar
 {% endhighlight %}
 
 
-###Final Thoughts
+##Final Thoughts
 Admittedly the use cases for `@at-root` were difficult to come by. I started writing the article with an amazing one that would save multiple lines of code only to have it fall apart on me once I started writing. The examples that were left are decent but far from a game changer. If you have a good use for `@at-root` please let us know in the comments. 
 
 Check out the examples on CodePen:
