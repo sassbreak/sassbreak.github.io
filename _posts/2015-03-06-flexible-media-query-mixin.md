@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Making our Media Query Mixins More Flexible"
-date:   2014-03-07 
+date:   2015-03-06 
 author: David Conner
 categories: sass tips
 permalink: /flexible-media-query-mixins/
