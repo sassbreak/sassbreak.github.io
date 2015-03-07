@@ -35,7 +35,7 @@ You would then call it and pass in the name of the breakpoint.
 }
 {% endhighlight %}
 
-Though I used this approach myself, there are a few reasons it may not be the best approach. 
+Though I have used this mixin myself, there are a few reasons it may not be the best approach. 
 
 ##What the Hell does 35em Look Like
 
