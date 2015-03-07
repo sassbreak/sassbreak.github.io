@@ -39,7 +39,7 @@ Though I used this approach myself, there are a few reasons it may not be the be
 
 ##What the Hell does 35em Look Like
 
-There are some pretty good arguments (<a href="http://bradfrost.com/blog/post/7-habits-of-highly-effective-media-queries/#relative">here</a> and <a href="http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/">here</a>) on why we should be using ems over pixels in our media queries but the problem is we are still seeing window size in pixels
+There are some pretty good arguments (<a href="http://bradfrost.com/blog/post/7-habits-of-highly-effective-media-queries/#relative">here</a> and <a href="http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/">here</a>) on why we should be using ems over pixels in our media queries but the problem is we are still seeing window size in pixels.
 
 Whether its a browser plugin, the element inspector or the new resize bubble on Codepen.io, we are constantly given window width information in pixel units. It is no wonder then that when we think of window size it is in pixels as well. When writing media queries we must do a conversion in order to use ems. Whether you  do the calculations in your head or you use a calculator, it is still one more action to complete. This adds up over the course of a project and will slow you down. 
 
@@ -51,7 +51,7 @@ Our content should determine what the breakpoints are. We start with the small s
 ##One Solution
 I have gotten away from naming my breakpoints and from creating them at "small", "medium" and "large" sizes. The mixin below is a versatile solution that allows for the creation of breakpoints as the content dictates. It defaults to `min-width:` for a terse include but arguments can be passed for min, max, height or width. This added flexibility means we can use this mixin for most of our query needs. 
 
-Since we are getting fed pixels by our tools this mixin is built to take it right back. Let the computer to do the math. The mixin takes the pixel input and divides it by the base font size, giving us our `em` units.  
+Since we are getting fed pixels by our tools this mixin is built to take it right back. Let the computer do the math. The mixin takes the pixel input and divides it by the base font size, giving us our `em` units.  
 
 {% highlight scss %}
 //base font
@@ -72,7 +72,7 @@ $bf: 16;
 
 
 ##Final Thoughts
-This mixin is terse, versatile, takes care of the `px` to `em` conversion and gives a bump to my productivity. You can still add predefined, named breakpoints with a variable if needed so it is still compatible with that school of thought.  
+This mixin is small, versatile, takes care of the `px` to `em` conversion and gives a bump to my productivity. You can still add predefined, named breakpoints with a variable if needed so it is still compatible with that school of thought.  
 
 We all have our own style of code, so much of this is just preference. The true test is which mixin helps you be more productive. If you have a media query mixin that helps you please share in the comments. 
 
