@@ -8,7 +8,7 @@ permalink: /nested-keyframe-rules-sass/
 desc: "We can nest @keyframes rules in Sass without an @at-root directive."
 ---
 
-A handy feature in Sass 3.3 was the [`@at-rule` directive](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#at-root), which outputs nested Sass rules at the root of the CSS.
+A handy feature in Sass 3.3 was the [`@at-root` directive](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#at-root), which outputs nested Sass rules at the root of the CSS.
 
 It was Stu Robson who came up with [an awesome use case and example](http://www.alwaystwisted.com/articles/2014-03-08-using-sass-33s-at-root-for-piece-of-mind) for `@at-root` when dealing with animations and `@keyframes` rules. Instead of creating keyframe rules at the root of the style sheet, we could nest them inside their modules with `@at-root`. Like this:
 
