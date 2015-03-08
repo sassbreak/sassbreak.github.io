@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Nested @keyframes Rules</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="We can nest @keyframes rules in Sass without an @at-root directive.">
+  <link rel="shortcut icon" href="http://sassbreak.com/favicon.ico">
+<!--     <link rel="stylesheet" href="http://basehold.it/27"> -->
+  <link rel="canonical" href="http://sassbreak.com/nested-keyframe-rules-sass/">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-54825201-1', 'auto');
+	  ga('send', 'pageview');
+	</script>
+</head>
+
+    <body>
+			<div class="wrapper">
+		     
+<header class="main-header" role="banner">
+    <nav class="navbar" role="navigation">
+        <ul class="nav">
+           <li  class="nav__item">
+                <a href="http://sassbreak.com">Articles</a>
+            </li>
+            <li  class="nav__item">
+                <a href="/about/">About</a>
+            </li class="nav__item">
+            <li  class="nav__item">
+                <a href="/resources/">Resources</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="grid panel--padded--centered">
+    <div class="grid__col--12 break">
+        <a class="site-logo" href="/" title="Sassbreak.com – Home">
+            <b class="srt">Sass Break</b>
+        </a>
+    </div>
+</div>
+
+		    <div class="grid">
+	<div class="grid__col--12 post">
+
+    <header class="post__header">
+      <h1 class="headline-primary">Nested @keyframes Rules</h1>
+      <div class="post__meta">
+        <b class="post__author">Guil Hernandez</b>
+        <b class="post__sep">•</b>
+        <b class="post__date"> 
+        Mar 1, 2015</b>
+      </div>
+    </header>
+
+    
+
+    <article class="post__content">
+    <p>A handy feature in Sass 3.3 was the <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#at-root"><code>@at-root</code> directive</a>, which outputs nested Sass rules at the root of the CSS.</p>
+
+<p>It was Stu Robson who came up with <a href="http://www.alwaystwisted.com/articles/2014-03-08-using-sass-33s-at-root-for-piece-of-mind">an awesome use case and example</a> for <code>@at-root</code> when dealing with animations and <code>@keyframes</code> rules. Instead of creating keyframe rules at the root of the style sheet, we could nest them inside their modules with <code>@at-root</code>. Like this:</p>
+
+<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.bunny</span> <span class="p">{</span>
+  <span class="na">animation</span><span class="o">:</span> <span class="n">hop</span> <span class="mi">2</span><span class="kt">s</span> <span class="n">ease-in-out</span> <span class="n">infinite</span><span class="o">,</span> 
+             <span class="n">move</span> <span class="mi">6</span><span class="kt">s</span> <span class="n">ease-out</span> <span class="n">forwards</span><span class="p">;</span>
+
+  <span class="k">@at-root</span> <span class="p">{</span>
+    <span class="k">@keyframes</span> <span class="nt">hop</span> <span class="p">{</span> 
+      <span class="nt">50</span><span class="err">%</span>  <span class="p">{</span> <span class="na">transform</span><span class="o">:</span> <span class="nf">translateY</span><span class="p">(</span><span class="mi">40</span><span class="kt">px</span><span class="p">);</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">@keyframes</span> <span class="nt">move</span> <span class="p">{</span> 
+      <span class="nt">100</span><span class="err">%</span> <span class="p">{</span> <span class="na">left</span><span class="o">:</span> <span class="mi">400</span><span class="kt">px</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>I was excited about this feature because it made <code>@keyframes</code> rules easier to find, read and maintain.</p>
+
+<h2 id="no-more-at-root">No more @at-root</h2>
+<p>I recently discovered that Sass 3.4 automatically “@at-roots” nested keyframe rules. So now, instead of wrapping our <code>@keyframes</code> rules in an <code>@at-root</code>, we can nest them like regular Sass rules:</p>
+
+<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.bunny</span> <span class="p">{</span>
+  <span class="na">animation</span><span class="o">:</span> <span class="n">hop</span> <span class="mi">2</span><span class="kt">s</span> <span class="n">ease-in-out</span> <span class="n">infinite</span><span class="o">,</span> 
+             <span class="n">move</span> <span class="mi">6</span><span class="kt">s</span> <span class="n">ease-out</span> <span class="n">forwards</span><span class="p">;</span>
+
+  <span class="k">@keyframes</span> <span class="nt">hop</span> <span class="p">{</span> 
+    <span class="nt">50</span><span class="err">%</span>  <span class="p">{</span> <span class="na">transform</span><span class="o">:</span> <span class="nf">translateY</span><span class="p">(</span><span class="mi">40</span><span class="kt">px</span><span class="p">);</span> <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">@keyframes</span> <span class="nt">move</span> <span class="p">{</span> 
+    <span class="nt">100</span><span class="err">%</span> <span class="p">{</span> <span class="na">left</span><span class="o">:</span> <span class="mi">400</span><span class="kt">px</span><span class="p">;</span> <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>… and Sass outputs them at the root level:</p>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.bunny</span> <span class="p">{</span>
+  <span class="n">animation</span><span class="o">:</span> <span class="n">hop</span> <span class="m">2s</span> <span class="n">ease</span><span class="o">-</span><span class="n">in</span><span class="o">-</span><span class="n">out</span> <span class="n">infinite</span><span class="o">,</span>  
+             <span class="n">move</span> <span class="m">6s</span> <span class="n">ease</span><span class="o">-</span><span class="n">out</span> <span class="n">forwards</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">@keyframes</span> <span class="nt">hop</span> <span class="p">{</span>
+  <span class="nt">50</span><span class="o">%</span> <span class="p">{</span>
+    <span class="n">transform</span><span class="o">:</span> <span class="n">translateY</span><span class="p">(</span><span class="m">40px</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">@keyframes</span> <span class="nt">move</span> <span class="p">{</span>
+  <span class="nt">100</span><span class="o">%</span> <span class="p">{</span>
+    <span class="k">left</span><span class="o">:</span> <span class="m">400px</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Sweet!</p>
+
+
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="sassbreak" data-size="large">Tweet this article</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </article>
+
+    <div class="post__comments">
+      <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'sassbreak'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+
+	</div>
+</div>
+		  	<div class="push"></div>
+			</div>
+		  <footer class="panel--centered" role="contentinfo">
+		<div class="grid">
+			<div class="grid__col--4">
+				<a href="https://twitter.com/Dave_Conner" title="Dave Conner - @Dave_Conner"><img class="media__img--avatar" src="https://pbs.twimg.com/profile_images/468537320581238784/BVSoNzeI.jpeg"></a>
+			</div>
+	    <div class="grid__col--4">
+	    	<a class="site-logo--white" href="/" title="Home">
+        	<b class="srt">Sass Break</b>
+        </a>
+	    	<p class="site-desc">A simple blog about Sass. <a href="https://twitter.com/sassbreak">@sassbreak</a></p>
+	    </div>
+			<div class="grid__col--4">
+				<a href="https://twitter.com/guilh" title="Guil Hernandez - @guilh"><img class="media__img--avatar" src="https://pbs.twimg.com/profile_images/483977668723884034/bPshQmgj.jpeg"></a>
+			</div>
+	</div>
+</footer>
+
+    </body>
+</html>

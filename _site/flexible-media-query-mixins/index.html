@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Making our Media Query Mixins More Flexible</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="Our content should determine what the breakpoints are. Any mixin that we use should be flexible enough to add them when and where they need be">
+  <link rel="shortcut icon" href="http://sassbreak.com/favicon.ico">
+<!--     <link rel="stylesheet" href="http://basehold.it/27"> -->
+  <link rel="canonical" href="http://sassbreak.com/flexible-media-query-mixins/">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-54825201-1', 'auto');
+	  ga('send', 'pageview');
+	</script>
+</head>
+
+    <body>
+			<div class="wrapper">
+		     
+<header class="main-header" role="banner">
+    <nav class="navbar" role="navigation">
+        <ul class="nav">
+           <li  class="nav__item">
+                <a href="http://sassbreak.com">Articles</a>
+            </li>
+            <li  class="nav__item">
+                <a href="/about/">About</a>
+            </li class="nav__item">
+            <li  class="nav__item">
+                <a href="/resources/">Resources</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="grid panel--padded--centered">
+    <div class="grid__col--12 break">
+        <a class="site-logo" href="/" title="Sassbreak.com – Home">
+            <b class="srt">Sass Break</b>
+        </a>
+    </div>
+</div>
+
+		    <div class="grid">
+	<div class="grid__col--12 post">
+
+    <header class="post__header">
+      <h1 class="headline-primary">Making our Media Query Mixins More Flexible</h1>
+      <div class="post__meta">
+        <b class="post__author">David Conner</b>
+        <b class="post__sep">•</b>
+        <b class="post__date"> 
+        Mar 6, 2015</b>
+      </div>
+    </header>
+
+    
+    <img class="feat-img is-hidden-mobile" src="/assets/flexible.jpg">
+    
+
+    <article class="post__content">
+    <p>Media Queries are how we all make our sites responsive. Simple sites may only require a few but on large projects we find ourselves writing them dozens of times in order to wrangle in the content. Though relatively small, writing a query over and over can get tedious which is why most people choose to use a mixin to minimize the typing. There are a ton of mixins out there ranging from simple to complex. Many of them opted to name the breakpoints with the idea that the names would be more intuitive than a numeric <code>em</code> value. The mixin may look something like this:</p>
+
+<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@mixin</span><span class="nf"> breakpoint</span><span class="p">(</span><span class="nv">$point</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">@if</span> <span class="nv">$point</span> <span class="o">==</span> <span class="n">small</span> <span class="p">{</span>
+    <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="nt">24em</span><span class="o">)</span> <span class="p">{</span> <span class="k">@content</span><span class="o">;</span> <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">point</span> <span class="o">==</span> <span class="nt">medium</span> <span class="p">{</span>
+    <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="nt">46</span><span class="nc">.8em</span><span class="o">)</span> <span class="p">{</span> <span class="k">@content</span><span class="o">;</span> <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">point</span> <span class="o">==</span> <span class="nt">large</span> <span class="p">{</span>
+    <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="nt">50em</span><span class="o">)</span>  <span class="p">{</span> <span class="k">@content</span><span class="o">;</span> <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>You would then call it and pass in the name of the breakpoint.</p>
+
+<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.element</span> <span class="p">{</span>
+  <span class="k">@include</span><span class="nd"> breakpoint</span><span class="p">(</span><span class="no">medium</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">...</span>
+  <span class="p">}</span> 
+<span class="p">}</span></code></pre></div>
+
+<p>Although I have used this mixin myself, there are a few reasons it may not be the best approach. </p>
+
+<h2 id="what-the-hell-does-35em-look-like">What the Hell does 35em Look Like</h2>
+
+<p>There are some pretty good arguments (<a href="http://bradfrost.com/blog/post/7-habits-of-highly-effective-media-queries/#relative">here</a> and <a href="http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/">here</a>) on why we should be using ems over pixels in our media queries but the problem is we are still seeing window size in pixels.</p>
+
+<p>Whether its a browser plugin, the element inspector or the new resize bubble on Codepen.io, we are constantly given window width information in pixel units. It is no wonder then that when we think of window size it is in pixels as well. When writing media queries we must do a conversion in order to use ems. Whether you  do the calculations in your head or you use a calculator, it is still one more action to complete. This adds up over the course of a project and will slow you down. </p>
+
+<p>So, we create mixins like the one above, that provide named breakpoints. We assign em values to them and have a vague idea of what that value is(in pixels). This sort of takes away our pixel conversion but what happens when you need a breakpoint that is not defined? Or, what if you want to have max-width or height?</p>
+
+<h2 id="content-should-determine-breakpoints">Content Should Determine Breakpoints</h2>
+<p>Our content should determine what the breakpoints are. We start with the small screen first, and then expand it till the content no longer looks good. We then add a breakpoint. Wash, rinse, repeat. Any mixin that we use should be flexible enough to add them when and where they need be. In that light, having arbitrary preset sizes may not be the  best way to go. </p>
+
+<h2 id="one-solution">One Solution</h2>
+<p>I have gotten away from naming my breakpoints and from creating them at “small”, “medium” and “large” sizes. The mixin below is a versatile solution that allows for the creation of breakpoints as the content dictates. It defaults to <code>min-width:</code> for a terse include but arguments can be passed for min, max, height or width. This added flexibility means we can use this mixin for most of our query needs. </p>
+
+<p>Since we are getting fed pixels by our tools this mixin is built to take it right back. Let the computer do the math. The mixin takes the pixel input and divides it by the base font size, giving us our <code>em</code> units.  </p>
+
+<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">//base font</span>
+<span class="nv">$bf</span><span class="o">:</span> <span class="mi">16</span><span class="p">;</span>
+
+<span class="k">@mixin</span><span class="nf"> bp</span><span class="p">(</span><span class="nv">$bp</span><span class="o">,</span> <span class="nv">$min-max</span><span class="o">:</span> <span class="no">min-width</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nv">$em</span><span class="o">:</span> <span class="nv">$bp</span><span class="o">/</span><span class="nv">$bf</span><span class="p">;</span>
+  <span class="k">@media</span><span class="o">(</span><span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">min-max</span><span class="p">}</span><span class="nd">:</span> <span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">em</span><span class="p">}</span><span class="nt">em</span><span class="o">)</span> <span class="p">{</span> <span class="k">@content</span><span class="o">;</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">//including the mixin</span>
+<span class="nc">.element</span> <span class="p">{</span>
+  <span class="k">@include</span><span class="nd"> bp</span><span class="p">(</span><span class="mi">600</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">...</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>This mixin is small, versatile, takes care of the <code>px</code> to <code>em</code> conversion and gives a bump to my productivity. You can still add predefined, named breakpoints with a variable if needed so it is still compatible with that school of thought.  </p>
+
+<p>We all have our own style of code, so much of this is just preference. The true test is which mixin helps you be more productive. If you have a media query mixin that helps you please share in the comments. </p>
+
+
+
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="sassbreak" data-size="large">Tweet this article</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </article>
+
+    <div class="post__comments">
+      <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'sassbreak'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+
+	</div>
+</div>
+		  	<div class="push"></div>
+			</div>
+		  <footer class="panel--centered" role="contentinfo">
+		<div class="grid">
+			<div class="grid__col--4">
+				<a href="https://twitter.com/Dave_Conner" title="Dave Conner - @Dave_Conner"><img class="media__img--avatar" src="https://pbs.twimg.com/profile_images/468537320581238784/BVSoNzeI.jpeg"></a>
+			</div>
+	    <div class="grid__col--4">
+	    	<a class="site-logo--white" href="/" title="Home">
+        	<b class="srt">Sass Break</b>
+        </a>
+	    	<p class="site-desc">A simple blog about Sass. <a href="https://twitter.com/sassbreak">@sassbreak</a></p>
+	    </div>
+			<div class="grid__col--4">
+				<a href="https://twitter.com/guilh" title="Guil Hernandez - @guilh"><img class="media__img--avatar" src="https://pbs.twimg.com/profile_images/483977668723884034/bPshQmgj.jpeg"></a>
+			</div>
+	</div>
+</footer>
+
+    </body>
+</html>

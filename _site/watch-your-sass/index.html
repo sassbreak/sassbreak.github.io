@@ -4,7 +4,7 @@
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Sass break | --watch Yo' Sass</title>
+  <title>--watch Yo' Sass</title>
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="The --watch command tells Sass to watch your project for changes. It’s what converts your Sass files into CSS and auto-compiles your Sass every time it changes.">
   <link rel="shortcut icon" href="http://sassbreak.com/favicon.ico">
@@ -62,7 +62,9 @@
       </div>
     </header>
 
+    
     <img class="feat-img is-hidden-mobile" src="/assets/sass-watch.jpg">
+    
 
     <article class="post__content">
     <p>I know the feeling: You just installed Sass, eager to dive into all of its awesome features and finally convert that stale CSS project over to Sass. You create your first .scss file, crack open Terminal, type a <code>--watch</code> command—everything comes to a hault. You get errors like  <code>No such file or directory</code>, or you notice your Sass compiling to the wrong directory, but can’t figure out why.</p>
@@ -75,7 +77,7 @@
 
 <p>The <code>--watch</code> command literally tells Sass to watch your project for changes. It’s what converts your Sass files into CSS and auto-compiles your Sass every time it changes.</p>
 
-<p>For example, this command tells Sass to watch and compile to a specific file – it’s basically saying <em>“watch style.scss and compile to style.css”</em>:</p>
+<p>For example, this command tells Sass to watch and compile to a specific file – it’s basically saying <em>“watch my project and compile from style.scss to style.css”</em>:</p>
 
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">sass</span> <span class="o">--</span><span class="n">watch</span> <span class="n">style</span><span class="o">.</span><span class="n">scss</span><span class="ss">:style</span><span class="o">.</span><span class="n">css</span></code></pre></div>
 
@@ -83,7 +85,7 @@
 
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">sass</span> <span class="o">--</span><span class="n">watch</span> <span class="o">.</span></code></pre></div>
 
-<p>So if your Sass file is in the root directory, this will auto-compile to css within the root directory. This can get messy if, say, you only want Sass files in a “scss” directory, because the <code>sass --watch .</code> command will also watch and compile to CSS within that “scss” directory. </p>
+<p>So if your Sass file is in the root directory, this will auto-compile to CSS within the root directory. This can get messy if, say, you only want Sass files in a “scss” directory, because the <code>sass --watch .</code> command will also watch and compile to CSS within that “scss” directory. </p>
 
 <h2 id="the-commands-i-prefer">The commands I prefer</h2>
 
@@ -97,7 +99,7 @@
 
 <p>This tells Sass <em>“watch the scss directory for changes, then update the style sheet inside the css directory.”</em></p>
 
-<p>If the <code>--watch</code> command succeeds, you should a notification like this in the command line output: <code>Sass is watching for changes. Press Ctrl-C to stop.</code></p>
+<p>If the <code>--watch</code> command succeeds, you should see a notification like this in the command line output: <code>Sass is watching for changes. Press Ctrl-C to stop.</code></p>
 
 <p>You also may see something like:</p>
 

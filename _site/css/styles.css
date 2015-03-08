@@ -222,7 +222,7 @@ li {
   margin-bottom: 0.19048em; }
 
 .headline-secondary, h2 {
-  letter-spacing: 1px;
+  letter-spacing: 0.025em;
   font-weight: 300;
   font-size: 1.52941em;
   margin-bottom: 0.69231em;
@@ -404,7 +404,7 @@ h4 {
   margin-bottom: 3.14286em;
   color: #ebedef;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.025em;
   font-weight: 400;
   font-size: 0.82353em; }
 
@@ -459,7 +459,7 @@ textarea:focus {
   transition: 0.3s; }
 
 code {
-  padding: 0 .18em; }
+  padding: 0 .15em; }
 
 footer {
   border-top: 1px solid #ebedef;
@@ -567,7 +567,7 @@ h4 {
   display: block;
   line-height: 3.17647em;
   font-weight: 300;
-  letter-spacing: 1px;
+  letter-spacing: 0.025em;
   padding: 0 1.05882em; }
   @media (min-width: 769px) {
     .nav__item a, .nav__item--current a {
@@ -751,6 +751,20 @@ h4 {
 .post,
 .page {
   padding-top: 0.70588em; }
+
+.pagination {
+  display: inline-block;
+  padding: 0.29412em 0.58824em;
+  border-radius: 0.4em;
+  background: #ebedef;
+  margin-bottom: 0.70588em;
+  font-size: 0.88235em; }
+  .pagination__arrow-next {
+    margin-left: 0.23529em; }
+  .pagination__arrow-prev {
+    margin-right: 0.23529em; }
+  .pagination__page {
+    margin: 0 0.29412em; }
 
 @media (min-width: 1px) and (max-width: 768px) {
   .is-displayed-mobile {

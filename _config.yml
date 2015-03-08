@@ -8,7 +8,7 @@ twitter_username: sassbreak
 github_username:  jekyll
 relative_path: /
 highlighter: pygments
-#paginate: 6
+paginate: 6
 
 # Build settings
 markdown: kramdown
