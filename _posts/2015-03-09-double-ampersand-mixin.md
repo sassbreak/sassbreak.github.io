@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The Double Ampersand Mixin"
-date:   2015-03-09
+date:   2015-03-10
 author: Guil Hernandez
 categories: sass tips
 permalink: /double-ampersand-mixin/
