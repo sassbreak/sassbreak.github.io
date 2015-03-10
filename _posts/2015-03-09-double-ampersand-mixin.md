@@ -119,7 +119,7 @@ p {
 }
 {% endhighlight %}
 
-I've noticed this selector *(the CSS version)* used on many typography websites like [jessicahische.is](http://jessicahische.is) and [trentwalton.com](http://trentwalton.com). Kudos goes out to [Mattox](https://dribbble.com/mattoxshuler) [Shuler](https://twitter.com/mattoxshuler) for showing me this clever typography use case.
+I've noticed this selector *(the CSS version)* used on many typographic websites like [jessicahische.is](http://jessicahische.is) and [trentwalton.com](http://trentwalton.com). Kudos goes out to [Mattox](https://dribbble.com/mattoxshuler) [Shuler](https://twitter.com/mattoxshuler) for showing me this clever typography use case.
 
 Check out an example on CodePen:  
 
