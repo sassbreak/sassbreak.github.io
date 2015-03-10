@@ -108,12 +108,13 @@ p {
 }
 {% endhighlight %}
 
-Or, we can zero out the top margins on all but the first paragraph:
+Or, we could also zero out the top margins on all but the first paragraph:
 
 {% highlight scss %}
 p {
   @include doubly() {
     margin-top: 0; 
+    text-indent: 1.5em;
   }
 }
 {% endhighlight %}
