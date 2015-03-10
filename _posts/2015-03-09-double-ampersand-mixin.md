@@ -34,7 +34,7 @@ This will output:
 }
 {% endhighlight %}
 
-This keeps first column flush with the left side of the page, while the others get a `20px` left margin.
+This keeps the first column flush with the left side of the page, while the others get a `20px` left margin.
 
 ##The Mixin
 
