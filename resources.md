@@ -31,6 +31,8 @@ This is an ongoing list of Sass resources. If you'd like your website, tool or a
 * [SassMeister](http://sassmeister.com/)
 * [CodePen](http://codepen.io/)
 * [Sache - Discover Sass & Compass Extensions](http://www.sache.in/)
+* [Breakpoint - Really Simple, Organized, Media Queries with Sass](http://breakpoint-sass.com/)
+* [Flexible.gs – Flexible Grid System](http://flexible.gs/)
 
 ***
 
