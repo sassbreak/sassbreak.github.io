@@ -4,7 +4,7 @@ comments: true
 ---
 <div class="grid">
 	<div class="grid__col--12 post">
-
+    {% assign author = site.data.authors.[page.author] %}
     <header class="post__header">
       <h1 class="headline-primary">{{ page.title }}</h1>
       <div class="post__meta">
@@ -23,18 +23,11 @@ comments: true
       {{ content }}
 
       <a href="https://twitter.com/share" class="twitter-share-button" data-via="sassbreak" data-size="large">Tweet this article</a>
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+      </script>
       
-      {% if page.guest-author %}
-      <div class="author-desc">
-        <a href="https://twitter.com/{{ page.twitter }}">
-          <img class="media__img--avatar" src="/assets/authors/{{ page.author-img }}">
-        </a>
-        <div class="author">
-          <span class="author__name">{{ page.author }}</span>
-          <p class="author__bio">{{ page.bio }}</p>
-        </div>
-      </div>
+      {% if author.guest %}
+        {% include author-box.html %}
       {% endif %}
     </article>
 
