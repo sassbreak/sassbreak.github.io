@@ -8,7 +8,7 @@ Dale Sande:
 
 David Conner:
   name: David Conner
-  guest: true
+  # guest: true
   img: 'dave.jpeg'
   bio: David is the Manager and Senior Web Designer at LeadFlash, a marketing company in South Florida. He writes about web design and front-end development. In addition to this blog he is a contributor for Web Designer Depot.
   twitter: Dave_Conner
