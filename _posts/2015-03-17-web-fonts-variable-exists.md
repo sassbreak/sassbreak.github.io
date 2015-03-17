@@ -43,9 +43,7 @@ If we've defined any of the font variables, Sass will import URLs for each exist
 @import url("http://fonts.googleapis.com/css?family=PT+Serif:400,700");
 {% endhighlight %}
 
-Now you can add this function to your Sass starter template to handle all web font imports. Define the web font variables you need in a  `_config` or `_variables` partial and Sass will take care of the rest! 
-
-Then, it can be business as usual with your font stacks and main styles:
+Now you can add this function to your Sass starter template to handle all web font imports. Define the web font variables you need in a  `_config` or `_variables` partial and Sass will take care of the rest! Then it can be business as usual with your font stacks and main styles:
 
 {% highlight scss %}
 // Font Stacks
