@@ -14,7 +14,7 @@ The introspection function I've found most useful is `variable-exists()`, which 
 
 I discovered that `variable-exists()` is a useful function for importing Google Web Fonts into our style sheets.
 
-##Web Font Variables
+##Web font variables
 When using Google Fonts in a project, declare variables for each web font URL:
 
 {% highlight scss %}
