@@ -12,7 +12,7 @@ Sass has [introspection functions](http://sass-lang.com/documentation/Sass/Scrip
 
 The introspection function I've found most useful is `variable-exists()`, which returns whether a variable exists in the current scope. With this function, we can check for a variable in our project, then instruct Sass to do something if the variable exists.
 
-In this post, we'll see how `variable-exists()` is a useful for importing Google Web Fonts into our style sheets.
+In this post, we'll see how `variable-exists()` is a useful function for importing Google Web Fonts into our style sheets.
 
 ##Web font variables
 When using Google Fonts in a project, declare variables for each web font URL:
