@@ -28,6 +28,9 @@ With `variable-exists()`, we can tell Sass to import a font into our style sheet
 
 
 {% highlight scss %}
+
+// _functions.scss
+
 @if variable-exists(font-google-prim) {
   @import url($font-google-prim);
 }
