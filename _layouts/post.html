@@ -7,7 +7,7 @@ comments: true
     {% assign author = site.data.authors.[page.author] %}
     <header class="post__header">
       <h1 class="headline-primary">{{ page.title }}</h1>
-      <div class="post__meta">
+      <div class="post__meta--padded">
         <b class="post__author">{% if page.author %}{{ page.author }}{% endif %}</b>
         <b class="post__sep">•</b>
         <b class="post__date">{% if page.meta %}{{ page.meta }}{% endif %} 
