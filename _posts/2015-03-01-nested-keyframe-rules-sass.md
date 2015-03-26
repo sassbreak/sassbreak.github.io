@@ -31,7 +31,7 @@ It was Stu Robson who came up with [an awesome use case and example](http://www.
 I was excited about this feature because it made `@keyframes` rules easier to find, read and maintain.
 
 ##No more @at-root
-I recently discovered that Sass 3.4 automatically "@at-roots" nested keyframe rules. So now, instead of wrapping our `@keyframes` rules in an `@at-root`, we can nest them like regular Sass rules:
+I recently discovered that [Sass 3.4](http://sass-lang.com/documentation/file.SASS_CHANGELOG.html) automatically "@at-roots" nested keyframe rules. So now, instead of wrapping our `@keyframes` rules in an `@at-root`, we can nest them like regular Sass rules:
 
 {% highlight scss %}
 .bunny {
