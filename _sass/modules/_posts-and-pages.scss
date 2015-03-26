@@ -21,6 +21,11 @@
 		}
 	}
 	@include e(meta) {
+		@include m(padded) {
+			@media (min-width: $g-breakpoint + 1) {
+				margin-bottom: 60px;
+  		}
+		}
 		margin-bottom: em(30px);
 	}
 	@include e(author) {
