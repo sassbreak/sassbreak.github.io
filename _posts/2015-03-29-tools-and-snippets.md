@@ -8,7 +8,7 @@ permalink: /sass-tools-and-snippets/
 desc: "In this post, we're sharing helpful Sass tools and snippets from the Sass community."
 ---
 
-Since we launched [Sass break](http://sassbreak.com/), we've received links to helpful Sass tools and snippets from readers. So in this post, we're giving them a hat tip by sharing them with everyone.
+Since we launched [Sass break](http://sassbreak.com/), we've received links to helpful Sass tools and snippets from readers. So in this post, we're giving them a hat tip by sharing these tools and snippets with everyone.
 
 ##unique-id() for auto-naming animations   
 In the post *[Nested @keyframes Rules](http://sassbreak.com/nested-keyframe-rules-sass/)*, front-end architect and Sass evangelist, [Roy Tomeij](https://twitter.com/roy), shared with us a clever use for the `unique-id()` function. 
