@@ -19,7 +19,7 @@ Naming things can be difficult. So, instead of spending valuable time pondering 
 
 ##The nested double ampersand mixin
 
-In the *[Double Ampersand Mixin](http://sassbreak.com/double-ampersand-mixin/)* post, front-end developer, [Kaelig](https://twitter.com/kaelig), shared a gist demonstrating how to use the mixin with nested selectors.
+In the *[Double Ampersand Mixin](http://sassbreak.com/double-ampersand-mixin/)* post, front-end developer [Kaelig](https://twitter.com/kaelig) shared a gist demonstrating how to use the mixin with nested selectors.
 
 <p class="sassmeister" data-gist-id="588ad7614481d259fc74" data-height="350" data-theme="tomorrow"><a href="http://sassmeister.com/gist/588ad7614481d259fc74">Play with this gist on SassMeister.</a></p><script src="http://cdn.sassmeister.com/js/embed.js" async></script>
 
