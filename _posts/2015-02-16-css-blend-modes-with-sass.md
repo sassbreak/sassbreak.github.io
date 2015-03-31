@@ -9,7 +9,7 @@ desc: "We’ll build a simple CSS blend mode mixin with Sass."
 image: blend-modes.jpg
 ---
 
-CSS blend modes are a new feature that let us blend an element’s background layer with another layer. They're commonly used for blending a background image with a background color. 
+[CSS blend modes](https://css-tricks.com/basics-css-blend-modes/) are a new feature that let us blend an element’s background layer with another layer. They're commonly used for blending a background image with a background color. 
 
 In this post, we'll take a look at a simple blend mode mixin I recently created and used on several Sass projects.
 
