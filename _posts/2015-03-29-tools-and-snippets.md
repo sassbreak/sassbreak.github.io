@@ -17,7 +17,9 @@ Naming things can be difficult. So, instead of spending valuable time pondering 
 
 <p class="sassmeister" data-gist-id="682040499e2d95ebde12" data-height="350" data-theme="tomorrow"><a href="http://sassmeister.com/gist/682040499e2d95ebde12">Play with this gist on SassMeister.</a></p><script src="http://cdn.sassmeister.com/js/embed.js" async></script>
 
+***
 **Edit:** Roy just released an article on [simplifying animation keyframes with `unique-id()`](http://advancedsass.com/articles/simplify-animation-keyframes-with-unique-id.html).
+***
 
 ##The nested double ampersand mixin
 
