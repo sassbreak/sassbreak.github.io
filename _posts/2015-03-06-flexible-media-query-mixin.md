@@ -76,4 +76,8 @@ This mixin is small, versatile, takes care of the `px` to `em` conversion and gi
 
 We all have our own style of code, so much of this is just preference. The true test is which mixin helps you be more productive. If you have a media query mixin that helps you please share in the comments. 
 
+***
 
+<p style="font-size: 96%;"><strong>Related Articles:</strong> <a href="http://sassbreak.com/getting-back-to-our-roots"> Getting Back To our @at-roots</a> | <a href="http://sassbreak.com/double-ampersand-mixin"> The Double Ampersand Mixin</a> | <a href="http://sassbreak.com/nested-keyframe-rules-sass"> Nested @keyframes Rules</a></p>
+
+***
