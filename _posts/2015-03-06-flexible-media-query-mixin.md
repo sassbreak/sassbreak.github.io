@@ -11,7 +11,7 @@ image: flexible.jpg
 
 ***
 
-<p style="font-size: 96%;"><strong>Related Articles:</strong> <a href="http://sassbreak.com/getting-back-to-our-roots"> Getting Back to our @at-roots</a> | <a href="http://sassbreak.com/double-ampersand-mixin"> The Double Ampersand Mixin</a> | <a href="http://sassbreak.com/css-blend-modes-with-sass"> CSS Blend Modes with Sass</a></p>
+<p style="font-size: 95%;"><strong>Related Articles:</strong> <a href="http://sassbreak.com/getting-back-to-our-roots"> Getting Back to our @at-roots</a> | <a href="http://sassbreak.com/double-ampersand-mixin"> The Double Ampersand Mixin</a> | <a href="http://sassbreak.com/css-blend-modes-with-sass"> CSS Blend Modes with Sass</a></p>
 
 ***
 
