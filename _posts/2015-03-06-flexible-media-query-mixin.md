@@ -9,6 +9,12 @@ desc: "Our content should determine what the breakpoints are. Any mixin that we 
 image: flexible.jpg
 ---
 
+***
+
+<p style="font-size: 96%;"><strong>Related Articles:</strong> <a href="http://sassbreak.com/getting-back-to-our-roots"> Getting Back to our @at-roots</a> | <a href="http://sassbreak.com/double-ampersand-mixin"> The Double Ampersand Mixin</a> | <a href="http://sassbreak.com/nested-keyframe-rules-sass"> Nested @keyframes Rules</a></p>
+
+***
+
 Media Queries are how we all make our sites responsive. Simple sites may only require a few but on large projects we find ourselves writing them dozens of times in order to wrangle in the content. Though relatively small, writing a query over and over can get tedious which is why most people choose to use a mixin to minimize the typing. There are a ton of mixins out there ranging from simple to complex. Many of them opted to name the breakpoints with the idea that the names would be more intuitive than a numeric `em` value. The mixin may look something like this:
 
 {% highlight scss %}
@@ -75,9 +81,3 @@ $bf: 16;
 This mixin is small, versatile, takes care of the `px` to `em` conversion and gives a bump to my productivity. You can still add predefined, named breakpoints with a variable if needed so it is still compatible with that school of thought.  
 
 We all have our own style of code, so much of this is just preference. The true test is which mixin helps you be more productive. If you have a media query mixin that helps you please share in the comments. 
-
-***
-
-<p style="font-size: 96%;"><strong>Related Articles:</strong> <a href="http://sassbreak.com/getting-back-to-our-roots"> Getting Back to our @at-roots</a> | <a href="http://sassbreak.com/double-ampersand-mixin"> The Double Ampersand Mixin</a> | <a href="http://sassbreak.com/nested-keyframe-rules-sass"> Nested @keyframes Rules</a></p>
-
-***
