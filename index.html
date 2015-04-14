@@ -38,7 +38,7 @@ layout: default
 		  {% endfor %}
 
 		  {% if paginator.next_page %}
-		    <a class="pagination__" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+		    <a class="pagination__arrow-next" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
 		  {% endif %}
 		</div>
 		{% endif %}
