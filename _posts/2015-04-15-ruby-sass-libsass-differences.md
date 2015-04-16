@@ -39,7 +39,7 @@ For example, `@at-root`, `@error`, and many of the [new features of Sass 3.4](ht
 ###The future of LibSass looks promising! 
 The good news is that LibSass will soon catch up to Ruby Sass. The upcoming release of LibSass 3.2 will have support for `@at-root`, `@error`, `@media` and `@keyframes` directive bubbling, and [lots more](https://github.com/sass/libsass/releases/tag/3.2.0-beta.1). 
 
-In fact, Ruby Sass will not release any new features until LibSass catches up. Once it does, there will be feature parity between the two moving forward. So soon, we'll have the blazing speed of LibSass with all the features of Ruby Sass!
+In fact, Ruby Sass will not release any new features until LibSass catches up. Once it does, there will be feature parity between the two moving forward. Soon we'll have the blazing speed of LibSass with all the features of Ruby Sass!
 
 For a quick way of testing Ruby Sass features against LibSass, check out [SassMeister](http://sassmeister.com/).
 
