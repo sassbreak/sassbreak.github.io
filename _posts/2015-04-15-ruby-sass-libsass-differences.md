@@ -32,7 +32,7 @@ With LibSass you're no longer bound to a Ruby dependency and, with the many wrap
 The best part about using LibSass is compiling speed. LibSass runs and compiles style sheets significantly faster than Ruby Sass&mdash;up to [4000% faster](http://www.moovweb.com/blog/libsass/)! Take a look at this [compile time comparison](http://www.solitr.com/blog/2014/01/css-preprocessor-benchmark/) between Sass, LibSass, and other CSS preprocessors.
 
 ##Compatibility with Ruby Sass
-LibSass isn't perfect, though. Developers are still hesitant about moving their codebase over to LibSass because it's behind Ruby Sass when it comes to certain features.
+LibSass isn't perfect, though. Developers are still hesitant about moving their codebases over to LibSass because it's behind Ruby Sass when it comes to certain features.
 
 For example, `@at-root`, `@error`, and many of the [new features of Sass 3.4](http://www.phase2technology.com/blog/everything-you-need-to-know-about-sass-3-4/) are not supported in LibSass. For an extensive list of the inconsistencies between Sass, LibSass, and older Sass engines, take a look at [sass-compatibility.github.io](http://sass-compatibility.github.io).
 
