@@ -1,4 +1,4 @@
-{% capture location %}{{ page.url | remove_first:'/' | split:'/' | first }}{% endcapture %} 
+{% capture location %}{{ page.url | split:'/' }}{% endcapture %}
 <header class="main-header" role="banner">
     <nav class="navbar" role="navigation">
         <ul class="nav">
