@@ -41,7 +41,8 @@ With `variable-exists()`, we can tell Sass to import a font into our style sheet
 
 If we've defined any of the font variables, Sass will import URLs for each existing font:
 
-{% highlight scss %}
+{% highlight css %}
+/* main.css */
 @import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700");
 @import url("http://fonts.googleapis.com/css?family=PT+Serif:400,700");
 {% endhighlight %}
