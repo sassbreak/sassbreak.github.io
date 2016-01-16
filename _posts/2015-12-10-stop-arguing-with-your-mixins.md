@@ -9,8 +9,6 @@ desc       : "The Sass community in South Florida started a new meetup to talk a
 layout     : post
 ---
 
-# Stop arguing so much with your mixins
-
 Mixins are arguably one of the more widely used tools in the Sass language next to the variable. Coming with that, mixins are more apt to be the most abused tool in the language. Mixins are extremely powerful and capable of doing a great number of things, but as we are creating these massive bodies of complex code, it's easy to find ourselves in a place where we have too many arguments in order to use our mixin. It's at this point we have started to lose comprehension of what's happening. The complexity of the tool starts to outweigh it's value.
 
 Recently in refactoring a mixin with too many arguments, I began to think of how I could use list-maps to solve this issue.
@@ -112,7 +110,7 @@ var minivan = makeVehicle(
   });
 {% endhighlight %}
 
-### Huston, we have a problem
+### Houston, we have a problem
 
 With the new `options` style mixin and the desire to use a a single argument, we can't simply pass in a list of arguments from the previous mixin? Understanding the JavaScript models and understanding on how we can use list-maps, this is easy enough to address. Pretty sure you saw that coming, right?
 
