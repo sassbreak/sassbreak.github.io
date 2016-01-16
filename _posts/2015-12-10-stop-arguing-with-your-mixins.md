@@ -1,4 +1,13 @@
-# Stop arguing so much with your mixins
+---
+author     : Dale Sande
+title      : "Stop Arguing So Much with Your Mixins"
+date       : 2016-01-16
+
+categories: sass tips
+permalink  : /stop-arguing-with-your-mixins
+desc       : "The Sass community in South Florida started a new meetup to talk about all things Sass."
+layout     : post
+---
 
 Mixins are probably one of the most widely used tools, if not the most, in Sass next to the variable. Coming with that, mixins are probably the most abused, if not the most, tool in the Sass arsenal. Mixins are extremely powerful and capable of doing a great number of things, but as we are creating these massive bodies of complex code, it's easy to find ourselves in a place where we have too many arguments in our mixin. It's at this point we have started to lose comprehension of what's happening. There is no 1:1 map that helps guide us through making value decisions without having to resource the mixin itself. 
 
