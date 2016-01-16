@@ -57,7 +57,7 @@ Now sure about you, but this is annoyed me for years.
 
 While refactoring a lot of old code from older versions of Sass up to the latest tools available in libsass. And one tool that I am trying to find 1001 uses for is __list-maps__. If you are not familiar with list-maps, here is an [article I wrote](http://anotheruiguy.roughdraft.io/10302472-so-you-want-to-play-with-list-maps) over a year ago that can help you get started. The best part is, peering into the future with [sass-maps-plus](https://github.com/lunelson/sass-maps-plus) which is [planned to be an integrated feature](https://github.com/sass/sass/issues/1739) of the official Sass library.
 
-List-maps bring to the table a great way to really manage a variable as a series of key-value pairs. Just like a real programming language! ＼(＾O＾)／
+List-maps bring to the table a great way to really manage a variable as a series of key-value pairs. Just like a real programming language! `＼(＾O＾)／`
 
 Looking back at the mixin above, wouldn't it be great if we could only have only one argument, a list of `options` perhaps, and then pass in a list-map of variables within? Good news, we can.
 
