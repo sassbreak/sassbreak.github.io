@@ -1,14 +1,13 @@
-----
--author     : Dale Sande
--title      : "Stop Arguing So Much with Your Mixins"
--date       : 2016-01-16
+---
+author     : Dale Sande
+title      : "Stop Arguing So Much with Your Mixins"
+date       : 2016-01-16
 
--categories: sass tips
-
--permalink  : /stop-arguing-with-your-mixins
--desc       : "The Sass community in South Florida started a new meetup to talk about all things Sass."
--layout     : post
-----
+categories: sass tips
+permalink  : /stop-arguing-with-your-mixins
+desc       : "The Sass community in South Florida started a new meetup to talk about all things Sass."
+layout     : post
+---
 
 # Stop arguing so much with your mixins
 
