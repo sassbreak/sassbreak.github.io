@@ -9,7 +9,7 @@ desc       : "The Sass community in South Florida started a new meetup to talk a
 layout     : post
 ---
 
-Mixins are arguably one of the more widely used tools in the Sass language next to the variable. Coming with that, mixins are more apt to be the most abused tool in the language. Mixins are extremely powerful and capable of doing a great number of things, but as we are creating these massive bodies of complex code, it's easy to find ourselves in a place where we have too many arguments in order to use our mixin. It's at this point we have started to lose comprehension of what's happening. The complexity of the tool starts to outweigh it's value.
+Mixins are arguably one of the more widely used tools in the Sass language next to the variable. Coming with that, mixins are more apt to be the most abused tool in the language. Mixins are extremely powerful and capable of doing a great number of things, but as we are creating these massive bodies of complex code, it's easy to find ourselves in a place where we have too many arguments in order to use our mixin. It's at this point we have started to lose comprehension of what's happening. The complexity of the tool starts to outweigh its value.
 
 Recently in refactoring a mixin with too many arguments, I began to think of how I could use list-maps to solve this issue.
 
@@ -29,7 +29,7 @@ Say you are creating a mixin that is relatively complex in scope and will consum
   &:hover,
   &:focus {
     background-color: $background-color-hover;
-  border-color: $border-color-hover;
+    border-color: $border-color-hover;
   }
   &:active,
   &[aria-selected="true"] {
@@ -43,7 +43,7 @@ Given the relative simplicity of the mixin, it still takes 7 arguments (yes you 
 
 {% highlight scss %}
 .foo {
-    @include core-button(#ffffff, #ededed, #b2005c, #dbdbdb, #ba0060, #c7c7c7, #a60056);
+  @include core-button(#ffffff, #ededed, #b2005c, #dbdbdb, #ba0060, #c7c7c7, #a60056);
 }
 {% endhighlight %}
 
@@ -51,7 +51,7 @@ Great, a list of hex values. In the moment, it makes perfect sense, you know the
 
 Then, this is a long list of values that I would assume that you would make a variable of so that you can use this with other similar buttons, right? So the process goes as follows ... see selector > see mixin > see variable. Search for variable > search for mixin > compare argument list > update and hope you got it right. What usually happens was, "Oh crap, I wanted to update the 4th value, not the 5th!"
 
-Now sure about you, but this is annoyed me for years.
+Not sure about you, but this has annoyed me for years.
 
 ## The "options" way
 
@@ -76,7 +76,7 @@ Functions and mixins in Sass work much like functions on JavaScript. You can hav
 {% highlight js %}
 // Define function to take one "argument", which is in fact an object:
 function fnParseInt( oArg ){
-    return parseInt( oArg.number, oArg.radix );
+  return parseInt( oArg.number, oArg.radix );
 }
 
 // Passing in the object literal you can then call like this:
@@ -112,7 +112,7 @@ var minivan = makeVehicle(
 
 ### Houston, we have a problem
 
-With the new `options` style mixin and the desire to use a a single argument, we can't simply pass in a list of arguments from the previous mixin? Understanding the JavaScript models and understanding on how we can use list-maps, this is easy enough to address. Pretty sure you saw that coming, right?
+With the new `options` style mixin and the desire to use a single argument, we can't simply pass in a list of arguments from the previous mixin? Understanding the JavaScript models and understanding on how we can use list-maps, this is easy enough to address. Pretty sure you saw that coming, right?
 
 In the following example I am creating a standard list-map variable and am using key/value pairs to address variable values.
 
@@ -146,7 +146,7 @@ Now that we have a __list-map__ with __key/value pairs__, it's required that we 
   &:hover,
   &:focus {
     background-color: map-get($options, background-hover);
-  border-color: map-get($options, border-color-hover);
+    border-color: map-get($options, border-color-hover);
   }
   &:active,
   &[aria-selected="true"] {
