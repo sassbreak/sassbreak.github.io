@@ -15,7 +15,7 @@ Recently in refactoring a mixin with too many arguments, I began to think of how
 
 ## The classic way
 
-Say you are creating a mixin that is relatively complex in scope and will consume a large number of arguments due to the number of alternative outcomes. We have all done it, I know I sure have. In the following example I am using a `button` mixin, the second most overly-engineered solution next to Grids, so the following code shouldn't seem that crazy to you:
+Say you are creating a mixin that is relatively complex in scope and will consume a large number of arguments due to the number of alternative outcomes. We have all done it, I know I sure have. In the following example I am using a button mixin, one of the most frequently written and over-engineered solution after Grids, so the following code shouldn't seem that crazy to you:
 
 {% highlight scss %}
 @mixin core-button($color, $background-color, $border-color, $background-hover, $border-color-hover, $background-active, $border-color-active) {
@@ -39,7 +39,7 @@ Say you are creating a mixin that is relatively complex in scope and will consum
 }
 {% endhighlight %}
 
-Given the relative simplicity of the mixin, it still takes 7 arguments (yes you can have defaults, but that's not the point). From here things can only get more complex. then the number of times you need to compare back and forth between the mixin and where you are including it to make sure that you are putting the right value in the right place. So, you end up with this:
+Given the relative simplicity of the mixin, it still takes 7 arguments (yes you can have defaults, but that's not the point). From here things can only get more complex. The number of times you may need to compare back and forth, between the mixin itself and the use of it, to make sure that you are placing the correct value in the proper argument placement. So, you end up with this:
 
 {% highlight scss %}
 .foo {
@@ -49,17 +49,17 @@ Given the relative simplicity of the mixin, it still takes 7 arguments (yes you 
 
 Great, a list of hex values. In the moment, it makes perfect sense, you know the order of things. But next time you come back to this, will you remember what `#ba0060` is referencing? Was it `$background-hover` or `$border-color-hover`?
 
-Then, this is a long list of values that I would assume that you would make a variable of so that you can use this with other similar buttons, right? So the process goes as follows ... see selector > see mixin > see variable. Search for variable > search for mixin > compare argument list > update and hope you got it right. What usually happens was, "Oh crap, I wanted to update the 4th value, not the 5th!"
+Logically, the next step when implementing this would likely be to store the list of values in a variable so you can easily re-use them with other buttons, right? So the process goes as follows ... see selector > see mixin > see variable. Search for variable > search for mixin > compare argument list > update and hope you got it right. What usually happens was, "Oh crap, I wanted to update the 4th value, not the 5th!"
 
 Not sure about you, but this has annoyed me for years.
 
 ## The "options" way
 
-While refactoring a lot of old code from older versions of Sass up to the latest tools available in libsass. And one tool that I am trying to find 1001 uses for is __list-maps__. If you are not familiar with list-maps, here is an [article I wrote](http://anotheruiguy.roughdraft.io/10302472-so-you-want-to-play-with-list-maps) over a year ago that can help you get started. The best part is, peering into the future with [sass-maps-plus](https://github.com/lunelson/sass-maps-plus) which is [planned to be an integrated feature](https://github.com/sass/sass/issues/1739) of the official Sass library.
+With recently moving a large project to the latest version of Libsass, I have spent a good amount of time refactoring old code. One tool that I am trying to find 1001 uses for is __list-maps__. If you are not familiar with list-maps, here is an [article I wrote](http://anotheruiguy.roughdraft.io/10302472-so-you-want-to-play-with-list-maps) over a year ago that can help you get started. Excitingly, it looks like Sass’s list-maps support is going to get even more robust in the future, as the features that are found in sass-maps-plus [are on the roadmap](https://github.com/sass/sass/issues/1739) to becoming an integrated feature of the official Sass library.
 
 List-maps bring to the table a great way to really manage a variable as a series of key-value pairs. Just like a real programming language! `＼(＾O＾)／`
 
-Looking back at the mixin above, wouldn't it be great if we could only have only one argument, a list of `options` perhaps, and then pass in a list-map of variables within? Good news, we can.
+Looking back at the mixin above, wouldn't it be great if we could only have only one argument, a list of `options` perhaps, and then pass in a list-map of variables within? Good news, we can!
 
 As illustrated in the following example, I have removed the dependency on an ordered list of arguments within the mixin. This `options` method allows me to use list-maps to have a complex array of named arguments in the form of key/value pairs and not have to deal with the complexities and ambiguity of an ordered list of arguments:
 
@@ -83,7 +83,7 @@ function fnParseInt( oArg ){
 fnParseInt( { number : 'afy', radix : 36 } );
 {% endhighlight %}
 
-This JavaScript method and similar methods in Sass have served us really well. But expanding on these ideas is what lead me to consider a single `option` in a mixin versus passing in a list or individually named arguments. Interestingly enough, and this was pointed out to me by a colleague, this very same model is heavily used in much of Backbone. The concept of `options` in Backbone is basically a javascript object of __key/value__ pairs that provide data to a method call.
+This JavaScript method and similar methods in Sass have served us really well. But expanding on these ideas is what lead me to consider a single `option` in a mixin versus passing in a list of individually named arguments. Interestingly enough, and this was pointed out to me by a colleague, this very same model is heavily used in much of Backbone. The concept of `options` in Backbone is basically a javascript object of __key/value__ pairs that provide data to a method call.
 
 {% highlight js %}
 var makeVehicle = function(make, options) {
@@ -112,7 +112,7 @@ var minivan = makeVehicle(
 
 ### Houston, we have a problem
 
-With the new `options` style mixin and the desire to use a single argument, we can't simply pass in a list of arguments from the previous mixin? Understanding the JavaScript models and understanding on how we can use list-maps, this is easy enough to address. Pretty sure you saw that coming, right?
+With the new `options` style mixin and the desire to use a single argument, a simple list of arguments won't work. Understanding the JavaScript models and understanding on how we can use list-maps, this is easy enough to address.
 
 In the following example I am creating a standard list-map variable and am using key/value pairs to address variable values.
 
@@ -132,7 +132,7 @@ I already love how this looks. Now instead of a list like we had before, `#fffff
 
 ### Update the signal, improve the receiver
 
-Now that we have a __list-map__ with __key/value pairs__, it's required that we update all the variables within the mixin so that we can parse though the list-map. In the following example you will see that I replaced the more traditional *ordered* argument/variable pairs with the `map-get` function and the *named* variables. IMHO, this is WAY more human readable. It's clear that we are targeting a single variable which is inherited from the `$options` argument. Then from that `map-get` function we are asking for simple values, `color` or `border-color`. The mixin itself should remain pretty stable post this set up configuration.
+Now that we have a __list-map__ with __key/value pairs__, we need to update all the variables within the mixin so that we can get them out of the list-map. In the following example you will see that I replaced the more traditional *ordered* argument/variable pairs with the `map-get` function and the *named* variables. IMHO, this is WAY more human readable. It's clear that we are targeting a single variable which is inherited from the `$options` argument. Then from that `map-get` function we are asking for simple values, `color` or `border-color`. The mixin itself should remain pretty stable post this set up configuration.
 
 {% highlight scss %}
 @mixin core-button($options) {
