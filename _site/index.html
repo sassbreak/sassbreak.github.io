@@ -4,7 +4,7 @@
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Sass break - A simple blog about Sass</title>
+  <title>Sass break - A Sass blog</title>
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="A simple blog about Sass.">
   <link rel="shortcut icon" href="http://sassbreak.com/favicon.ico">
@@ -25,7 +25,7 @@
 
     <body>
 			<div class="wrapper">
-		     
+		    
 <header class="main-header" role="banner">
     <nav class="navbar" role="navigation">
         <ul class="nav">
@@ -49,87 +49,88 @@
     </div>
 </div>
 
+
 		    <div class="grid">
 	<div class="grid__col--12">
 		<ul class="post">
 				<!-- This loops through the paginated posts -->
 				
 				<li class="post__item">
-					<a class="post__title" href="/flexible-media-query-mixins/">Making our Media Query Mixins More Flexible</a>
+					<a class="post__title" href="/stop-arguing-with-your-mixins">Stop Arguing So Much with Your Mixins</a>
 					<div class="post__meta">
-						<b class="post__author">David Conner</b>
+						<b class="post__author">Dale Sande</b>
 						<b class="post__sep">•</b>
-						<b class="post__date">Mar 6, 2015</b>
+						<b class="post__date">Jan 16, 2016</b>
 					</div>
-					<p>Media Queries are how we all make our sites responsive. Simple sites may only require a few but on large projects we find ourselves writing them dozens of times in order to wrangle in the content. Though relatively small, writing a query over and over can get tedious which is why most people choose to use a mixin to minimize the typing. There are a ton of mixins out there ranging from simple to complex. Many of them opted to name the breakpoints with the idea that the names would be more intuitive than a numeric <code>em</code> value. The mixin may look something like this:</p>
+					<p>Mixins are arguably one of the more widely used tools in the Sass language next to the variable. Coming with that, mixins are more apt to be the most abused tool in the language. Mixins are extremely powerful and capable of doing a great number of things, but as we are creating these massive bodies of complex code, it’s easy to find ourselves in a place where we have too many arguments in order to use our mixin. It’s at this point we have started to lose comprehension of what’s happening. The complexity of the tool starts to outweigh its value.</p>
 
 
-					<a class="btn--default" href="/flexible-media-query-mixins/">Read more</a>
+					<a class="btn--default" href="/stop-arguing-with-your-mixins">Read more</a>
 				</li>
 			
 				<li class="post__item">
-					<a class="post__title" href="/getting-back-to-our-roots/">Getting Back To our @at-roots</a>
-					<div class="post__meta">
-						<b class="post__author">David Conner</b>
-						<b class="post__sep">•</b>
-						<b class="post__date">Mar 2, 2015</b>
-					</div>
-					<p>Nesting is a feature in Sass that allows you to write your CSS with the same visual hierarchy that we see in HTML. It can provide many organizational and time saving benefits but its misuse is one of the main criticisms of Sass and the CSS it outputs. There have been many articles espousing the three levels deep nesting rule. When observed, this rule can take care of the majority of nesting issues but there are still cases where pushing a nested selector up to the root would be useful. That is where the <code>@at-root</code> directive comes in.</p>
-
-
-					<a class="btn--default" href="/getting-back-to-our-roots/">Read more</a>
-				</li>
-			
-				<li class="post__item">
-					<a class="post__title" href="/nested-keyframe-rules-sass/">Nested @keyframes Rules</a>
+					<a class="post__title" href="/writing-modular-css-with-sass/">Writing Modular CSS with Sass</a>
 					<div class="post__meta">
 						<b class="post__author">Guil Hernandez</b>
 						<b class="post__sep">•</b>
-						<b class="post__date">Mar 1, 2015</b>
+						<b class="post__date">Jul 22, 2015</b>
 					</div>
-					<p>A handy feature in Sass 3.3 was the <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#at-root"><code>@at-root</code> directive</a>, which outputs nested Sass rules at the root of the CSS.</p>
+					<p>CSS needs to be reusable, scalable and adaptable to different use cases. When writing modular CSS, our goal should be to get to a point where modifying or re-arranging anything about the structure will not break the front-end.</p>
 
 
-					<a class="btn--default" href="/nested-keyframe-rules-sass/">Read more</a>
+					<a class="btn--default" href="/writing-modular-css-with-sass/">Read more</a>
 				</li>
 			
 				<li class="post__item">
-					<a class="post__title" href="/viewport-relative-headings-with-sass/">Viewport-Relative Headings with Sass</a>
+					<a class="post__title" href="/ruby-sass-libsass-differences/">Ruby Sass, LibSass – What's the Difference?</a>
 					<div class="post__meta">
 						<b class="post__author">Guil Hernandez</b>
 						<b class="post__sep">•</b>
-						<b class="post__date">Feb 24, 2015</b>
+						<b class="post__date">Apr 15, 2015</b>
 					</div>
-					<p>Viewport-relative units (vw, vh, vmin, vmax) are a new set of dynamic CSS units for sizing elements. They’re called “viewport-relative” because they eliminate dependency on parent elements and allow sizing based on the viewport size. This makes them a handy unit for defining font sizes and building fluid layouts.</p>
+					<p>Just when you’re getting used to working with <a href="http://sass-lang.com/">Sass</a>, you hear about a new type of Sass called <a href="http://libsass.org/">LibSass</a>. Then you immediately start asking yourself: <em>“What the heck is LibSass? Should I drop Ruby Sass and get on board with LibSass? Oh no — I’m behind on the new hotness!”</em></p>
 
 
-					<a class="btn--default" href="/viewport-relative-headings-with-sass/">Read more</a>
+					<a class="btn--default" href="/ruby-sass-libsass-differences/">Read more</a>
 				</li>
 			
 				<li class="post__item">
-					<a class="post__title" href="/css-blend-modes-with-sass/">CSS Blend Modes with Sass</a>
+					<a class="post__title" href="/sass-tools-and-snippets/">Tools & Snippets from the Sass Community</a>
 					<div class="post__meta">
 						<b class="post__author">Guil Hernandez</b>
 						<b class="post__sep">•</b>
-						<b class="post__date">Feb 16, 2015</b>
+						<b class="post__date">Mar 29, 2015</b>
 					</div>
-					<p>CSS blend modes are a new feature that let us blend an element’s background layer with another layer. They’re commonly used for blending a background image with a background color. </p>
+					<p>Since we launched <a href="http://sassbreak.com/">Sass break</a>, we’ve received links to helpful Sass tools and snippets from readers. So in this post, we’re giving them a hat tip by sharing their tools and code snippets with everyone!</p>
 
 
-					<a class="btn--default" href="/css-blend-modes-with-sass/">Read more</a>
+					<a class="btn--default" href="/sass-tools-and-snippets/">Read more</a>
 				</li>
 			
 				<li class="post__item">
-					<a class="post__title" href="/watch-your-sass/">--watch Yo' Sass</a>
+					<a class="post__title" href="/web-fonts-variable-exists/">Importing Web Fonts with variable-exists()</a>
 					<div class="post__meta">
 						<b class="post__author">Guil Hernandez</b>
 						<b class="post__sep">•</b>
-						<b class="post__date">Feb 9, 2015</b>
+						<b class="post__date">Mar 17, 2015</b>
 					</div>
-					<p>I know the feeling: You just installed Sass, eager to dive into all of its awesome features and finally convert that stale CSS project over to Sass. You create your first .scss file, crack open Terminal, type a <code>--watch</code> command—everything comes to a hault. You get errors like  <code>No such file or directory</code>, or you notice your Sass compiling to the wrong directory, but can’t figure out why.</p>
+					<p>Sass has <a href="http://sass-lang.com/documentation/Sass/Script/Functions.html#introspection_functions">introspection functions</a> that can check for available variables, mixins, functions, and features in our code.</p>
 
 
-					<a class="btn--default" href="/watch-your-sass/">Read more</a>
+					<a class="btn--default" href="/web-fonts-variable-exists/">Read more</a>
+				</li>
+			
+				<li class="post__item">
+					<a class="post__title" href="/double-ampersand-mixin/">The Double Ampersand Mixin</a>
+					<div class="post__meta">
+						<b class="post__author">Guil Hernandez</b>
+						<b class="post__sep">•</b>
+						<b class="post__date">Mar 10, 2015</b>
+					</div>
+					<p>A while back, <a href="http://blog.teamtreehouse.com/sass-tip-double-ampersand-selector">I wrote about a useful selector</a> for applying margins to columns and buttons. The selector used a double ampersand with an adjacent sibling combinator (<code class="highlighter-rouge">&amp;+&amp;</code>).</p>
+
+
+					<a class="btn--default" href="/double-ampersand-mixin/">Read more</a>
 				</li>
 			
 		</ul>
@@ -148,6 +149,10 @@
 		      <a class="pagination__page" href="/page2">2</a>
 		    
 		  
+		    
+		      <a class="pagination__page" href="/page3">3</a>
+		    
+		  
 
 		  
 		    <a class="pagination__arrow-next" href="/page2">Next &raquo;</a>
@@ -156,6 +161,7 @@
 		
 	</div>
 </div>
+
 		  	<div class="push"></div>
 			</div>
 		  <footer class="panel--centered" role="contentinfo">
@@ -170,7 +176,7 @@
 	    	<p class="site-desc">A simple blog about Sass. <a href="https://twitter.com/sassbreak">@sassbreak</a></p>
 	    </div>
 			<div class="grid__col--4">
-				<a href="https://twitter.com/guilh" title="Guil Hernandez - @guilh"><img class="media__img--avatar" src="https://pbs.twimg.com/profile_images/483977668723884034/bPshQmgj.jpeg"></a>
+				<a href="https://twitter.com/guilh" title="Guil Hernandez - @guilh"><img class="media__img--avatar" src="https://pbs.twimg.com/profile_images/578368788535455744/WhLtbEaB.jpeg"></a>
 			</div>
 	</div>
 </footer>

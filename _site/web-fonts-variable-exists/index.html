@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Importing Web Fonts with variable-exists()</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="The variable-exists() introspection function in Sass is useful for importing Google Web Fonts into our style sheet.">
+  <link rel="shortcut icon" href="http://sassbreak.com/favicon.ico">
+<!--     <link rel="stylesheet" href="http://basehold.it/27"> -->
+  <link rel="canonical" href="http://sassbreak.com/web-fonts-variable-exists/">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-54825201-1', 'auto');
+	  ga('send', 'pageview');
+	</script>
+</head>
+
+    <body>
+			<div class="wrapper">
+		    
+<header class="main-header" role="banner">
+    <nav class="navbar" role="navigation">
+        <ul class="nav">
+           <li  class="nav__item">
+                <a href="http://sassbreak.com">Articles</a>
+            </li>
+            <li  class="nav__item">
+                <a href="/about/">About</a>
+            </li class="nav__item">
+            <li  class="nav__item">
+                <a href="/resources/">Resources</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="grid panel--padded--centered">
+    <div class="grid__col--12 break">
+        <a class="site-logo" href="/" title="Sassbreak.com – Home">
+            <b class="srt">Sass Break</b>
+        </a>
+    </div>
+</div>
+
+
+		    <div class="grid">
+	<div class="grid__col--12 post">
+    
+    <header class="post__header">
+      <h1 class="headline-primary">Importing Web Fonts with variable-exists()</h1>
+      <div class="post__meta--padded">
+        <b class="post__author">Guil Hernandez</b>
+        <b class="post__sep">•</b>
+        <b class="post__date"> 
+        Mar 17, 2015</b>
+      </div>
+    </header>
+
+    
+
+    <article class="post__content">
+      <p>Sass has <a href="http://sass-lang.com/documentation/Sass/Script/Functions.html#introspection_functions">introspection functions</a> that can check for available variables, mixins, functions, and features in our code.</p>
+
+<p>The introspection function I’ve found most useful is <code class="highlighter-rouge">variable-exists()</code>, which returns whether a variable exists in the current scope. With this function, we can check for a variable in our project, then instruct Sass to do something if the variable exists.</p>
+
+<p>In this post, we’ll see how <code class="highlighter-rouge">variable-exists()</code> is a useful function for importing <a href="http://www.google.com/fonts/">Google Web Fonts</a> into our style sheets.</p>
+
+<h2 id="web-font-variables">Web font variables</h2>
+<p>To use the function, we’ll need to declare variables for each Google Web Font URL:</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Web font URLs
+</span><span class="nv">$font-google-prim</span> <span class="p">:</span> <span class="s1">'http://fonts.googleapis.com/css?family=Lato:100,300,400'</span><span class="p">;</span>
+<span class="nv">$font-google-sec</span>  <span class="p">:</span> <span class="s1">'http://fonts.googleapis.com/css?family=PT+Serif:400,700'</span><span class="p">;</span></code></pre></figure>
+
+<h3 id="variable-exists">variable-exists()</h3>
+<p>With <code class="highlighter-rouge">variable-exists()</code>, we can tell Sass to import a font into our style sheet if <code class="highlighter-rouge">$font-google-prim</code> or <code class="highlighter-rouge">$font-google-sec</code> exist in our project:</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// _functions.scss
+</span>
+<span class="k">@if</span> <span class="nf">variable-exists</span><span class="p">(</span><span class="n">font-google-prim</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">@import</span> <span class="sx">url($font-google-prim)</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">@if</span> <span class="nf">variable-exists</span><span class="p">(</span><span class="n">font-google-sec</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">@import</span> <span class="sx">url($font-google-sec)</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>If we’ve defined any of the font variables, Sass will import URLs for each existing font:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* main.css */</span>
+<span class="k">@import</span> <span class="sx">url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700")</span><span class="p">;</span>
+<span class="k">@import</span> <span class="sx">url("http://fonts.googleapis.com/css?family=PT+Serif:400,700")</span><span class="p">;</span></code></pre></figure>
+
+<p>Now we can add this function to our Sass starter template to handle all web font imports. Define the web font variables we need in a  <code class="highlighter-rouge">_config</code> or <code class="highlighter-rouge">_variables</code> partial and Sass will take care of the rest! Then it can be business as usual with our font stacks and main styles:</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Font Stacks
+</span><span class="nv">$stack-lato</span>     <span class="p">:</span> <span class="s1">'Lato'</span><span class="o">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+<span class="nv">$stack-pt-serif</span> <span class="p">:</span> <span class="s1">'PT Serif'</span><span class="o">,</span> <span class="nb">serif</span><span class="p">;</span>
+
+<span class="c1">// Main Styles
+</span><span class="nt">body</span> <span class="p">{</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="nv">$stack-lato</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">h1</span> <span class="p">{</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="nv">$stack-pt-serif</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>See the demo on SassMeister:</p>
+
+<p class="sassmeister" data-gist-id="84c46cc0239791a0143e" data-height="380" data-theme="tomorrow"><a href="http://sassmeister.com/gist/84c46cc0239791a0143e">Play with this gist on SassMeister.</a></p>
+<script src="http://cdn.sassmeister.com/js/embed.js" async=""></script>
+
+
+
+      <a href="https://twitter.com/share" class="twitter-share twitter-share-button" data-via="sassbreak" data-size="large">Tweet this article</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+      </script>
+      
+      
+    </article>
+
+    <div class="post__comments">
+      <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'sassbreak'; // required: replace example with your forum shortname
+    var disqus_identifier = "/web-fonts-variable-exists/";
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+
+    </div>
+
+	</div>
+</div>
+		  	<div class="push"></div>
+			</div>
+		  <footer class="panel--centered" role="contentinfo">
+		<div class="grid">
+			<div class="grid__col--4">
+				<a href="https://twitter.com/Dave_Conner" title="Dave Conner - @Dave_Conner"><img class="media__img--avatar" src="https://pbs.twimg.com/profile_images/468537320581238784/BVSoNzeI.jpeg"></a>
+			</div>
+	    <div class="grid__col--4">
+	    	<a class="site-logo--white" href="/" title="Home">
+        	<b class="srt">Sass Break</b>
+        </a>
+	    	<p class="site-desc">A simple blog about Sass. <a href="https://twitter.com/sassbreak">@sassbreak</a></p>
+	    </div>
+			<div class="grid__col--4">
+				<a href="https://twitter.com/guilh" title="Guil Hernandez - @guilh"><img class="media__img--avatar" src="https://pbs.twimg.com/profile_images/578368788535455744/WhLtbEaB.jpeg"></a>
+			</div>
+	</div>
+</footer>
+
+    </body>
+</html>

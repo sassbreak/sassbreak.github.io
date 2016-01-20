@@ -1,5 +1,5 @@
 @import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
-.grid:after {
+.grid:after, .author-box:after {
   content: "";
   display: table;
   clear: both; }
@@ -465,7 +465,7 @@ footer {
   border-top: 1px solid #ebedef;
   background: #dadbdf; }
 
-.panel, .panel--centered {
+.panel, .panel--centered, .author-box {
   padding-top: 2.35294em;
   padding-bottom: 1.17647em; }
 
@@ -608,7 +608,8 @@ h4 {
   border-radius: 50%; }
 
 .feat-img {
-  margin-bottom: 2.11765em; }
+  margin-bottom: 2.11765em;
+  margin-top: -1.52941em; }
 
 .form__label {
   display: block;
@@ -633,7 +634,7 @@ h4 {
   border-bottom: solid 3px #bfc0c7; }
 .btn--error {
   background-color: #b37399;
-  border-bottom: solid 3px #9d5580; }
+  border-bottom: solid 3px #9e5680; }
 .btn--warning {
   background-color: #699;
   border-bottom: solid 3px #527a7a; }
@@ -647,6 +648,9 @@ h4 {
     display: inline-block; }
     [class^="btn--"] + [class^="btn--"] {
       margin-left: 20px; } }
+
+.twitter-share {
+  margin-top: 0.94118em; }
 
 .nav__item a {
   color: #fff; }
@@ -739,6 +743,9 @@ h4 {
     margin: 0.23529em 0; }
 .post__meta {
   margin-bottom: 1.76471em; }
+  @media (min-width: 769px) {
+    .post__meta--padded {
+      margin-bottom: 60px; } }
 .post__author {
   color: #699; }
 .post__sep {
@@ -751,6 +758,40 @@ h4 {
 .post,
 .page {
   padding-top: 0.70588em; }
+
+.author-box {
+  margin-top: 1.17647em;
+  border-top: 1px dotted #a2abb4; }
+  @media (min-width: 768px) {
+    .author-box {
+      margin-top: 2.47059em; } }
+  .author-box a {
+    display: block; }
+    @media (min-width: 768px) {
+      .author-box a {
+        float: left;
+        margin-top: 0.29412em; } }
+
+@media (min-width: 768px) {
+  .author {
+    width: 72%;
+    margin-left: 1.88235em;
+    float: left; } }
+@media (min-width: 968px) {
+  .author {
+    width: 80%; } }
+.author__name {
+  color: #808c99;
+  font-size: 1.41176em;
+  margin-bottom: 0.35294em;
+  display: block; }
+  @media (max-width: 767px) {
+    .author__name {
+      text-align: center;
+      margin-top: -0.82353em;
+      margin-bottom: 0.94118em; } }
+.author__bio {
+  font-size: 1em; }
 
 .pagination {
   display: inline-block;

@@ -7,8 +7,11 @@ url: "http://sassbreak.com"
 twitter_username: sassbreak
 github_username:  jekyll
 relative_path: /
-highlighter: pygments
+# highlighter: pygments
 paginate: 6
+
+#gems
+gems: [jekyll-paginate, jekyll-gist]
 
 # Build settings
 markdown: kramdown

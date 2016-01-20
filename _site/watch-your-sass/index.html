@@ -25,7 +25,7 @@
 
     <body>
 			<div class="wrapper">
-		     
+		    
 <header class="main-header" role="banner">
     <nav class="navbar" role="navigation">
         <ul class="nav">
@@ -49,12 +49,13 @@
     </div>
 </div>
 
+
 		    <div class="grid">
 	<div class="grid__col--12 post">
-
+    
     <header class="post__header">
       <h1 class="headline-primary">--watch Yo' Sass</h1>
-      <div class="post__meta">
+      <div class="post__meta--padded">
         <b class="post__author">Guil Hernandez</b>
         <b class="post__sep">•</b>
         <b class="post__date"> 
@@ -67,64 +68,67 @@
     
 
     <article class="post__content">
-    <p>I know the feeling: You just installed Sass, eager to dive into all of its awesome features and finally convert that stale CSS project over to Sass. You create your first .scss file, crack open Terminal, type a <code>--watch</code> command—everything comes to a hault. You get errors like  <code>No such file or directory</code>, or you notice your Sass compiling to the wrong directory, but can’t figure out why.</p>
+      <p>I know the feeling: You just installed Sass, eager to dive into all of its awesome features and finally convert that stale CSS project over to Sass. You create your first .scss file, crack open Terminal, type a <code class="highlighter-rouge">--watch</code> command—everything comes to a hault. You get errors like  <code class="highlighter-rouge">No such file or directory</code>, or you notice your Sass compiling to the wrong directory, but can’t figure out why.</p>
 
-<p>After Googling and attempting a few <code>--watch</code> commands, you check your .css file. Nothing. This goes on for almost an hour. Yes, this is frustrating, but don’t let it discourage you from crossing over to the wonderful world of Sass. </p>
+<p>After Googling and attempting a few <code class="highlighter-rouge">--watch</code> commands, you check your .css file. Nothing. This goes on for almost an hour. Yes, this is frustrating, but don’t let it discourage you from crossing over to the wonderful world of Sass.</p>
 
-<p>In this short post, we’ll go over a few simple <code>--watch</code> commands, what they mean, and how to overcome possible errors.</p>
+<p>In this short post, we’ll go over a few simple <code class="highlighter-rouge">--watch</code> commands, what they mean, and how to overcome possible errors.</p>
 
-<h2 id="what-does---watch-do">What does <code>--watch</code> do?</h2>
+<h2 id="what-does---watch-do">What does <code class="highlighter-rouge">--watch</code> do?</h2>
 
-<p>The <code>--watch</code> command literally tells Sass to watch your project for changes. It’s what converts your Sass files into CSS and auto-compiles your Sass every time it changes.</p>
+<p>The <code class="highlighter-rouge">--watch</code> command literally tells Sass to watch your project for changes. It’s what converts your Sass files into CSS and auto-compiles your Sass every time it changes.</p>
 
 <p>For example, this command tells Sass to watch and compile to a specific file – it’s basically saying <em>“watch my project and compile from style.scss to style.css”</em>:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">sass</span> <span class="o">--</span><span class="n">watch</span> <span class="n">style</span><span class="o">.</span><span class="n">scss</span><span class="ss">:style</span><span class="o">.</span><span class="n">css</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">sass</span> <span class="o">--</span><span class="n">watch</span> <span class="n">style</span><span class="p">.</span><span class="nf">scss</span><span class="ss">:style</span><span class="p">.</span><span class="nf">css</span></code></pre></figure>
 
 <p>Following is a more general command that looks for your Sass files and watches for changes inside the directory containing your Sass files:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">sass</span> <span class="o">--</span><span class="n">watch</span> <span class="o">.</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">sass</span> <span class="o">--</span><span class="n">watch</span> <span class="o">.</span></code></pre></figure>
 
-<p>So if your Sass file is in the root directory, this will auto-compile to CSS within the root directory. This can get messy if, say, you only want Sass files in a “scss” directory, because the <code>sass --watch .</code> command will also watch and compile to CSS within that “scss” directory. </p>
+<p>So if your Sass file is in the root directory, this will auto-compile to CSS within the root directory. This can get messy if, say, you only want Sass files in a “scss” directory, because the <code class="highlighter-rouge">sass --watch .</code> command will also watch and compile to CSS within that “scss” directory.</p>
 
 <h2 id="the-commands-i-prefer">The commands I prefer</h2>
 
 <p>Usually, to keep our project nice and tidy, we’ll want our Sass and CSS files in separate directories. For instance, if our Sass file is in a directory named “scss,” this command will compile our Sass and update the style sheet inside the “css” directory:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">sass</span> <span class="o">--</span><span class="n">watch</span> <span class="n">scss</span><span class="o">/</span><span class="n">style</span><span class="o">.</span><span class="n">scss</span><span class="ss">:css</span><span class="o">/</span><span class="n">style</span><span class="o">.</span><span class="n">css</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">sass</span> <span class="o">--</span><span class="n">watch</span> <span class="n">scss</span><span class="o">/</span><span class="n">style</span><span class="p">.</span><span class="nf">scss</span><span class="ss">:css</span><span class="o">/</span><span class="n">style</span><span class="p">.</span><span class="nf">css</span></code></pre></figure>
 
 <p>If you’re working on a large project with many Sass files, you can tell Sass to just watch your Sass directory and update your CSS directory. Once my project is all set up, I like to use the command:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">sass</span> <span class="o">--</span><span class="n">watch</span> <span class="ss">scss</span><span class="p">:</span><span class="n">css</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">sass</span> <span class="o">--</span><span class="n">watch</span> <span class="n">scss</span><span class="ss">:css</span></code></pre></figure>
 
 <p>This tells Sass <em>“watch the scss directory for changes, then update the style sheet inside the css directory.”</em></p>
 
-<p>If the <code>--watch</code> command succeeds, you should see a notification like this in the command line output: <code>Sass is watching for changes. Press Ctrl-C to stop.</code></p>
+<p>If the <code class="highlighter-rouge">--watch</code> command succeeds, you should see a notification like this in the command line output: <code class="highlighter-rouge">Sass is watching for changes. Press Ctrl-C to stop.</code></p>
 
 <p>You also may see something like:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">directory</span> <span class="n">css</span>
-    <span class="n">write</span> <span class="n">css</span><span class="o">/</span><span class="n">style</span><span class="o">.</span><span class="n">css</span>
-    <span class="n">write</span> <span class="n">css</span><span class="o">/</span><span class="n">style</span><span class="o">.</span><span class="n">css</span><span class="o">.</span><span class="n">map</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">directory</span> <span class="n">css</span>
+    <span class="n">write</span> <span class="n">css</span><span class="o">/</span><span class="n">style</span><span class="p">.</span><span class="nf">css</span>
+    <span class="n">write</span> <span class="n">css</span><span class="o">/</span><span class="n">style</span><span class="p">.</span><span class="nf">css</span><span class="p">.</span><span class="nf">map</span></code></pre></figure>
 
-<p>This simply means that it generated a “css” directory containing a style sheet and <a href="http://sass-lang.com/documentation/file.SASS_CHANGELOG.html#source_maps">sourcemap</a>. <strong>Remember</strong>: you don’t even have to create the css directory, style sheet, or sourcemap – the <code>--watch</code> command will generate them for you!</p>
+<p>This simply means that it generated a “css” directory containing a style sheet and <a href="http://sass-lang.com/documentation/file.SASS_CHANGELOG.html#source_maps">sourcemap</a>. <strong>Remember</strong>: you don’t even have to create the css directory, style sheet, or sourcemap – the <code class="highlighter-rouge">--watch</code> command will generate them for you!</p>
 
 <h2 id="tried-it-still-no-dice">Tried it. Still no dice.</h2>
 
-<p>OK, now you need to make sure that you’re in the right working directory. Let’s say you have a folder on your desktop named “project”. Open up Terminal and type the command <code>cd desktop/project</code>. This will bring you to the correct working directory on your desktop.</p>
+<p>OK, now you need to make sure that you’re in the right working directory. Let’s say you have a folder on your desktop named “project”. Open up Terminal and type the command <code class="highlighter-rouge">cd desktop/project</code>. This will bring you to the correct working directory on your desktop.</p>
 
-<p>Once you’re in the project directory, write the command <code>sass --watch scss:css</code> to begin auto-compiling your Sass to CSS—provided you’ve already created the “scss” directory.</p>
+<p>Once you’re in the project directory, write the command <code class="highlighter-rouge">sass --watch scss:css</code> to begin auto-compiling your Sass to CSS—provided you’ve already created the “scss” directory.</p>
 
 <h2 id="thats-it">That’s it!</h2>
 
-<p>Now that you’re a <code>sass --watch</code> pro, next time you’re up late working on a Sass project and frustrated because nothing’s happening in the browser, don’t <em>spend minutes, hours, days, weeks, or even months over-analyzing the situation</em>. Just <code>--watch</code> yo’ Sass.</p>
+<p>Now that you’re a <code class="highlighter-rouge">sass --watch</code> pro, next time you’re up late working on a Sass project and frustrated because nothing’s happening in the browser, don’t <em>spend minutes, hours, days, weeks, or even months over-analyzing the situation</em>. Just <code class="highlighter-rouge">--watch</code> yo’ Sass.</p>
 
 <p>Check out our <a href="/resources/">Sass Resources</a> page to learn more about getting up and running with Sass.</p>
 
 
 
-    <a href="https://twitter.com/share" class="twitter-share-button" data-via="sassbreak" data-size="large">Tweet this article</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      <a href="https://twitter.com/share" class="twitter-share twitter-share-button" data-via="sassbreak" data-size="large">Tweet this article</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+      </script>
+      
+      
     </article>
 
     <div class="post__comments">
@@ -132,6 +136,7 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'sassbreak'; // required: replace example with your forum shortname
+    var disqus_identifier = "/watch-your-sass/";
 
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function() {
@@ -143,6 +148,7 @@
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     
+
     </div>
 
 	</div>
@@ -161,7 +167,7 @@
 	    	<p class="site-desc">A simple blog about Sass. <a href="https://twitter.com/sassbreak">@sassbreak</a></p>
 	    </div>
 			<div class="grid__col--4">
-				<a href="https://twitter.com/guilh" title="Guil Hernandez - @guilh"><img class="media__img--avatar" src="https://pbs.twimg.com/profile_images/483977668723884034/bPshQmgj.jpeg"></a>
+				<a href="https://twitter.com/guilh" title="Guil Hernandez - @guilh"><img class="media__img--avatar" src="https://pbs.twimg.com/profile_images/578368788535455744/WhLtbEaB.jpeg"></a>
 			</div>
 	</div>
 </footer>

@@ -4,12 +4,12 @@
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Poly – A Modular UI Kit Built with Sass</title>
+  <title>Tools & Snippets from the Sass Community</title>
   <meta name="viewport" content="width=device-width">
-  <meta name="description" content="A simple blog about Sass.">
+  <meta name="description" content="In this post, we're sharing helpful Sass tools and snippets from the Sass community.">
   <link rel="shortcut icon" href="http://sassbreak.com/favicon.ico">
 <!--     <link rel="stylesheet" href="http://basehold.it/27"> -->
-  <link rel="canonical" href="http://sassbreak.com/poly-ui-toolkit/">
+  <link rel="canonical" href="http://sassbreak.com/sass-tools-and-snippets/">
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/css/styles.css">
@@ -54,27 +54,55 @@
 	<div class="grid__col--12 post">
     
     <header class="post__header">
-      <h1 class="headline-primary">Poly – A Modular UI Kit Built with Sass</h1>
+      <h1 class="headline-primary">Tools & Snippets from the Sass Community</h1>
       <div class="post__meta--padded">
         <b class="post__author">Guil Hernandez</b>
         <b class="post__sep">•</b>
         <b class="post__date"> 
-        Feb 7, 2015</b>
+        Mar 29, 2015</b>
       </div>
     </header>
 
     
-    <img class="feat-img is-hidden-mobile" src="/assets/poly-hdr.jpg">
-    
 
     <article class="post__content">
-      <p>Poly is a simple, responsive UI toolkit for everyone to share and enjoy! It was designed by <a href="https://twitter.com/MatHelme">Mat Helme</a> and built by <a href="https://twitter.com/guilh">Guil Hernandez</a> using many of the best practices and principles of modular Sass. Poly’s versatility makes it the perfect toolkit for your next website, prototype, or blog. In fact, we used Poly to build Sass break.</p>
+      <p>Since we launched <a href="http://sassbreak.com/">Sass break</a>, we’ve received links to helpful Sass tools and snippets from readers. So in this post, we’re giving them a hat tip by sharing their tools and code snippets with everyone!</p>
 
-<p>To learn how we built Poly, watch the <a href="http://teamtreehouse.com/library/modular-css-with-sass">Modular CSS with Sass</a> course on Treehouse. You can also <a href="https://github.com/Guilh/Poly">grab the files on GitHub</a>, or check it out on CodePen:</p>
+<h2 id="unique-id-for-auto-naming-animations">unique-id() for auto-naming animations</h2>
+<p>In the post <em><a href="http://sassbreak.com/nested-keyframe-rules-sass/">Nested @keyframes Rules</a></em>, front-end architect and Sass evangelist, <a href="https://twitter.com/roy">Roy Tomeij</a>, shared with us a clever use for the <code class="highlighter-rouge">unique-id()</code> function.</p>
 
-<p data-height="268" data-theme-id="0" data-slug-hash="KwmmWq" data-default-tab="result" data-user="Guilh" class="codepen">See the Pen <a href="http://codepen.io/Guilh/pen/KwmmWq/">Poly – A simple, modular UI kit built with Sass</a> by Guil H (<a href="http://codepen.io/Guilh">@Guilh</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p>Naming things can be difficult. So, instead of spending valuable time pondering what to call an animation, we can let Sass name it with <code class="highlighter-rouge">unique-id()</code>.</p>
+
+<p class="sassmeister" data-gist-id="682040499e2d95ebde12" data-height="350" data-theme="tomorrow"><a href="http://sassmeister.com/gist/682040499e2d95ebde12">Play with this gist on SassMeister.</a></p>
+<script src="http://cdn.sassmeister.com/js/embed.js" async=""></script>
+
+<hr />
+
+<p><strong>Edit:</strong> Roy just released an article on <a href="http://advancedsass.com/articles/simplify-animation-keyframes-with-unique-id.html">simplifying animation keyframes with <code class="highlighter-rouge">unique-id()</code></a>.</p>
+
+<hr />
+
+<h2 id="the-nested-double-ampersand-mixin">The nested double ampersand mixin</h2>
+
+<p>In the <em><a href="http://sassbreak.com/double-ampersand-mixin/">Double Ampersand Mixin</a></em> post, front-end developer <a href="https://twitter.com/kaelig">Kaelig</a> shared a gist demonstrating how to use the mixin with nested selectors.</p>
+
+<p class="sassmeister" data-gist-id="588ad7614481d259fc74" data-height="350" data-theme="tomorrow"><a href="http://sassmeister.com/gist/588ad7614481d259fc74">Play with this gist on SassMeister.</a></p>
+<script src="http://cdn.sassmeister.com/js/embed.js" async=""></script>
+
+<h2 id="flexible-grid-system">Flexible grid system</h2>
+<p>Front-end developer, <a href="https://twitter.com/dnomak">Doğukan Güven Nomak</a>, built a Flexible grid system with Sass! To learn more about it, visit <a href="http://flexible.gs/">flexible.gs</a>, or check out Doğukan’s CodePen demo:</p>
+
+<p data-height="230" data-theme-id="0" data-slug-hash="wBzdzj" data-default-tab="result" data-user="dnomak" class="codepen">See the Pen <a href="http://codepen.io/dnomak/pen/wBzdzj/">wBzdzj</a> by Doğukan Güven Nomak (<a href="http://codepen.io/dnomak">@dnomak</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async="" src="//assets.codepen.io/assets/embed/ei.js"></script>
 
+<h2 id="sass-maps-for-icon-fonts">Sass maps for icon fonts</h2>
+<p>This one wasn’t posted on Sass break, but it’s a neat snippet by <a href="https://twitter.com/anotheruiguy">Dale Sande</a> that uses a <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#maps">Sass map</a> and an <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#each-directive"><code class="highlighter-rouge">@each</code></a> loop to generate icon fonts. Here’s an example:</p>
+
+<div style="margin-bottom: 23.9998607635498px;">
+	<p class="sassmeister" data-gist-id="ea55f4db8599e9b8b79d" data-height="350" data-theme="tomorrow"><a href="http://sassmeister.com/gist/ea55f4db8599e9b8b79d">Play with this gist on SassMeister.</a></p><script src="http://cdn.sassmeister.com/js/embed.js" async=""></script>
+</div>
+
+<p>Thank you and keep up the great work, Sass community!</p>
 
 
       <a href="https://twitter.com/share" class="twitter-share twitter-share-button" data-via="sassbreak" data-size="large">Tweet this article</a>
@@ -89,7 +117,7 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'sassbreak'; // required: replace example with your forum shortname
-    var disqus_identifier = "/poly-ui-toolkit/";
+    var disqus_identifier = "/sass-tools-and-snippets/";
 
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function() {

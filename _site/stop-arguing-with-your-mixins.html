@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Stop Arguing So Much with Your Mixins</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="The Sass community in South Florida started a new meetup to talk about all things Sass.">
+  <link rel="shortcut icon" href="http://sassbreak.com/favicon.ico">
+<!--     <link rel="stylesheet" href="http://basehold.it/27"> -->
+  <link rel="canonical" href="http://sassbreak.com/stop-arguing-with-your-mixins">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-54825201-1', 'auto');
+	  ga('send', 'pageview');
+	</script>
+</head>
+
+    <body>
+			<div class="wrapper">
+		    
+<header class="main-header" role="banner">
+    <nav class="navbar" role="navigation">
+        <ul class="nav">
+           <li  class="nav__item">
+                <a href="http://sassbreak.com">Articles</a>
+            </li>
+            <li  class="nav__item">
+                <a href="/about/">About</a>
+            </li class="nav__item">
+            <li  class="nav__item">
+                <a href="/resources/">Resources</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="grid panel--padded--centered">
+    <div class="grid__col--12 break">
+        <a class="site-logo" href="/" title="Sassbreak.com – Home">
+            <b class="srt">Sass Break</b>
+        </a>
+    </div>
+</div>
+
+
+		    <div class="grid">
+	<div class="grid__col--12 post">
+    
+    <header class="post__header">
+      <h1 class="headline-primary">Stop Arguing So Much with Your Mixins</h1>
+      <div class="post__meta--padded">
+        <b class="post__author">Dale Sande</b>
+        <b class="post__sep">•</b>
+        <b class="post__date"> 
+        Jan 16, 2016</b>
+      </div>
+    </header>
+
+    
+
+    <article class="post__content">
+      <p>Mixins are arguably one of the more widely used tools in the Sass language next to the variable. Coming with that, mixins are more apt to be the most abused tool in the language. Mixins are extremely powerful and capable of doing a great number of things, but as we are creating these massive bodies of complex code, it’s easy to find ourselves in a place where we have too many arguments in order to use our mixin. It’s at this point we have started to lose comprehension of what’s happening. The complexity of the tool starts to outweigh its value.</p>
+
+<p>Recently in refactoring a mixin with too many arguments, I began to think of how I could use list-maps to solve this issue.</p>
+
+<h2 id="the-classic-way">The classic way</h2>
+
+<p>Say you are creating a mixin that is relatively complex in scope and will consume a large number of arguments due to the number of alternative outcomes. We have all done it, I know I sure have. In the following example I am using a <code class="highlighter-rouge">button</code> mixin, the second most overly-engineered solution next to Grids, so the following code shouldn’t seem that crazy to you:</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@mixin</span> <span class="nf">core-button</span><span class="p">(</span><span class="nv">$color</span><span class="o">,</span> <span class="nv">$background-color</span><span class="o">,</span> <span class="nv">$border-color</span><span class="o">,</span> <span class="nv">$background-hover</span><span class="o">,</span> <span class="nv">$border-color-hover</span><span class="o">,</span> <span class="nv">$background-active</span><span class="o">,</span> <span class="nv">$border-color-active</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="nv">$color</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="nv">$background-color</span><span class="p">;</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nv">$border-color</span><span class="p">;</span>
+  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">3px</span><span class="p">;</span>
+  <span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="nv">$type-family-title</span><span class="p">;</span>
+
+  <span class="k">&amp;</span><span class="nd">:hover</span><span class="o">,</span>
+  <span class="k">&amp;</span><span class="nd">:focus</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="nv">$background-color-hover</span><span class="p">;</span>
+    <span class="nl">border-color</span><span class="p">:</span> <span class="nv">$border-color-hover</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">&amp;</span><span class="nd">:active</span><span class="o">,</span>
+  <span class="k">&amp;</span><span class="o">[</span><span class="nt">aria-selected</span><span class="o">=</span><span class="s2">"true"</span><span class="o">]</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="nv">$background-color-active</span><span class="p">;</span>
+    <span class="nl">border-color</span><span class="p">:</span> <span class="nv">$border-color-active</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Given the relative simplicity of the mixin, it still takes 7 arguments (yes you can have defaults, but that’s not the point). From here things can only get more complex. then the number of times you need to compare back and forth between the mixin and where you are including it to make sure that you are putting the right value in the right place. So, you end up with this:</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.foo</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">core-button</span><span class="p">(</span><span class="mh">#ffffff</span><span class="o">,</span> <span class="mh">#ededed</span><span class="o">,</span> <span class="mh">#b2005c</span><span class="o">,</span> <span class="mh">#dbdbdb</span><span class="o">,</span> <span class="mh">#ba0060</span><span class="o">,</span> <span class="mh">#c7c7c7</span><span class="o">,</span> <span class="mh">#a60056</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Great, a list of hex values. In the moment, it makes perfect sense, you know the order of things. But next time you come back to this, will you remember what <code class="highlighter-rouge">#ba0060</code> is referencing? Was it <code class="highlighter-rouge">$background-hover</code> or <code class="highlighter-rouge">$border-color-hover</code>?</p>
+
+<p>Then, this is a long list of values that I would assume that you would make a variable of so that you can use this with other similar buttons, right? So the process goes as follows … see selector &gt; see mixin &gt; see variable. Search for variable &gt; search for mixin &gt; compare argument list &gt; update and hope you got it right. What usually happens was, “Oh crap, I wanted to update the 4th value, not the 5th!”</p>
+
+<p>Not sure about you, but this has annoyed me for years.</p>
+
+<h2 id="the-options-way">The “options” way</h2>
+
+<p>While refactoring a lot of old code from older versions of Sass up to the latest tools available in libsass. And one tool that I am trying to find 1001 uses for is <strong>list-maps</strong>. If you are not familiar with list-maps, here is an <a href="http://anotheruiguy.roughdraft.io/10302472-so-you-want-to-play-with-list-maps">article I wrote</a> over a year ago that can help you get started. The best part is, peering into the future with <a href="https://github.com/lunelson/sass-maps-plus">sass-maps-plus</a> which is <a href="https://github.com/sass/sass/issues/1739">planned to be an integrated feature</a> of the official Sass library.</p>
+
+<p>List-maps bring to the table a great way to really manage a variable as a series of key-value pairs. Just like a real programming language! <code class="highlighter-rouge">＼(＾O＾)／</code></p>
+
+<p>Looking back at the mixin above, wouldn’t it be great if we could only have only one argument, a list of <code class="highlighter-rouge">options</code> perhaps, and then pass in a list-map of variables within? Good news, we can.</p>
+
+<p>As illustrated in the following example, I have removed the dependency on an ordered list of arguments within the mixin. This <code class="highlighter-rouge">options</code> method allows me to use list-maps to have a complex array of named arguments in the form of key/value pairs and not have to deal with the complexities and ambiguity of an ordered list of arguments:</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@mixin</span> <span class="nf">core-button</span> <span class="p">(</span><span class="nv">$options</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">...</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="ive-seen-this-before-">I’ve seen this before …</h3>
+
+<p>Functions and mixins in Sass work much like functions on JavaScript. You can have either a list of ordered arguments where you must follow that specific order to address the needs of the function, or you can use named arguments as well. As shown in the following example, using the <code class="highlighter-rouge">.</code> syntax, you can basically make a single argument into an object and parse out the individual values for later use.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Define function to take one "argument", which is in fact an object:</span>
+<span class="kd">function</span> <span class="nx">fnParseInt</span><span class="p">(</span> <span class="nx">oArg</span> <span class="p">){</span>
+  <span class="k">return</span> <span class="nb">parseInt</span><span class="p">(</span> <span class="nx">oArg</span><span class="p">.</span><span class="nx">number</span><span class="p">,</span> <span class="nx">oArg</span><span class="p">.</span><span class="nx">radix</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Passing in the object literal you can then call like this:</span>
+<span class="nx">fnParseInt</span><span class="p">(</span> <span class="p">{</span> <span class="na">number</span> <span class="p">:</span> <span class="s1">'afy'</span><span class="p">,</span> <span class="na">radix</span> <span class="p">:</span> <span class="mi">36</span> <span class="p">}</span> <span class="p">);</span></code></pre></figure>
+
+<p>This JavaScript method and similar methods in Sass have served us really well. But expanding on these ideas is what lead me to consider a single <code class="highlighter-rouge">option</code> in a mixin versus passing in a list or individually named arguments. Interestingly enough, and this was pointed out to me by a colleague, this very same model is heavily used in much of Backbone. The concept of <code class="highlighter-rouge">options</code> in Backbone is basically a javascript object of <strong>key/value</strong> pairs that provide data to a method call.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">makeVehicle</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">make</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">vehicle</span> <span class="o">=</span> <span class="p">{};</span>
+  <span class="nx">vehicle</span><span class="p">.</span><span class="nx">make</span>  <span class="o">=</span> <span class="nx">make</span><span class="p">;</span>
+  <span class="nx">vehicle</span><span class="p">.</span><span class="nx">model</span> <span class="o">=</span> <span class="nx">options</span><span class="p">.</span><span class="nx">model</span><span class="p">;</span>
+  <span class="nx">vehicle</span><span class="p">.</span><span class="nx">year</span>  <span class="o">=</span> <span class="nx">options</span><span class="p">.</span><span class="nx">year</span><span class="p">;</span>
+  <span class="nx">vehicle</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">options</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">vehicle</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">car</span> <span class="o">=</span> <span class="nx">makeVehicle</span><span class="p">(</span>
+  <span class="s1">'Lamborghini'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">model</span><span class="p">:</span><span class="s1">'Aventador'</span><span class="p">,</span>
+    <span class="na">value</span><span class="p">:</span><span class="s1">'$397,500'</span><span class="p">,</span>
+    <span class="na">year</span><span class="p">:</span><span class="mi">2015</span><span class="p">,</span>
+  <span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">minivan</span> <span class="o">=</span> <span class="nx">makeVehicle</span><span class="p">(</span>
+  <span class="s1">'Toyota'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">model</span><span class="p">:</span><span class="s1">'Sienna'</span><span class="p">,</span>
+    <span class="na">value</span><span class="p">:</span><span class="s1">'$28,700'</span><span class="p">,</span>
+    <span class="na">year</span><span class="p">:</span><span class="mi">2015</span><span class="p">,</span>
+  <span class="p">});</span></code></pre></figure>
+
+<h3 id="houston-we-have-a-problem">Houston, we have a problem</h3>
+
+<p>With the new <code class="highlighter-rouge">options</code> style mixin and the desire to use a single argument, we can’t simply pass in a list of arguments from the previous mixin? Understanding the JavaScript models and understanding on how we can use list-maps, this is easy enough to address. Pretty sure you saw that coming, right?</p>
+
+<p>In the following example I am creating a standard list-map variable and am using key/value pairs to address variable values.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nv">$core-buttons</span><span class="p">:</span> <span class="p">(</span>
+  <span class="n">color</span><span class="o">:</span>               <span class="mh">#ffffff</span><span class="o">,</span>
+  <span class="n">background-color</span><span class="o">:</span>    <span class="mh">#ededed</span><span class="o">,</span>
+  <span class="n">border-color</span><span class="o">:</span>        <span class="mh">#b2005c</span><span class="o">,</span>
+  <span class="n">background-hover</span><span class="o">:</span>    <span class="mh">#dbdbdb</span><span class="o">,</span>
+  <span class="n">border-color-hover</span><span class="o">:</span>  <span class="mh">#ba0060</span><span class="o">,</span>
+  <span class="n">background-active</span><span class="o">:</span>   <span class="mh">#c7c7c7</span><span class="o">,</span>
+  <span class="n">border-color-active</span><span class="o">:</span> <span class="mh">#a60056</span>
+<span class="p">);</span></code></pre></figure>
+
+<p>I already love how this looks. Now instead of a list like we had before, <code class="highlighter-rouge">#ffffff, #ededed, #b2005c ...</code>, or a series of overly complicated variables with a naming convention, we have something that makes sense. It reads much like an object in any other language. We understand the role of each value in that list and that can mean a whole lot when you are managing thousands of lines of code.</p>
+
+<h3 id="update-the-signal-improve-the-receiver">Update the signal, improve the receiver</h3>
+
+<p>Now that we have a <strong>list-map</strong> with <strong>key/value pairs</strong>, it’s required that we update all the variables within the mixin so that we can parse though the list-map. In the following example you will see that I replaced the more traditional <em>ordered</em> argument/variable pairs with the <code class="highlighter-rouge">map-get</code> function and the <em>named</em> variables. IMHO, this is WAY more human readable. It’s clear that we are targeting a single variable which is inherited from the <code class="highlighter-rouge">$options</code> argument. Then from that <code class="highlighter-rouge">map-get</code> function we are asking for simple values, <code class="highlighter-rouge">color</code> or <code class="highlighter-rouge">border-color</code>. The mixin itself should remain pretty stable post this set up configuration.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@mixin</span> <span class="nf">core-button</span><span class="p">(</span><span class="nv">$options</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="nf">map-get</span><span class="p">(</span><span class="nv">$options</span><span class="o">,</span> <span class="n">color</span><span class="p">);</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="nf">map-get</span><span class="p">(</span><span class="nv">$options</span><span class="o">,</span> <span class="n">background-color</span><span class="p">);</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nf">map-get</span><span class="p">(</span><span class="nv">$options</span><span class="o">,</span> <span class="n">border-color</span><span class="p">);</span>
+  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">3px</span><span class="p">;</span>
+  <span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="nv">$type-family-title</span><span class="p">;</span>
+
+  <span class="k">&amp;</span><span class="nd">:hover</span><span class="o">,</span>
+  <span class="k">&amp;</span><span class="nd">:focus</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="nf">map-get</span><span class="p">(</span><span class="nv">$options</span><span class="o">,</span> <span class="n">background-hover</span><span class="p">);</span>
+    <span class="nl">border-color</span><span class="p">:</span> <span class="nf">map-get</span><span class="p">(</span><span class="nv">$options</span><span class="o">,</span> <span class="n">border-color-hover</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">&amp;</span><span class="nd">:active</span><span class="o">,</span>
+  <span class="k">&amp;</span><span class="o">[</span><span class="nt">aria-selected</span><span class="o">=</span><span class="s2">"true"</span><span class="o">]</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="nf">map-get</span><span class="p">(</span><span class="nv">$options</span><span class="o">,</span> <span class="n">background-active</span><span class="p">);</span>
+    <span class="nl">border-color</span><span class="p">:</span> <span class="nf">map-get</span><span class="p">(</span><span class="nv">$options</span><span class="o">,</span> <span class="n">border-color-active</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>There is something that I really just love about looking at this code. It’s expressive, it’s clear, it’s direct to the point. What I love even more is how it’s actually used. In the following example you will see a mixin with a single argument, or <code class="highlighter-rouge">option</code>, that is able to address multiple concerns:</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nt">block</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">core-button</span><span class="p">(</span><span class="nv">$core-buttons</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="one-variable-to-rule-them-all">One variable to rule them all!</h3>
+
+<p>Once all the values are in an easy-to-read list-map variable, we are not beholden to one use case. The variable of <code class="highlighter-rouge">$core-buttons</code> can be global so these values are not trapped inside the scope of the mixin as they were before. Say I had a simpler case, like making a quick button? In the following example you will see that I can reference that same list-map and just pull out a few key values that I want to make use of without any extraneous naming conventions like <code class="highlighter-rouge">core-button--button-color</code>, or use the mixin and find ways to ignore rules I don’t want, or worse yet … just write in regular CSS!</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nt">button</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="nf">map-get</span><span class="p">(</span><span class="nv">$core-buttons</span><span class="o">,</span> <span class="n">color</span><span class="p">);</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="nf">map-get</span><span class="p">(</span><span class="nv">$core-buttons</span><span class="o">,</span> <span class="n">background-color</span><span class="p">);</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nf">map-get</span><span class="p">(</span><span class="nv">$core-buttons</span><span class="o">,</span> <span class="n">border-color</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Same variable. No copy/paste. No long naming conventions to find the original values from variables. All the values I ever need all scoped correctly within the same concept, or dare I say … object.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Coming to this conclusion and having worked on many Sass projects in my career, I can only say, “<em>If you are not using list-maps, what the hell are you waiting for?</em>”</p>
+
+<p>The more I use list-maps, the more I find myself greatly reducing the complexity of my code. I too was victim of variable naming conventions. For me, finding new and creative ways of using list-maps, like reducing the number of arguments within a super-mixin, really just helps to dial in the sanity of my code.</p>
+
+
+      <a href="https://twitter.com/share" class="twitter-share twitter-share-button" data-via="sassbreak" data-size="large">Tweet this article</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+      </script>
+      
+      
+        
+<div class="author-box">
+  <a href="https://twitter.com/anotheruiguy">
+    <img class="media__img--avatar" src="/assets/authors/dale.png">
+  </a>
+  <div class="author">
+    <span class="author__name">Dale Sande</span>
+    <p class="author__bio">Dale splits his time between San Francisco where he is a UI Architect for AppDirect and Seattle where he is a Front-End Developer instructor for Code Fellows. He is very involved in the Sass community and a core contributor to SassMeister.</p>
+  </div>
+</div>
+      
+    </article>
+
+    <div class="post__comments">
+      <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'sassbreak'; // required: replace example with your forum shortname
+    var disqus_identifier = "/stop-arguing-with-your-mixins";
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+
+    </div>
+
+	</div>
+</div>
+		  	<div class="push"></div>
+			</div>
+		  <footer class="panel--centered" role="contentinfo">
+		<div class="grid">
+			<div class="grid__col--4">
+				<a href="https://twitter.com/Dave_Conner" title="Dave Conner - @Dave_Conner"><img class="media__img--avatar" src="https://pbs.twimg.com/profile_images/468537320581238784/BVSoNzeI.jpeg"></a>
+			</div>
+	    <div class="grid__col--4">
+	    	<a class="site-logo--white" href="/" title="Home">
+        	<b class="srt">Sass Break</b>
+        </a>
+	    	<p class="site-desc">A simple blog about Sass. <a href="https://twitter.com/sassbreak">@sassbreak</a></p>
+	    </div>
+			<div class="grid__col--4">
+				<a href="https://twitter.com/guilh" title="Guil Hernandez - @guilh"><img class="media__img--avatar" src="https://pbs.twimg.com/profile_images/578368788535455744/WhLtbEaB.jpeg"></a>
+			</div>
+	</div>
+</footer>
+
+    </body>
+</html>

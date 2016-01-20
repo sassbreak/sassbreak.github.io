@@ -25,7 +25,7 @@
 
     <body>
 			<div class="wrapper">
-		     
+		    
 <header class="main-header" role="banner">
     <nav class="navbar" role="navigation">
         <ul class="nav">
@@ -49,12 +49,13 @@
     </div>
 </div>
 
+
 		    <div class="grid">
 	<div class="grid__col--12 post">
-
+    
     <header class="post__header">
       <h1 class="headline-primary">Nested @keyframes Rules</h1>
-      <div class="post__meta">
+      <div class="post__meta--padded">
         <b class="post__author">Guil Hernandez</b>
         <b class="post__sep">•</b>
         <b class="post__date"> 
@@ -65,63 +66,66 @@
     
 
     <article class="post__content">
-    <p>A handy feature in Sass 3.3 was the <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#at-root"><code>@at-root</code> directive</a>, which outputs nested Sass rules at the root of the CSS.</p>
+      <p>A handy feature in Sass 3.3 was the <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#at-root"><code class="highlighter-rouge">@at-root</code> directive</a>, which outputs nested Sass rules at the root of the CSS.</p>
 
-<p>It was Stu Robson who came up with <a href="http://www.alwaystwisted.com/articles/2014-03-08-using-sass-33s-at-root-for-piece-of-mind">an awesome use case and example</a> for <code>@at-root</code> when dealing with animations and <code>@keyframes</code> rules. Instead of creating keyframe rules at the root of the style sheet, we could nest them inside their modules with <code>@at-root</code>. Like this:</p>
+<p>It was Stu Robson who came up with <a href="http://www.alwaystwisted.com/articles/2014-03-08-using-sass-33s-at-root-for-piece-of-mind">an awesome use case and example</a> for <code class="highlighter-rouge">@at-root</code> when dealing with animations and <code class="highlighter-rouge">@keyframes</code> rules. Instead of creating keyframe rules at the root of the style sheet, we could nest them inside their modules with <code class="highlighter-rouge">@at-root</code>. Like this:</p>
 
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.bunny</span> <span class="p">{</span>
-  <span class="na">animation</span><span class="o">:</span> <span class="n">hop</span> <span class="mi">2</span><span class="kt">s</span> <span class="n">ease-in-out</span> <span class="n">infinite</span><span class="o">,</span> 
-             <span class="n">move</span> <span class="mi">6</span><span class="kt">s</span> <span class="n">ease-out</span> <span class="n">forwards</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.bunny</span> <span class="p">{</span>
+  <span class="nl">animation</span><span class="p">:</span> <span class="n">hop</span> <span class="m">2s</span> <span class="n">ease-in-out</span> <span class="n">infinite</span><span class="o">,</span> 
+             <span class="n">move</span> <span class="m">6s</span> <span class="n">ease-out</span> <span class="n">forwards</span><span class="p">;</span>
 
   <span class="k">@at-root</span> <span class="p">{</span>
     <span class="k">@keyframes</span> <span class="nt">hop</span> <span class="p">{</span> 
-      <span class="nt">50</span><span class="err">%</span>  <span class="p">{</span> <span class="na">transform</span><span class="o">:</span> <span class="nf">translateY</span><span class="p">(</span><span class="mi">40</span><span class="kt">px</span><span class="p">);</span> <span class="p">}</span>
+      <span class="nt">50</span><span class="nv">%</span>  <span class="p">{</span> <span class="nl">transform</span><span class="p">:</span> <span class="nf">translateY</span><span class="p">(</span><span class="m">40px</span><span class="p">);</span> <span class="p">}</span>
     <span class="p">}</span>
     <span class="k">@keyframes</span> <span class="nt">move</span> <span class="p">{</span> 
-      <span class="nt">100</span><span class="err">%</span> <span class="p">{</span> <span class="na">left</span><span class="o">:</span> <span class="mi">400</span><span class="kt">px</span><span class="p">;</span> <span class="p">}</span>
+      <span class="nt">100</span><span class="nv">%</span> <span class="p">{</span> <span class="nl">left</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
-<p>I was excited about this feature because it made <code>@keyframes</code> rules easier to find, read and maintain.</p>
+<p>I was excited about this feature because it made <code class="highlighter-rouge">@keyframes</code> rules easier to find, read and maintain.</p>
 
 <h2 id="no-more-at-root">No more @at-root</h2>
-<p>I recently discovered that Sass 3.4 automatically “@at-roots” nested keyframe rules. So now, instead of wrapping our <code>@keyframes</code> rules in an <code>@at-root</code>, we can nest them like regular Sass rules:</p>
+<p>I recently discovered that <a href="http://sass-lang.com/documentation/file.SASS_CHANGELOG.html">Sass 3.4</a> automatically “@at-roots” nested keyframe rules. So now, instead of wrapping our <code class="highlighter-rouge">@keyframes</code> rules in an <code class="highlighter-rouge">@at-root</code>, we can nest them like regular Sass rules:</p>
 
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.bunny</span> <span class="p">{</span>
-  <span class="na">animation</span><span class="o">:</span> <span class="n">hop</span> <span class="mi">2</span><span class="kt">s</span> <span class="n">ease-in-out</span> <span class="n">infinite</span><span class="o">,</span> 
-             <span class="n">move</span> <span class="mi">6</span><span class="kt">s</span> <span class="n">ease-out</span> <span class="n">forwards</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.bunny</span> <span class="p">{</span>
+  <span class="nl">animation</span><span class="p">:</span> <span class="n">hop</span> <span class="m">2s</span> <span class="n">ease-in-out</span> <span class="n">infinite</span><span class="o">,</span> 
+             <span class="n">move</span> <span class="m">6s</span> <span class="n">ease-out</span> <span class="n">forwards</span><span class="p">;</span>
 
   <span class="k">@keyframes</span> <span class="nt">hop</span> <span class="p">{</span> 
-    <span class="nt">50</span><span class="err">%</span>  <span class="p">{</span> <span class="na">transform</span><span class="o">:</span> <span class="nf">translateY</span><span class="p">(</span><span class="mi">40</span><span class="kt">px</span><span class="p">);</span> <span class="p">}</span>
+    <span class="nt">50</span><span class="nv">%</span>  <span class="p">{</span> <span class="nl">transform</span><span class="p">:</span> <span class="nf">translateY</span><span class="p">(</span><span class="m">40px</span><span class="p">);</span> <span class="p">}</span>
   <span class="p">}</span>
   <span class="k">@keyframes</span> <span class="nt">move</span> <span class="p">{</span> 
-    <span class="nt">100</span><span class="err">%</span> <span class="p">{</span> <span class="na">left</span><span class="o">:</span> <span class="mi">400</span><span class="kt">px</span><span class="p">;</span> <span class="p">}</span>
+    <span class="nt">100</span><span class="nv">%</span> <span class="p">{</span> <span class="nl">left</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span> <span class="p">}</span>
   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>… and Sass outputs them at the root level:</p>
 
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.bunny</span> <span class="p">{</span>
-  <span class="n">animation</span><span class="o">:</span> <span class="n">hop</span> <span class="m">2s</span> <span class="n">ease</span><span class="o">-</span><span class="n">in</span><span class="o">-</span><span class="n">out</span> <span class="n">infinite</span><span class="o">,</span>  
-             <span class="n">move</span> <span class="m">6s</span> <span class="n">ease</span><span class="o">-</span><span class="n">out</span> <span class="n">forwards</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.bunny</span> <span class="p">{</span>
+  <span class="nl">animation</span><span class="p">:</span> <span class="n">hop</span> <span class="m">2s</span> <span class="n">ease-in-out</span> <span class="n">infinite</span><span class="p">,</span>  
+             <span class="n">move</span> <span class="m">6s</span> <span class="n">ease-out</span> <span class="n">forwards</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="k">@keyframes</span> <span class="nt">hop</span> <span class="p">{</span>
+<span class="k">@keyframes</span> <span class="n">hop</span> <span class="p">{</span>
   <span class="nt">50</span><span class="o">%</span> <span class="p">{</span>
-    <span class="n">transform</span><span class="o">:</span> <span class="n">translateY</span><span class="p">(</span><span class="m">40px</span><span class="p">);</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">translateY</span><span class="p">(</span><span class="m">40px</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
-<span class="k">@keyframes</span> <span class="nt">move</span> <span class="p">{</span>
+<span class="k">@keyframes</span> <span class="n">move</span> <span class="p">{</span>
   <span class="nt">100</span><span class="o">%</span> <span class="p">{</span>
-    <span class="k">left</span><span class="o">:</span> <span class="m">400px</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>Sweet!</p>
 
 
-    <a href="https://twitter.com/share" class="twitter-share-button" data-via="sassbreak" data-size="large">Tweet this article</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      <a href="https://twitter.com/share" class="twitter-share twitter-share-button" data-via="sassbreak" data-size="large">Tweet this article</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+      </script>
+      
+      
     </article>
 
     <div class="post__comments">
@@ -129,6 +133,7 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'sassbreak'; // required: replace example with your forum shortname
+    var disqus_identifier = "/nested-keyframe-rules-sass/";
 
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function() {
@@ -140,6 +145,7 @@
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     
+
     </div>
 
 	</div>
@@ -158,7 +164,7 @@
 	    	<p class="site-desc">A simple blog about Sass. <a href="https://twitter.com/sassbreak">@sassbreak</a></p>
 	    </div>
 			<div class="grid__col--4">
-				<a href="https://twitter.com/guilh" title="Guil Hernandez - @guilh"><img class="media__img--avatar" src="https://pbs.twimg.com/profile_images/483977668723884034/bPshQmgj.jpeg"></a>
+				<a href="https://twitter.com/guilh" title="Guil Hernandez - @guilh"><img class="media__img--avatar" src="https://pbs.twimg.com/profile_images/578368788535455744/WhLtbEaB.jpeg"></a>
 			</div>
 	</div>
 </footer>
