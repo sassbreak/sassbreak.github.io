@@ -20,6 +20,7 @@ This is an ongoing list of Sass resources. If you'd like your website, tool or a
 ### Articles
 
 * [Sign up for Sass News Weekly](http://sassnews.us7.list-manage.com/subscribe?u=b4a4054cce715a3b0ae5e7d35&id=f7c505323d)
+* [Write More With Less (well actually with Sass)](https://docs.google.com/document/d/1_ANbgUWv9KnhdOusjAkDYS3fDk9q7ZF8c78FNAMtvCY/edit)
 * [5 reasons you should be using Sass today](http://www.webdesignerdepot.com/2014/08/5-reasons-you-should-be-using-sass-today/)
 * [Treehouse Blog](http://blog.teamtreehouse.com/?s=sass&submit=%F0%9F%94%8E)
 * [The Sass Way](http://thesassway.com/)
