@@ -15,7 +15,7 @@ After Googling and attempting a few `--watch` commands, you check your .css file
 
 In this short post, we’ll go over a few simple `--watch` commands, what they mean, and how to overcome possible errors.
 
-##What does `--watch` do?
+## What does `--watch` do?
 
 The `--watch` command literally tells Sass to watch your project for changes. It's what converts your Sass files into CSS and auto-compiles your Sass every time it changes.
 
@@ -33,7 +33,7 @@ sass --watch .
 
 So if your Sass file is in the root directory, this will auto-compile to CSS within the root directory. This can get messy if, say, you only want Sass files in a "scss" directory, because the `sass --watch .` command will also watch and compile to CSS within that "scss" directory. 
 
-##The commands I prefer
+## The commands I prefer
 
 Usually, to keep our project nice and tidy, we'll want our Sass and CSS files in separate directories. For instance, if our Sass file is in a directory named "scss," this command will compile our Sass and update the style sheet inside the "css" directory:
 
@@ -61,13 +61,13 @@ directory css
 
 This simply means that it generated a "css" directory containing a style sheet and [sourcemap](http://sass-lang.com/documentation/file.SASS_CHANGELOG.html#source_maps). **Remember**: you don't even have to create the css directory, style sheet, or sourcemap &ndash; the `--watch` command will generate them for you!
 
-##Tried it. Still no dice.
+## Tried it. Still no dice.
 
 OK, now you need to make sure that you’re in the right working directory. Let’s say you have a folder on your desktop named "project". Open up Terminal and type the command `cd desktop/project`. This will bring you to the correct working directory on your desktop.
 
 Once you're in the project directory, write the command `sass --watch scss:css` to begin auto-compiling your Sass to CSS&mdash;provided you’ve already created the “scss” directory.
 
-##That's it!
+## That's it!
 
 Now that you’re a `sass --watch` pro, next time you're up late working on a Sass project and frustrated because nothing’s happening in the browser, don't *spend minutes, hours, days, weeks, or even months over-analyzing the situation*. Just `--watch` yo’ Sass.
 
