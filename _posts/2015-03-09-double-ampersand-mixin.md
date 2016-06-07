@@ -36,7 +36,7 @@ This will output:
 
 This keeps the first column flush with the left side of the page, while the others get a `20px` left margin.
 
-##The Mixin
+## The Mixin
 
 I found myself repeating this "double ampersand selector" several times on projects, so I wrote a simple mixin for it:
 
@@ -85,7 +85,7 @@ The adjacent button gets the `firebrick` background color and `10px` left margin
 }
 {% endhighlight %}
 
-##What if we need it for other *things*?
+## What if we need it for other *things*?
 
 Sure, we could create further customization by adding other properties, passing more values, control directives, etc. Let's keeps things simple here by setting the default `$margin` value to `null`:
 
