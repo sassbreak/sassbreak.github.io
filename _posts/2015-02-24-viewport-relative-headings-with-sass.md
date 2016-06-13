@@ -13,7 +13,7 @@ Viewport-relative units (vw, vh, vmin, vmax) are a new set of dynamic CSS units 
 
 I like to use the `vw` (viewport width) unit on large headlines&mdash;I'll usually fiddle with the font-size value until it looks right. But what if we could define a pixel-based value, then have Sass convert it to a flexible `vw` value? In this article, we'll see how we can create viewport-relative headlines out of pixel units.
 
-##vw function
+## vw function
 When we use the `vw` unit, `1vw` is equal to 1% of the viewport width. So if an element's font-size value is set to `1w`, it means that if the browser is `1000px` wide, the element's computed font-size value is `10px`.
 
 To convert a `px` value to `vw`, we'll need a pixel-based context equal to 1% of some value&mdash;let's use 1% of 1000 *(1000 * .01)*. Next, we'll create a Sass function that gets the context value in pixels:
@@ -43,7 +43,7 @@ The final output is:
 
 If the viewport is `1000px` wide, the font size for `.headline` will be exactly `72px`. When the browser width changes, its computed value will also change and resize relative to the viewport.
 
-##Creating a mixin
+## Creating a mixin
 
 When using fluid units like `vw`, it's good to set a max font-size so that our text doesn't get too big on wider screens. We can do this a number of ways, but let's say we've already defined media query breakpoint variables in our project&mdash;something like this:
 
@@ -72,7 +72,7 @@ Then, include the mixin in place of the `font-size` declaration:
 }
 {% endhighlight %}
 
-##Changing the context
+## Changing the context
 
 If we want a `vw` font-size value that's relative to the widest breakpoint (1% of, say, $max-breakpoint), we can adjust our SCSS to output those values: 
 
@@ -94,7 +94,7 @@ Then, pass the `$max-breakpoint` variable in the function:
 }
 {% endhighlight %}
 
-##Closing
+## Closing
 
 This may seem like extra work up front, but the end result gives us a viable solution for displaying fluid headlines.
 
