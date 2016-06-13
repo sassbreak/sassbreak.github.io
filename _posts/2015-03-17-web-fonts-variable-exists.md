@@ -14,7 +14,7 @@ The introspection function I've found most useful is `variable-exists()`, which 
 
 In this post, we'll see how `variable-exists()` is a useful function for importing [Google Web Fonts](http://www.google.com/fonts/) into our style sheets.
 
-##Web font variables
+## Web font variables
 To use the function, we'll need to declare variables for each Google Web Font URL: 
 
 {% highlight scss %}
@@ -23,7 +23,7 @@ $font-google-prim : 'http://fonts.googleapis.com/css?family=Lato:100,300,400';
 $font-google-sec  : 'http://fonts.googleapis.com/css?family=PT+Serif:400,700';
 {% endhighlight %}
 
-###variable-exists()
+### variable-exists()
 With `variable-exists()`, we can tell Sass to import a font into our style sheet if `$font-google-prim` or `$font-google-sec` exist in our project:
 
 
