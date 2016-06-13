@@ -13,7 +13,7 @@ image: blend-modes.jpg
 
 In this post, we'll take a look at a simple blend mode mixin I recently created and used on several Sass projects.
 
-##Using blend modes
+## Using blend modes
 
 When we use the `background-blend-mode` property on an element, it mixes the background image and color together based on the blend mode we set.
 
@@ -39,7 +39,7 @@ Now we can include the `blendy` mixin in any rule that needs a background blend,
 }
 {% endhighlight %}
 
-##What about gradients?
+## What about gradients?
 What's great about blend modes is that they also allow blending between images and gradients. This can create some interesting blending effects.
 
 First, we'll declare a variable for our blend mode gradient:
@@ -74,7 +74,7 @@ This time, instead of a color value, let's pass the gradient variable:
 }
 {% endhighlight %}
 
-##Finishing touches
+## Finishing touches
 
 Currently, we're limited to one blend mode gradient and we want the mixin to accept values from a variety of variables. For example, any of these:
 
