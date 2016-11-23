@@ -5,9 +5,45 @@
     <description>A simple blog about Sass.</description>
     <link>http://sassbreak.com/</link>
     <atom:link href="http://sassbreak.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 20 Jan 2016 06:55:24 -0500</pubDate>
-    <lastBuildDate>Wed, 20 Jan 2016 06:55:24 -0500</lastBuildDate>
+    <pubDate>Wed, 23 Nov 2016 11:19:37 -0500</pubDate>
+    <lastBuildDate>Wed, 23 Nov 2016 11:19:37 -0500</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Introduction to React Router</title>
+        <description>&lt;p&gt;In this talk from &lt;a href=&quot;http://nodevember.org/&quot;&gt;Nodevember 2016&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/guilh&quot;&gt;Guil&lt;/a&gt; covers essential features of React Router, a popular React library that manages navigation and rendering of components in React apps.&lt;p&gt;
+
+We’ll start with routing basics, then dive into React Router’s powerful features, including:&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;style type=&quot;text/css&quot;&gt;
+		li { list-style: disc; }
+	&lt;/style&gt;
+  &lt;li&gt;Navigating routes&lt;/li&gt;
+  &lt;li&gt;Constructing a layout via nested routes&lt;/li&gt; 
+  &lt;li&gt;Rendering index routes and links&lt;/li&gt; 
+  &lt;li&gt;Styling active links&lt;/li&gt; 
+  &lt;li&gt;Creating routes with parameters&lt;/li&gt; 
+  &lt;li&gt;Displaying 404 routes and clean URLs&lt;/li&gt; 
+  &lt;li&gt;What&#39;s new in React Router 4&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p style=&quot;margin: 2em 0 0;&quot;&gt;
+  &lt;script async=&quot;&quot; class=&quot;speakerdeck-embed&quot; data-id=&quot;933e01f04ace4cc783dbd6537138bf1a&quot; data-ratio=&quot;1.77777777777778&quot; src=&quot;//speakerdeck.com/assets/embed.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
+
+
+&lt;/p&gt;
+</description>
+        <pubDate>Wed, 23 Nov 2016 00:00:00 -0500</pubDate>
+        <link>http://sassbreak.com/intro-to-react-router/</link>
+        <guid isPermaLink="true">http://sassbreak.com/intro-to-react-router/</guid>
+        
+        
+        <category>React</category>
+        
+      </item>
     
       <item>
         <title>Stop Arguing So Much with Your Mixins</title>
@@ -17,7 +53,7 @@
 
 &lt;h2 id=&quot;the-classic-way&quot;&gt;The classic way&lt;/h2&gt;
 
-&lt;p&gt;Say you are creating a mixin that is relatively complex in scope and will consume a large number of arguments due to the number of alternative outcomes. We have all done it, I know I sure have. In the following example I am using a &lt;code class=&quot;highlighter-rouge&quot;&gt;button&lt;/code&gt; mixin, the second most overly-engineered solution next to Grids, so the following code shouldn’t seem that crazy to you:&lt;/p&gt;
+&lt;p&gt;Say you are creating a mixin that is relatively complex in scope and will consume a large number of arguments due to the number of alternative outcomes. We have all done it, I know I sure have. In the following example I am using a button mixin, one of the most frequently written and over-engineered solution after Grids, so the following code shouldn’t seem that crazy to you:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@mixin&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;core-button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$background-color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$border-color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$background-hover&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$border-color-hover&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$background-active&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$border-color-active&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -39,7 +75,7 @@
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Given the relative simplicity of the mixin, it still takes 7 arguments (yes you can have defaults, but that’s not the point). From here things can only get more complex. then the number of times you need to compare back and forth between the mixin and where you are including it to make sure that you are putting the right value in the right place. So, you end up with this:&lt;/p&gt;
+&lt;p&gt;Given the relative simplicity of the mixin, it still takes 7 arguments (yes you can have defaults, but that’s not the point). From here things can only get more complex. The number of times you may need to compare back and forth, between the mixin itself and the use of it, to make sure that you are placing the correct value in the proper argument placement. So, you end up with this:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.foo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;core-button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;#ffffff&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#ededed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#b2005c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#dbdbdb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#ba0060&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#c7c7c7&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#a60056&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -47,17 +83,17 @@
 
 &lt;p&gt;Great, a list of hex values. In the moment, it makes perfect sense, you know the order of things. But next time you come back to this, will you remember what &lt;code class=&quot;highlighter-rouge&quot;&gt;#ba0060&lt;/code&gt; is referencing? Was it &lt;code class=&quot;highlighter-rouge&quot;&gt;$background-hover&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;$border-color-hover&lt;/code&gt;?&lt;/p&gt;
 
-&lt;p&gt;Then, this is a long list of values that I would assume that you would make a variable of so that you can use this with other similar buttons, right? So the process goes as follows … see selector &amp;gt; see mixin &amp;gt; see variable. Search for variable &amp;gt; search for mixin &amp;gt; compare argument list &amp;gt; update and hope you got it right. What usually happens was, “Oh crap, I wanted to update the 4th value, not the 5th!”&lt;/p&gt;
+&lt;p&gt;Logically, the next step when implementing this would likely be to store the list of values in a variable so you can easily re-use them with other buttons, right? So the process goes as follows … see selector &amp;gt; see mixin &amp;gt; see variable. Search for variable &amp;gt; search for mixin &amp;gt; compare argument list &amp;gt; update and hope you got it right. What usually happens was, “Oh crap, I wanted to update the 4th value, not the 5th!”&lt;/p&gt;
 
 &lt;p&gt;Not sure about you, but this has annoyed me for years.&lt;/p&gt;
 
 &lt;h2 id=&quot;the-options-way&quot;&gt;The “options” way&lt;/h2&gt;
 
-&lt;p&gt;While refactoring a lot of old code from older versions of Sass up to the latest tools available in libsass. And one tool that I am trying to find 1001 uses for is &lt;strong&gt;list-maps&lt;/strong&gt;. If you are not familiar with list-maps, here is an &lt;a href=&quot;http://anotheruiguy.roughdraft.io/10302472-so-you-want-to-play-with-list-maps&quot;&gt;article I wrote&lt;/a&gt; over a year ago that can help you get started. The best part is, peering into the future with &lt;a href=&quot;https://github.com/lunelson/sass-maps-plus&quot;&gt;sass-maps-plus&lt;/a&gt; which is &lt;a href=&quot;https://github.com/sass/sass/issues/1739&quot;&gt;planned to be an integrated feature&lt;/a&gt; of the official Sass library.&lt;/p&gt;
+&lt;p&gt;With recently moving a large project to the latest version of Libsass, I have spent a good amount of time refactoring old code. One tool that I am trying to find 1001 uses for is &lt;strong&gt;list-maps&lt;/strong&gt;. If you are not familiar with list-maps, here is an &lt;a href=&quot;http://anotheruiguy.roughdraft.io/10302472-so-you-want-to-play-with-list-maps&quot;&gt;article I wrote&lt;/a&gt; over a year ago that can help you get started. Excitingly, it looks like Sass’s list-maps support is going to get even more robust in the future, as the features that are found in sass-maps-plus &lt;a href=&quot;https://github.com/sass/sass/issues/1739&quot;&gt;are on the roadmap&lt;/a&gt; to becoming an integrated feature of the official Sass library.&lt;/p&gt;
 
 &lt;p&gt;List-maps bring to the table a great way to really manage a variable as a series of key-value pairs. Just like a real programming language! &lt;code class=&quot;highlighter-rouge&quot;&gt;＼(＾O＾)／&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Looking back at the mixin above, wouldn’t it be great if we could only have only one argument, a list of &lt;code class=&quot;highlighter-rouge&quot;&gt;options&lt;/code&gt; perhaps, and then pass in a list-map of variables within? Good news, we can.&lt;/p&gt;
+&lt;p&gt;Looking back at the mixin above, wouldn’t it be great if we could only have only one argument, a list of &lt;code class=&quot;highlighter-rouge&quot;&gt;options&lt;/code&gt; perhaps, and then pass in a list-map of variables within? Good news, we can!&lt;/p&gt;
 
 &lt;p&gt;As illustrated in the following example, I have removed the dependency on an ordered list of arguments within the mixin. This &lt;code class=&quot;highlighter-rouge&quot;&gt;options&lt;/code&gt; method allows me to use list-maps to have a complex array of named arguments in the form of key/value pairs and not have to deal with the complexities and ambiguity of an ordered list of arguments:&lt;/p&gt;
 
@@ -77,7 +113,7 @@
 &lt;span class=&quot;c1&quot;&gt;// Passing in the object literal you can then call like this:&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;fnParseInt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;afy&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;radix&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;36&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;This JavaScript method and similar methods in Sass have served us really well. But expanding on these ideas is what lead me to consider a single &lt;code class=&quot;highlighter-rouge&quot;&gt;option&lt;/code&gt; in a mixin versus passing in a list or individually named arguments. Interestingly enough, and this was pointed out to me by a colleague, this very same model is heavily used in much of Backbone. The concept of &lt;code class=&quot;highlighter-rouge&quot;&gt;options&lt;/code&gt; in Backbone is basically a javascript object of &lt;strong&gt;key/value&lt;/strong&gt; pairs that provide data to a method call.&lt;/p&gt;
+&lt;p&gt;This JavaScript method and similar methods in Sass have served us really well. But expanding on these ideas is what lead me to consider a single &lt;code class=&quot;highlighter-rouge&quot;&gt;option&lt;/code&gt; in a mixin versus passing in a list of individually named arguments. Interestingly enough, and this was pointed out to me by a colleague, this very same model is heavily used in much of Backbone. The concept of &lt;code class=&quot;highlighter-rouge&quot;&gt;options&lt;/code&gt; in Backbone is basically a javascript object of &lt;strong&gt;key/value&lt;/strong&gt; pairs that provide data to a method call.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;makeVehicle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;vehicle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;
@@ -104,7 +140,7 @@
 
 &lt;h3 id=&quot;houston-we-have-a-problem&quot;&gt;Houston, we have a problem&lt;/h3&gt;
 
-&lt;p&gt;With the new &lt;code class=&quot;highlighter-rouge&quot;&gt;options&lt;/code&gt; style mixin and the desire to use a single argument, we can’t simply pass in a list of arguments from the previous mixin? Understanding the JavaScript models and understanding on how we can use list-maps, this is easy enough to address. Pretty sure you saw that coming, right?&lt;/p&gt;
+&lt;p&gt;With the new &lt;code class=&quot;highlighter-rouge&quot;&gt;options&lt;/code&gt; style mixin and the desire to use a single argument, a simple list of arguments won’t work. Understanding the JavaScript models and understanding on how we can use list-maps, this is easy enough to address.&lt;/p&gt;
 
 &lt;p&gt;In the following example I am creating a standard list-map variable and am using key/value pairs to address variable values.&lt;/p&gt;
 
@@ -122,7 +158,7 @@
 
 &lt;h3 id=&quot;update-the-signal-improve-the-receiver&quot;&gt;Update the signal, improve the receiver&lt;/h3&gt;
 
-&lt;p&gt;Now that we have a &lt;strong&gt;list-map&lt;/strong&gt; with &lt;strong&gt;key/value pairs&lt;/strong&gt;, it’s required that we update all the variables within the mixin so that we can parse though the list-map. In the following example you will see that I replaced the more traditional &lt;em&gt;ordered&lt;/em&gt; argument/variable pairs with the &lt;code class=&quot;highlighter-rouge&quot;&gt;map-get&lt;/code&gt; function and the &lt;em&gt;named&lt;/em&gt; variables. IMHO, this is WAY more human readable. It’s clear that we are targeting a single variable which is inherited from the &lt;code class=&quot;highlighter-rouge&quot;&gt;$options&lt;/code&gt; argument. Then from that &lt;code class=&quot;highlighter-rouge&quot;&gt;map-get&lt;/code&gt; function we are asking for simple values, &lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;border-color&lt;/code&gt;. The mixin itself should remain pretty stable post this set up configuration.&lt;/p&gt;
+&lt;p&gt;Now that we have a &lt;strong&gt;list-map&lt;/strong&gt; with &lt;strong&gt;key/value pairs&lt;/strong&gt;, we need to update all the variables within the mixin so that we can get them out of the list-map. In the following example you will see that I replaced the more traditional &lt;em&gt;ordered&lt;/em&gt; argument/variable pairs with the &lt;code class=&quot;highlighter-rouge&quot;&gt;map-get&lt;/code&gt; function and the &lt;em&gt;named&lt;/em&gt; variables. IMHO, this is WAY more human readable. It’s clear that we are targeting a single variable which is inherited from the &lt;code class=&quot;highlighter-rouge&quot;&gt;$options&lt;/code&gt; argument. Then from that &lt;code class=&quot;highlighter-rouge&quot;&gt;map-get&lt;/code&gt; function we are asking for simple values, &lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;border-color&lt;/code&gt;. The mixin itself should remain pretty stable post this set up configuration.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@mixin&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;core-button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;map-get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -831,105 +867,6 @@
         <pubDate>Sun, 01 Mar 2015 00:00:00 -0500</pubDate>
         <link>http://sassbreak.com/nested-keyframe-rules-sass/</link>
         <guid isPermaLink="true">http://sassbreak.com/nested-keyframe-rules-sass/</guid>
-        
-        
-        <category>sass</category>
-        
-        <category>tips</category>
-        
-      </item>
-    
-      <item>
-        <title>Viewport-Relative Headings with Sass</title>
-        <description>&lt;p&gt;Viewport-relative units (vw, vh, vmin, vmax) are a new set of dynamic CSS units for sizing elements. They’re called “viewport-relative” because they eliminate dependency on parent elements and allow sizing based on the viewport size. This makes them a handy unit for defining font sizes and building fluid layouts.&lt;/p&gt;
-
-&lt;p&gt;I like to use the &lt;code class=&quot;highlighter-rouge&quot;&gt;vw&lt;/code&gt; (viewport width) unit on large headlines—I’ll usually fiddle with the font-size value until it looks right. But what if we could define a pixel-based value, then have Sass convert it to a flexible &lt;code class=&quot;highlighter-rouge&quot;&gt;vw&lt;/code&gt; value? In this article, we’ll see how we can create viewport-relative headlines out of pixel units.&lt;/p&gt;
-
-&lt;h2 id=&quot;vw-function&quot;&gt;vw function&lt;/h2&gt;
-&lt;p&gt;When we use the &lt;code class=&quot;highlighter-rouge&quot;&gt;vw&lt;/code&gt; unit, &lt;code class=&quot;highlighter-rouge&quot;&gt;1vw&lt;/code&gt; is equal to 1% of the viewport width. So if an element’s font-size value is set to &lt;code class=&quot;highlighter-rouge&quot;&gt;1w&lt;/code&gt;, it means that if the browser is &lt;code class=&quot;highlighter-rouge&quot;&gt;1000px&lt;/code&gt; wide, the element’s computed font-size value is &lt;code class=&quot;highlighter-rouge&quot;&gt;10px&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;To convert a &lt;code class=&quot;highlighter-rouge&quot;&gt;px&lt;/code&gt; value to &lt;code class=&quot;highlighter-rouge&quot;&gt;vw&lt;/code&gt;, we’ll need a pixel-based context equal to 1% of some value—let’s use 1% of 1000 &lt;em&gt;(1000 * .01)&lt;/em&gt;. Next, we’ll create a Sass function that gets the context value in pixels:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get-vw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; 
-  &lt;span class=&quot;nv&quot;&gt;$vw-context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*.&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;01&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;@return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$target&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$vw-context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1vw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The function also divides the pixel value we pass via &lt;code class=&quot;highlighter-rouge&quot;&gt;$target&lt;/code&gt; by the 1% context, then converts it to &lt;code class=&quot;highlighter-rouge&quot;&gt;vw&lt;/code&gt;. Now we can use the &lt;code class=&quot;highlighter-rouge&quot;&gt;get-vw&lt;/code&gt; function in a font-size value.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.headline&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get-vw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;72px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The final output is:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.headline&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;7.2vw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;If the viewport is &lt;code class=&quot;highlighter-rouge&quot;&gt;1000px&lt;/code&gt; wide, the font size for &lt;code class=&quot;highlighter-rouge&quot;&gt;.headline&lt;/code&gt; will be exactly &lt;code class=&quot;highlighter-rouge&quot;&gt;72px&lt;/code&gt;. When the browser width changes, its computed value will also change and resize relative to the viewport.&lt;/p&gt;
-
-&lt;h2 id=&quot;creating-a-mixin&quot;&gt;Creating a mixin&lt;/h2&gt;
-
-&lt;p&gt;When using fluid units like &lt;code class=&quot;highlighter-rouge&quot;&gt;vw&lt;/code&gt;, it’s good to set a max font-size so that our text doesn’t get too big on wider screens. We can do this a number of ways, but let’s say we’ve already defined media query breakpoint variables in our project—something like this:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Media query variables
-&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;...
-$&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;wide-screen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;(min-width: 1025px)&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;We can create a mixin that uses &lt;code class=&quot;highlighter-rouge&quot;&gt;get-vw&lt;/code&gt; and outputs a media query to set the font size back to pixels once the viewport reaches the widest breakpoint:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@mixin&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;vw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get-vw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$wide-screen&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Then, include the mixin in place of the &lt;code class=&quot;highlighter-rouge&quot;&gt;font-size&lt;/code&gt; declaration:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.headline&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;vw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;72px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;changing-the-context&quot;&gt;Changing the context&lt;/h2&gt;
-
-&lt;p&gt;If we want a &lt;code class=&quot;highlighter-rouge&quot;&gt;vw&lt;/code&gt; font-size value that’s relative to the widest breakpoint (1% of, say, $max-breakpoint), we can adjust our SCSS to output those values:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Breakpoint variables
-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$max-breakpoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1025&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Media query variables
-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$wide-screen&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;(min-width: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$max-breakpoint&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;px)&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Then, pass the &lt;code class=&quot;highlighter-rouge&quot;&gt;$max-breakpoint&lt;/code&gt; variable in the function:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Function
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get-vw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nv&quot;&gt;$vw-context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$max-breakpoint&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*.&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;01&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;@return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$target&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$vw-context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1vw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;closing&quot;&gt;Closing&lt;/h2&gt;
-
-&lt;p&gt;This may seem like extra work up front, but the end result gives us a viable solution for displaying fluid headlines.&lt;/p&gt;
-
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;vw&lt;/code&gt; unit &lt;a href=&quot;http://caniuse.com/#search=vw&quot;&gt;has strong support&lt;/a&gt; in the latest browsers. As a fallback, simply include a regular font-size value first. Browsers that do not support &lt;code class=&quot;highlighter-rouge&quot;&gt;vw&lt;/code&gt; will display the &lt;code class=&quot;highlighter-rouge&quot;&gt;em&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;px&lt;/code&gt; value instead:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.headline&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;.5em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;vw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;72px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Check out one of the examples on CodePen:&lt;/p&gt;
-
-&lt;p data-height=&quot;268&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;emrYPJ&quot; data-default-tab=&quot;result&quot; data-user=&quot;Guilh&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/Guilh/pen/emrYPJ/&quot;&gt;px to vw&lt;/a&gt; by Guil H (&lt;a href=&quot;http://codepen.io/Guilh&quot;&gt;@Guilh&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
-&lt;script async=&quot;&quot; src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
-
-</description>
-        <pubDate>Tue, 24 Feb 2015 00:00:00 -0500</pubDate>
-        <link>http://sassbreak.com/viewport-relative-headings-with-sass/</link>
-        <guid isPermaLink="true">http://sassbreak.com/viewport-relative-headings-with-sass/</guid>
         
         
         <category>sass</category>

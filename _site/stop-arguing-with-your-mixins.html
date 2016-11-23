@@ -72,7 +72,7 @@
 
 <h2 id="the-classic-way">The classic way</h2>
 
-<p>Say you are creating a mixin that is relatively complex in scope and will consume a large number of arguments due to the number of alternative outcomes. We have all done it, I know I sure have. In the following example I am using a <code class="highlighter-rouge">button</code> mixin, the second most overly-engineered solution next to Grids, so the following code shouldn’t seem that crazy to you:</p>
+<p>Say you are creating a mixin that is relatively complex in scope and will consume a large number of arguments due to the number of alternative outcomes. We have all done it, I know I sure have. In the following example I am using a button mixin, one of the most frequently written and over-engineered solution after Grids, so the following code shouldn’t seem that crazy to you:</p>
 
 <figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@mixin</span> <span class="nf">core-button</span><span class="p">(</span><span class="nv">$color</span><span class="o">,</span> <span class="nv">$background-color</span><span class="o">,</span> <span class="nv">$border-color</span><span class="o">,</span> <span class="nv">$background-hover</span><span class="o">,</span> <span class="nv">$border-color-hover</span><span class="o">,</span> <span class="nv">$background-active</span><span class="o">,</span> <span class="nv">$border-color-active</span><span class="p">)</span> <span class="p">{</span>
   <span class="nl">color</span><span class="p">:</span> <span class="nv">$color</span><span class="p">;</span>
@@ -94,7 +94,7 @@
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Given the relative simplicity of the mixin, it still takes 7 arguments (yes you can have defaults, but that’s not the point). From here things can only get more complex. then the number of times you need to compare back and forth between the mixin and where you are including it to make sure that you are putting the right value in the right place. So, you end up with this:</p>
+<p>Given the relative simplicity of the mixin, it still takes 7 arguments (yes you can have defaults, but that’s not the point). From here things can only get more complex. The number of times you may need to compare back and forth, between the mixin itself and the use of it, to make sure that you are placing the correct value in the proper argument placement. So, you end up with this:</p>
 
 <figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.foo</span> <span class="p">{</span>
   <span class="k">@include</span> <span class="nd">core-button</span><span class="p">(</span><span class="mh">#ffffff</span><span class="o">,</span> <span class="mh">#ededed</span><span class="o">,</span> <span class="mh">#b2005c</span><span class="o">,</span> <span class="mh">#dbdbdb</span><span class="o">,</span> <span class="mh">#ba0060</span><span class="o">,</span> <span class="mh">#c7c7c7</span><span class="o">,</span> <span class="mh">#a60056</span><span class="p">);</span>
@@ -102,17 +102,17 @@
 
 <p>Great, a list of hex values. In the moment, it makes perfect sense, you know the order of things. But next time you come back to this, will you remember what <code class="highlighter-rouge">#ba0060</code> is referencing? Was it <code class="highlighter-rouge">$background-hover</code> or <code class="highlighter-rouge">$border-color-hover</code>?</p>
 
-<p>Then, this is a long list of values that I would assume that you would make a variable of so that you can use this with other similar buttons, right? So the process goes as follows … see selector &gt; see mixin &gt; see variable. Search for variable &gt; search for mixin &gt; compare argument list &gt; update and hope you got it right. What usually happens was, “Oh crap, I wanted to update the 4th value, not the 5th!”</p>
+<p>Logically, the next step when implementing this would likely be to store the list of values in a variable so you can easily re-use them with other buttons, right? So the process goes as follows … see selector &gt; see mixin &gt; see variable. Search for variable &gt; search for mixin &gt; compare argument list &gt; update and hope you got it right. What usually happens was, “Oh crap, I wanted to update the 4th value, not the 5th!”</p>
 
 <p>Not sure about you, but this has annoyed me for years.</p>
 
 <h2 id="the-options-way">The “options” way</h2>
 
-<p>While refactoring a lot of old code from older versions of Sass up to the latest tools available in libsass. And one tool that I am trying to find 1001 uses for is <strong>list-maps</strong>. If you are not familiar with list-maps, here is an <a href="http://anotheruiguy.roughdraft.io/10302472-so-you-want-to-play-with-list-maps">article I wrote</a> over a year ago that can help you get started. The best part is, peering into the future with <a href="https://github.com/lunelson/sass-maps-plus">sass-maps-plus</a> which is <a href="https://github.com/sass/sass/issues/1739">planned to be an integrated feature</a> of the official Sass library.</p>
+<p>With recently moving a large project to the latest version of Libsass, I have spent a good amount of time refactoring old code. One tool that I am trying to find 1001 uses for is <strong>list-maps</strong>. If you are not familiar with list-maps, here is an <a href="http://anotheruiguy.roughdraft.io/10302472-so-you-want-to-play-with-list-maps">article I wrote</a> over a year ago that can help you get started. Excitingly, it looks like Sass’s list-maps support is going to get even more robust in the future, as the features that are found in sass-maps-plus <a href="https://github.com/sass/sass/issues/1739">are on the roadmap</a> to becoming an integrated feature of the official Sass library.</p>
 
 <p>List-maps bring to the table a great way to really manage a variable as a series of key-value pairs. Just like a real programming language! <code class="highlighter-rouge">＼(＾O＾)／</code></p>
 
-<p>Looking back at the mixin above, wouldn’t it be great if we could only have only one argument, a list of <code class="highlighter-rouge">options</code> perhaps, and then pass in a list-map of variables within? Good news, we can.</p>
+<p>Looking back at the mixin above, wouldn’t it be great if we could only have only one argument, a list of <code class="highlighter-rouge">options</code> perhaps, and then pass in a list-map of variables within? Good news, we can!</p>
 
 <p>As illustrated in the following example, I have removed the dependency on an ordered list of arguments within the mixin. This <code class="highlighter-rouge">options</code> method allows me to use list-maps to have a complex array of named arguments in the form of key/value pairs and not have to deal with the complexities and ambiguity of an ordered list of arguments:</p>
 
@@ -132,7 +132,7 @@
 <span class="c1">// Passing in the object literal you can then call like this:</span>
 <span class="nx">fnParseInt</span><span class="p">(</span> <span class="p">{</span> <span class="na">number</span> <span class="p">:</span> <span class="s1">'afy'</span><span class="p">,</span> <span class="na">radix</span> <span class="p">:</span> <span class="mi">36</span> <span class="p">}</span> <span class="p">);</span></code></pre></figure>
 
-<p>This JavaScript method and similar methods in Sass have served us really well. But expanding on these ideas is what lead me to consider a single <code class="highlighter-rouge">option</code> in a mixin versus passing in a list or individually named arguments. Interestingly enough, and this was pointed out to me by a colleague, this very same model is heavily used in much of Backbone. The concept of <code class="highlighter-rouge">options</code> in Backbone is basically a javascript object of <strong>key/value</strong> pairs that provide data to a method call.</p>
+<p>This JavaScript method and similar methods in Sass have served us really well. But expanding on these ideas is what lead me to consider a single <code class="highlighter-rouge">option</code> in a mixin versus passing in a list of individually named arguments. Interestingly enough, and this was pointed out to me by a colleague, this very same model is heavily used in much of Backbone. The concept of <code class="highlighter-rouge">options</code> in Backbone is basically a javascript object of <strong>key/value</strong> pairs that provide data to a method call.</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">makeVehicle</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">make</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">vehicle</span> <span class="o">=</span> <span class="p">{};</span>
@@ -159,7 +159,7 @@
 
 <h3 id="houston-we-have-a-problem">Houston, we have a problem</h3>
 
-<p>With the new <code class="highlighter-rouge">options</code> style mixin and the desire to use a single argument, we can’t simply pass in a list of arguments from the previous mixin? Understanding the JavaScript models and understanding on how we can use list-maps, this is easy enough to address. Pretty sure you saw that coming, right?</p>
+<p>With the new <code class="highlighter-rouge">options</code> style mixin and the desire to use a single argument, a simple list of arguments won’t work. Understanding the JavaScript models and understanding on how we can use list-maps, this is easy enough to address.</p>
 
 <p>In the following example I am creating a standard list-map variable and am using key/value pairs to address variable values.</p>
 
@@ -177,7 +177,7 @@
 
 <h3 id="update-the-signal-improve-the-receiver">Update the signal, improve the receiver</h3>
 
-<p>Now that we have a <strong>list-map</strong> with <strong>key/value pairs</strong>, it’s required that we update all the variables within the mixin so that we can parse though the list-map. In the following example you will see that I replaced the more traditional <em>ordered</em> argument/variable pairs with the <code class="highlighter-rouge">map-get</code> function and the <em>named</em> variables. IMHO, this is WAY more human readable. It’s clear that we are targeting a single variable which is inherited from the <code class="highlighter-rouge">$options</code> argument. Then from that <code class="highlighter-rouge">map-get</code> function we are asking for simple values, <code class="highlighter-rouge">color</code> or <code class="highlighter-rouge">border-color</code>. The mixin itself should remain pretty stable post this set up configuration.</p>
+<p>Now that we have a <strong>list-map</strong> with <strong>key/value pairs</strong>, we need to update all the variables within the mixin so that we can get them out of the list-map. In the following example you will see that I replaced the more traditional <em>ordered</em> argument/variable pairs with the <code class="highlighter-rouge">map-get</code> function and the <em>named</em> variables. IMHO, this is WAY more human readable. It’s clear that we are targeting a single variable which is inherited from the <code class="highlighter-rouge">$options</code> argument. Then from that <code class="highlighter-rouge">map-get</code> function we are asking for simple values, <code class="highlighter-rouge">color</code> or <code class="highlighter-rouge">border-color</code>. The mixin itself should remain pretty stable post this set up configuration.</p>
 
 <figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@mixin</span> <span class="nf">core-button</span><span class="p">(</span><span class="nv">$options</span><span class="p">)</span> <span class="p">{</span>
   <span class="nl">color</span><span class="p">:</span> <span class="nf">map-get</span><span class="p">(</span><span class="nv">$options</span><span class="o">,</span> <span class="n">color</span><span class="p">);</span>
