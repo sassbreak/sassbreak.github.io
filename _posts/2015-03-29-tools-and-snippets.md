@@ -30,7 +30,7 @@ In the *[Double Ampersand Mixin](http://sassbreak.com/double-ampersand-mixin/)* 
 <p class="sassmeister" data-gist-id="588ad7614481d259fc74" data-height="350" data-theme="tomorrow"><a href="http://sassmeister.com/gist/588ad7614481d259fc74">Play with this gist on SassMeister.</a></p><script src="http://cdn.sassmeister.com/js/embed.js" async></script>
 
 ## Flexible grid system  
-Front-end developer, [Doğukan Güven Nomak](https://twitter.com/dnomak), built a Flexible grid system with Sass! To learn more about it, visit [flexible.gs](http://flexible.gs/), or check out Doğukan's CodePen demo:
+Front-end developer [Doğukan Güven Nomak](https://twitter.com/dnomak) built a Flexible grid system with Sass! To learn more about it, visit [flexible.gs](http://flexible.gs/), or check out Doğukan's CodePen demo:
 
 <p data-height="230" data-theme-id="0" data-slug-hash="wBzdzj" data-default-tab="result" data-user="dnomak" class='codepen'>See the Pen <a href='http://codepen.io/dnomak/pen/wBzdzj/'>wBzdzj</a> by Doğukan Güven Nomak (<a href='http://codepen.io/dnomak'>@dnomak</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
